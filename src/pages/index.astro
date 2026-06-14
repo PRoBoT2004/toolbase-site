@@ -1,0 +1,41 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>The AI tool stack for solopreneurs.</h1>
+			<p style="font-size: 1.2em; margin: 1.5em 0;">
+				There are <strong>thousands of AI tools</strong> launching every month.
+				Most are noise. A few are genuinely useful for solo founders, freelancers,
+				and indie operators trying to run a business by themselves.
+			</p>
+			<p>
+				<strong>Toolbase is the honest filter.</strong> We test, compare, and review the
+				AI tools that actually save time and make money for one-person businesses
+				— no fluff, no paid placements, no "10 ways AI will change your life" listicles.
+			</p>
+			<h2 style="margin-top: 2em;">What we cover</h2>
+			<ul>
+				<li><strong>Comparison guides:</strong> "Jasper vs Copy.ai vs ChatGPT for freelance writers" — the kind of head-to-head that saves you hours of evaluation</li>
+				<li><strong>Tool-stack tutorials:</strong> "How I built a $5k/month freelance ops system using Notion AI + ClickUp + Loom"</li>
+				<li><strong>Honest reviews:</strong> What works, what doesn't, what the marketing pages don't tell you</li>
+				<li><strong>Free utilities:</strong> Small AI tools we build ourselves when no one else has built them right</li>
+			</ul>
+			<p style="margin-top: 2em;">
+				New articles every week. Browse the <a href="/blog">blog</a> for the latest reviews,
+				or check the <a href="/about">about page</a> to learn who's behind this.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
