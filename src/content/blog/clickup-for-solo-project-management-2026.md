@@ -45,7 +45,7 @@ That's it. Don't create more Spaces. Resist the temptation to make a Space per c
 
 That's the entire structure. Eight Lists total, plus one List per active client. Anyone who tells you a "solid PM system" needs more is selling you the maintenance overhead, not the value.
 
-<!-- IMAGE: Editorial line illustration, 16:9, warm cream background (#F4EBD8). Subject: a simple folder tree hand-drawn — top box says "Workspace" (no readable text, just a small icon hint), three boxes underneath labeled with tiny abstract icons (one for clients, one for operations, one for personal). Inside the "Clients" box, three smaller boxes representing client folders. Charcoal black hand-drawn lines (#1A1A1A), deliberately imperfect. The "Operations" box accented in burnt orange (#E07856). Subtle paper grain. No text labels. No people. Style: New Yorker editorial illustration. Save as: clickup-hierarchy.webp -->
+![The minimal hierarchy: one workspace, three spaces, one list per client.](../../assets/clickup-hierarchy.webp)
 
 ## Workflow 1: The Weekly Pull
 
@@ -116,7 +116,7 @@ If you bill hourly, this becomes your invoice basis. If you bill fixed-price, th
 
 **Why this matters:** Almost every solo business loses revenue to follow-up failure, not to losing in the actual sale. The pipeline view + due-date discipline catches roughly $X/year you would have otherwise let slip.
 
-<!-- IMAGE: Editorial line illustration, 16:9, warm cream background (#F4EBD8). Subject: a hand-drawn kanban board with 4 vertical columns, each containing 2-3 small rectangle "cards." The columns sit on a table. Some cards have small icons (no text). One column is slightly highlighted. Charcoal black hand-drawn lines (#1A1A1A), deliberately imperfect. One card in the middle column accented in burnt orange (#E07856). Subtle paper grain. No text. No people. Style: New Yorker editorial illustration. Save as: clickup-kanban.webp -->
+![The "Doing" kanban: keep "In Progress" to two cards. WIP limits are real productivity hygiene.](../../assets/clickup-kanban.webp)
 
 ## Three things to deliberately NOT do
 

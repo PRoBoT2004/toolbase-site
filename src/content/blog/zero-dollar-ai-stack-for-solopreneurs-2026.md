@@ -69,7 +69,7 @@ We wrote a [7-scenario starter playbook](/blog/automate-friday-admin-with-make-c
 
 [Try Make free →](https://www.make.com/en/register?pc=toolbase)
 
-<!-- IMAGE: Editorial line illustration, 16:9, warm cream background (#F4EBD8). Subject: a circular composition of small icons arranged like a wheel — each icon represents a different AI tool category (chat bubble, magnifying glass, calendar, lightbulb, video play button, robot head, paint palette, document, link/chain). All hand-drawn in charcoal black (#1A1A1A), deliberately imperfect. One icon (the central or topmost) accented in burnt orange (#E07856). Subtle paper grain. No text. No people. Style: New Yorker editorial illustration. Save as: zero-dollar-ai-stack-overview.webp -->
+![Eleven free tiers that genuinely deliver — a complete solo operating system at $0/month.](../../assets/zero-dollar-ai-stack-overview.webp)
 
 ### 8. Fathom Free — AI meeting capture
 
