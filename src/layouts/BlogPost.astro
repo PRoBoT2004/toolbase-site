@@ -82,10 +82,17 @@ const { title, description, pubDate, updatedDate, heroImage, readingTime } = Ast
 				color: rgb(var(--gray-dark));
 				font-size: 1.05em;
 				line-height: 1.8;
+				position: relative;
 			}
 			.prose :global(p) { margin: 0 0 1.4em; }
-			.prose :global(h2) { margin: 2em 0 0.6em; }
-			.prose :global(h3) { margin: 1.5em 0 0.5em; }
+			.prose :global(h2) {
+				margin: 2em 0 0.6em;
+				scroll-margin-top: 90px;
+			}
+			.prose :global(h3) {
+				margin: 1.5em 0 0.5em;
+				scroll-margin-top: 90px;
+			}
 			.prose :global(hr) { margin: 2.5em 0; }
 			.prose :global(table) {
 				margin: 1.5em 0;
@@ -111,9 +118,252 @@ const { title, description, pubDate, updatedDate, heroImage, readingTime } = Ast
 				padding: 1em 1.25em;
 				border-radius: var(--radius-sm);
 			}
+
+			/* ------- Sticky TOC (wide screens) ------- */
+			.toc {
+				display: none;
+				position: fixed;
+				top: 96px;
+				right: max(24px, calc((100vw - 1100px) / 2));
+				width: 220px;
+				max-height: calc(100vh - 130px);
+				overflow-y: auto;
+				font-size: 0.85em;
+				line-height: 1.45;
+				z-index: 10;
+				padding-left: 0.9em;
+				border-left: 1px solid rgb(var(--gray-light));
+			}
+			.toc-title {
+				display: block;
+				font-size: 0.78em;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
+				color: rgb(var(--gray));
+				margin-bottom: 0.8em;
+			}
+			.toc ol {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				gap: 0.55em;
+			}
+			.toc a {
+				display: block;
+				color: rgb(var(--gray-dark));
+				text-decoration: none;
+				transition: color 0.15s ease;
+				border-left: 2px solid transparent;
+				padding-left: 0.6em;
+				margin-left: -0.9em - 1px;
+				margin-left: calc(-0.9em - 1px);
+			}
+			.toc a:hover { color: var(--accent-dark); }
+			.toc a.is-active {
+				color: var(--accent-dark);
+				font-weight: 600;
+				border-left-color: var(--accent);
+			}
+			@media (min-width: 1180px) {
+				.toc { display: block; }
+			}
+
+			/* ------- Floating action buttons ------- */
+			.fab-stack {
+				position: fixed;
+				right: 18px;
+				bottom: 18px;
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				z-index: 60;
+				pointer-events: none;
+			}
+			.fab {
+				pointer-events: auto;
+				width: 44px;
+				height: 44px;
+				border-radius: 999px;
+				background: rgb(var(--gray-dark));
+				color: #fff;
+				border: none;
+				cursor: pointer;
+				box-shadow: var(--shadow-md);
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				opacity: 0;
+				transform: translateY(8px);
+				transition: opacity 0.2s ease, transform 0.2s ease, background 0.15s ease;
+				font-size: 18px;
+				line-height: 1;
+			}
+			.fab.is-visible {
+				opacity: 1;
+				transform: none;
+			}
+			.fab:hover {
+				background: var(--accent-dark);
+			}
+			.fab.has-badge {
+				position: relative;
+			}
+			.fab .badge {
+				position: absolute;
+				top: -4px;
+				right: -4px;
+				min-width: 18px;
+				height: 18px;
+				padding: 0 5px;
+				border-radius: 999px;
+				background: var(--accent);
+				color: #fff;
+				font-size: 11px;
+				font-weight: 700;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				box-shadow: 0 0 0 2px var(--bg);
+			}
+
+			/* ------- Selection popover ------- */
+			.sel-pop {
+				position: absolute;
+				z-index: 70;
+				display: none;
+				background: rgb(var(--gray-dark));
+				color: #fff;
+				border-radius: 999px;
+				padding: 0.3em 0.4em;
+				box-shadow: var(--shadow-lg);
+				font-size: 13px;
+				gap: 0.15em;
+			}
+			.sel-pop.is-open { display: inline-flex; }
+			.sel-pop::after {
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				left: 50%;
+				transform: translateX(-50%);
+				border: 5px solid transparent;
+				border-top-color: rgb(var(--gray-dark));
+				border-bottom: none;
+			}
+			.sel-pop button {
+				background: transparent;
+				border: none;
+				color: #fff;
+				cursor: pointer;
+				padding: 0.35em 0.75em;
+				border-radius: 999px;
+				font-size: 13px;
+				font-weight: 600;
+				transition: background 0.15s ease;
+			}
+			.sel-pop button:hover { background: rgba(255, 255, 255, 0.15); }
+			.sel-pop button.done {
+				background: var(--accent);
+				color: #fff;
+			}
+
+			/* ------- Saved quotes drawer ------- */
+			.notes-drawer {
+				position: fixed;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: var(--surface);
+				border-top: 1px solid rgb(var(--gray-light));
+				box-shadow: var(--shadow-lg);
+				transform: translateY(100%);
+				transition: transform 0.22s ease;
+				z-index: 80;
+				max-height: 70vh;
+				overflow-y: auto;
+			}
+			.notes-drawer.is-open { transform: none; }
+			.notes-inner {
+				max-width: 720px;
+				margin: 0 auto;
+				padding: 1.25em 1.25em 1.5em;
+			}
+			.notes-head {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 0.8em;
+				border-bottom: 1px solid rgb(var(--gray-light));
+				padding-bottom: 0.6em;
+			}
+			.notes-head h3 {
+				margin: 0;
+				font-size: 1.1em;
+				font-family: var(--font-serif);
+			}
+			.notes-head button {
+				background: transparent;
+				border: none;
+				font-size: 22px;
+				line-height: 1;
+				cursor: pointer;
+				color: rgb(var(--gray));
+				padding: 0.1em 0.3em;
+				border-radius: 4px;
+			}
+			.notes-head button:hover { color: rgb(var(--black)); background: var(--surface-warm); }
+			.notes-empty {
+				color: rgb(var(--gray));
+				font-style: italic;
+				padding: 1em 0;
+			}
+			.notes-list {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				gap: 0.8em;
+			}
+			.notes-list li {
+				background: var(--surface-warm);
+				border-radius: var(--radius-sm);
+				padding: 0.75em 0.9em;
+				display: flex;
+				justify-content: space-between;
+				gap: 0.6em;
+				align-items: start;
+				font-size: 0.92em;
+				line-height: 1.55;
+			}
+			.notes-list .quote-text { flex: 1; }
+			.notes-list .remove {
+				background: transparent;
+				border: none;
+				color: rgb(var(--gray));
+				cursor: pointer;
+				font-size: 16px;
+				line-height: 1;
+				padding: 0.2em 0.4em;
+				border-radius: 4px;
+				flex-shrink: 0;
+			}
+			.notes-list .remove:hover { color: var(--danger); background: rgba(162, 39, 22, 0.06); }
+
 			@media (max-width: 720px) {
 				.article-header h1 { font-size: 2em; }
 				.prose { font-size: 1em; line-height: 1.7; padding: 0 0.5em 1em; }
+				.fab { width: 40px; height: 40px; font-size: 16px; }
+				.fab-stack { right: 12px; bottom: 12px; }
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				.fab, .sel-pop, .notes-drawer, .toc a {
+					transition: none !important;
+				}
 			}
 		</style>
 	</head>
@@ -121,6 +371,12 @@ const { title, description, pubDate, updatedDate, heroImage, readingTime } = Ast
 	<body>
 		<div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
 		<Header />
+
+		<nav class="toc" id="toc" aria-label="On this page" hidden>
+			<span class="toc-title">On this page</span>
+			<ol id="toc-list"></ol>
+		</nav>
+
 		<main>
 			<article id="article">
 				<header class="article-header">
@@ -147,38 +403,297 @@ const { title, description, pubDate, updatedDate, heroImage, readingTime } = Ast
 						<Image width={1200} height={675} src={heroImage} alt="" />
 					</div>
 				)}
-				<div class="prose">
+				<div class="prose" id="prose">
 					<slot />
 				</div>
 			</article>
 		</main>
 		<Footer />
 
+		<!-- Selection popover -->
+		<div class="sel-pop" id="sel-pop" role="toolbar" aria-label="Selection actions">
+			<button type="button" data-action="copy" title="Copy selected text">Copy</button>
+			<button type="button" data-action="save" title="Save this quote">Save quote</button>
+		</div>
+
+		<!-- Floating buttons: notes + back to top -->
+		<div class="fab-stack">
+			<button type="button" class="fab has-badge" id="fab-notes" aria-label="View saved quotes" title="Saved quotes">
+				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+				<span class="badge" id="notes-badge" hidden>0</span>
+			</button>
+			<button type="button" class="fab" id="fab-top" aria-label="Back to top" title="Back to top">
+				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+			</button>
+		</div>
+
+		<!-- Saved quotes drawer -->
+		<aside class="notes-drawer" id="notes-drawer" aria-hidden="true">
+			<div class="notes-inner">
+				<div class="notes-head">
+					<h3>Your saved quotes from this article</h3>
+					<button type="button" id="notes-close" aria-label="Close">×</button>
+				</div>
+				<div id="notes-body"></div>
+			</div>
+		</aside>
+
 		<script>
 			(function () {
-				const bar = document.getElementById('reading-progress');
-				const article = document.getElementById('article');
-				if (!bar || !article) return;
+				const STORAGE_PREFIX = 'tb-notes:';
+				const articleEl = document.getElementById('article');
+				const proseEl = document.getElementById('prose');
+				const progressBar = document.getElementById('reading-progress');
+				const tocEl = document.getElementById('toc');
+				const tocListEl = document.getElementById('toc-list');
+				const fabTop = document.getElementById('fab-top');
+				const fabNotes = document.getElementById('fab-notes');
+				const notesBadge = document.getElementById('notes-badge');
+				const drawer = document.getElementById('notes-drawer');
+				const drawerClose = document.getElementById('notes-close');
+				const notesBody = document.getElementById('notes-body');
+				const selPop = document.getElementById('sel-pop');
 
-				let ticking = false;
-				function update() {
-					const rect = article.getBoundingClientRect();
-					const articleTop = rect.top + window.scrollY;
-					const articleEnd = articleTop + article.scrollHeight - window.innerHeight;
-					const range = Math.max(1, articleEnd - articleTop);
-					const progress = Math.max(0, Math.min(1, (window.scrollY - articleTop) / range));
-					bar.style.width = progress * 100 + '%';
-					ticking = false;
+				if (!articleEl || !proseEl) return;
+
+				const storageKey = STORAGE_PREFIX + location.pathname;
+
+				// ---------- Reading progress ----------
+				if (progressBar) {
+					let ticking = false;
+					const update = () => {
+						const rect = articleEl.getBoundingClientRect();
+						const top = rect.top + window.scrollY;
+						const end = top + articleEl.scrollHeight - window.innerHeight;
+						const range = Math.max(1, end - top);
+						const p = Math.max(0, Math.min(1, (window.scrollY - top) / range));
+						progressBar.style.width = p * 100 + '%';
+						ticking = false;
+					};
+					const onScroll = () => {
+						if (!ticking) { requestAnimationFrame(update); ticking = true; }
+					};
+					window.addEventListener('scroll', onScroll, { passive: true });
+					window.addEventListener('resize', onScroll);
+					update();
 				}
-				function onScroll() {
-					if (!ticking) {
-						requestAnimationFrame(update);
-						ticking = true;
+
+				// ---------- TOC build ----------
+				const slugify = (s) =>
+					s.toLowerCase()
+						.replace(/[^\w\s-]/g, '')
+						.replace(/\s+/g, '-')
+						.replace(/^-+|-+$/g, '')
+						.slice(0, 64);
+				const headings = Array.from(proseEl.querySelectorAll('h2'));
+				const usedIds = new Set();
+				const tocItems = headings.map((h) => {
+					let id = h.id || slugify(h.textContent || '');
+					let base = id; let n = 2;
+					while (usedIds.has(id)) { id = base + '-' + n; n++; }
+					usedIds.add(id);
+					h.id = id;
+					return { id, text: h.textContent || '', el: h };
+				});
+				if (tocItems.length >= 2 && tocListEl && tocEl) {
+					tocEl.hidden = false;
+					tocListEl.innerHTML = tocItems
+						.map((it) => `<li><a href="#${it.id}" data-id="${it.id}">${it.text}</a></li>`)
+						.join('');
+					const anchors = Array.from(tocListEl.querySelectorAll('a'));
+					anchors.forEach((a) =>
+						a.addEventListener('click', (e) => {
+							const id = a.getAttribute('data-id');
+							const target = id && document.getElementById(id);
+							if (!target) return;
+							e.preventDefault();
+							const y = target.getBoundingClientRect().top + window.scrollY - 80;
+							window.scrollTo({ top: y, behavior: 'smooth' });
+							history.replaceState(null, '', '#' + id);
+						})
+					);
+					const setActive = (id) => {
+						anchors.forEach((a) => {
+							a.classList.toggle('is-active', a.getAttribute('data-id') === id);
+						});
+					};
+					if ('IntersectionObserver' in window) {
+						const io = new IntersectionObserver(
+							(entries) => {
+								const visible = entries
+									.filter((e) => e.isIntersecting)
+									.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+								if (visible) setActive(visible.target.id);
+							},
+							{ rootMargin: '-80px 0px -65% 0px', threshold: 0 }
+						);
+						tocItems.forEach((it) => io.observe(it.el));
 					}
 				}
-				window.addEventListener('scroll', onScroll, { passive: true });
-				window.addEventListener('resize', onScroll);
-				update();
+
+				// ---------- FAB visibility ----------
+				const updateFabs = () => {
+					const show = window.scrollY > 500;
+					fabTop && fabTop.classList.toggle('is-visible', show);
+					if (fabNotes) {
+						const hasNotes = readNotes().length > 0;
+						fabNotes.classList.toggle('is-visible', show || hasNotes);
+					}
+				};
+				window.addEventListener('scroll', updateFabs, { passive: true });
+				updateFabs();
+
+				fabTop && fabTop.addEventListener('click', () => {
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				});
+
+				// ---------- Saved quotes storage ----------
+				function readNotes() {
+					try {
+						const raw = localStorage.getItem(storageKey);
+						if (!raw) return [];
+						const parsed = JSON.parse(raw);
+						return Array.isArray(parsed) ? parsed : [];
+					} catch (e) { return []; }
+				}
+				function writeNotes(arr) {
+					try { localStorage.setItem(storageKey, JSON.stringify(arr)); } catch (e) {}
+					renderNotes();
+				}
+				function addNote(text) {
+					const arr = readNotes();
+					const clean = (text || '').trim();
+					if (!clean) return;
+					if (arr.some((n) => n.text === clean)) return;
+					arr.push({ text: clean, at: Date.now() });
+					writeNotes(arr);
+				}
+				function removeNote(at) {
+					writeNotes(readNotes().filter((n) => n.at !== at));
+				}
+				function renderNotes() {
+					const arr = readNotes();
+					if (notesBadge) {
+						notesBadge.textContent = String(arr.length);
+						notesBadge.hidden = arr.length === 0;
+					}
+					if (notesBody) {
+						if (!arr.length) {
+							notesBody.innerHTML = '<p class="notes-empty">No quotes saved yet. Highlight any text in the article and tap "Save quote".</p>';
+						} else {
+							const items = arr
+								.slice()
+								.reverse()
+								.map(
+									(n) =>
+										`<li><span class="quote-text">"${n.text.replace(/</g, '&lt;')}"</span><button class="remove" type="button" data-at="${n.at}" aria-label="Remove quote">×</button></li>`
+								)
+								.join('');
+							notesBody.innerHTML = '<ul class="notes-list">' + items + '</ul>';
+							notesBody.querySelectorAll('.remove').forEach((btn) => {
+								btn.addEventListener('click', () => removeNote(Number(btn.getAttribute('data-at'))));
+							});
+						}
+					}
+					updateFabs();
+				}
+				renderNotes();
+
+				// ---------- Notes drawer ----------
+				function openDrawer() {
+					drawer && drawer.classList.add('is-open');
+					drawer && drawer.setAttribute('aria-hidden', 'false');
+				}
+				function closeDrawer() {
+					drawer && drawer.classList.remove('is-open');
+					drawer && drawer.setAttribute('aria-hidden', 'true');
+				}
+				fabNotes && fabNotes.addEventListener('click', openDrawer);
+				drawerClose && drawerClose.addEventListener('click', closeDrawer);
+				document.addEventListener('keydown', (e) => {
+					if (e.key === 'Escape') closeDrawer();
+				});
+
+				// ---------- Selection popover ----------
+				let lastSelectionText = '';
+				function showPop(rect, sel) {
+					if (!selPop) return;
+					lastSelectionText = sel;
+					selPop.style.opacity = '0';
+					selPop.classList.add('is-open');
+					const popRect = selPop.getBoundingClientRect();
+					const top = window.scrollY + rect.top - popRect.height - 10;
+					const left = window.scrollX + rect.left + rect.width / 2 - popRect.width / 2;
+					const maxLeft = Math.max(8, window.scrollX + window.innerWidth - popRect.width - 8);
+					selPop.style.top = Math.max(window.scrollY + 60, top) + 'px';
+					selPop.style.left = Math.min(Math.max(8, left), maxLeft) + 'px';
+					selPop.style.opacity = '1';
+					// Reset any "done" state on buttons
+					selPop.querySelectorAll('button').forEach((b) => {
+						b.classList.remove('done');
+						const a = b.getAttribute('data-action');
+						b.textContent = a === 'copy' ? 'Copy' : 'Save quote';
+					});
+				}
+				function hidePop() {
+					if (selPop) selPop.classList.remove('is-open');
+				}
+				function handleSelection() {
+					const sel = window.getSelection();
+					if (!sel || sel.isCollapsed) { hidePop(); return; }
+					const text = sel.toString().trim();
+					if (text.length < 5) { hidePop(); return; }
+					// Selection must be inside prose
+					const range = sel.getRangeAt(0);
+					if (!proseEl.contains(range.commonAncestorContainer)) { hidePop(); return; }
+					const rect = range.getBoundingClientRect();
+					if (rect.width === 0 && rect.height === 0) { hidePop(); return; }
+					showPop(rect, text);
+				}
+				document.addEventListener('mouseup', () => setTimeout(handleSelection, 10));
+				document.addEventListener('touchend', () => setTimeout(handleSelection, 10), { passive: true });
+				document.addEventListener('scroll', hidePop, { passive: true });
+				document.addEventListener('mousedown', (e) => {
+					if (selPop && !selPop.contains(e.target)) {
+						// Let mouseup re-evaluate
+						setTimeout(() => {
+							const s = window.getSelection();
+							if (!s || s.isCollapsed) hidePop();
+						}, 0);
+					}
+				});
+
+				selPop && selPop.querySelectorAll('button').forEach((btn) => {
+					btn.addEventListener('click', (e) => {
+						e.preventDefault();
+						const action = btn.getAttribute('data-action');
+						if (!lastSelectionText) return;
+						if (action === 'copy') {
+							const finish = () => {
+								btn.classList.add('done');
+								btn.textContent = 'Copied!';
+								setTimeout(hidePop, 700);
+							};
+							if (navigator.clipboard && navigator.clipboard.writeText) {
+								navigator.clipboard.writeText(lastSelectionText).then(finish).catch(finish);
+							} else {
+								try {
+									const ta = document.createElement('textarea');
+									ta.value = lastSelectionText;
+									document.body.appendChild(ta);
+									ta.select(); document.execCommand('copy');
+									document.body.removeChild(ta);
+								} catch (e) {}
+								finish();
+							}
+						} else if (action === 'save') {
+							addNote(lastSelectionText);
+							btn.classList.add('done');
+							btn.textContent = 'Saved!';
+							setTimeout(hidePop, 700);
+						}
+					});
+				});
 			})();
 		</script>
 	</body>
