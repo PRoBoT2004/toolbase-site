@@ -85,6 +85,20 @@ const { title, description, pubDate, updatedDate, heroImage, readingTime } = Ast
 				position: relative;
 			}
 			.prose :global(p) { margin: 0 0 1.4em; }
+			.prose :global(p > img),
+			.prose :global(p > picture > img) {
+				display: block;
+				margin: 2.5em auto;
+				max-width: 100%;
+				border-radius: var(--radius-md);
+				box-shadow: var(--shadow-sm);
+				background: var(--surface-warm);
+			}
+			.prose :global(p:has(> img)),
+			.prose :global(p:has(> picture)) {
+				margin: 0;
+				text-align: center;
+			}
 			.prose :global(h2) {
 				margin: 2em 0 0.6em;
 				scroll-margin-top: 90px;
