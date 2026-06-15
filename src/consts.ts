@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = 'Toolbase';
 export const SITE_DESCRIPTION = 'Honest AI tool reviews and tutorials for solopreneurs and freelancers. Cut through the noise, pick what actually works.';
+export const GA_MEASUREMENT_ID = 'G-X6SK35LFL3';
