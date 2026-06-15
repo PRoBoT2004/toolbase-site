@@ -119,69 +119,99 @@ const { title, description, pubDate, updatedDate, heroImage, readingTime } = Ast
 				border-radius: var(--radius-sm);
 			}
 
-			/* ------- Sticky TOC (wide screens, Google Docs-style outline) ------- */
+			/* ------- TOC: dot column on right edge (minimal, never overlaps) ------- */
 			.toc {
 				display: none;
 				position: fixed;
-				top: 96px;
-				right: max(32px, calc((100vw - 1240px) / 2));
-				width: 210px;
-				max-height: calc(100vh - 130px);
+				right: 18px;
+				top: 50%;
+				transform: translateY(-50%);
+				max-height: 70vh;
 				overflow-y: auto;
-				font-size: 0.78em;
-				line-height: 1.45;
+				padding: 8px 6px;
 				z-index: 10;
+				scrollbar-width: none;
 			}
-			.toc-title {
-				display: block;
-				font-size: 0.72em;
-				font-weight: 700;
-				text-transform: uppercase;
-				letter-spacing: 0.12em;
-				color: rgb(var(--gray));
-				margin: 0 0 0.85em 0.95em;
-			}
+			.toc::-webkit-scrollbar { display: none; }
+			.toc-title { display: none; }
 			.toc ol {
 				list-style: none;
 				margin: 0;
 				padding: 0;
-				border-left: 1px solid rgb(var(--gray-light));
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
 			}
-			.toc li { margin: 0; }
+			.toc li { margin: 0; position: relative; }
 			.toc a {
 				display: block;
-				color: rgb(var(--gray));
+				width: 9px;
+				height: 9px;
+				border-radius: 50%;
+				background: rgba(119, 109, 96, 0.32);
 				text-decoration: none;
-				font-weight: 400;
-				padding: 0.32em 0 0.32em 0.95em;
-				border-left: 2px solid transparent;
-				margin-left: -1px;
-				transition: color 0.15s ease, border-color 0.15s ease;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				display: -webkit-box;
-				-webkit-line-clamp: 2;
-				-webkit-box-orient: vertical;
+				position: relative;
+				transition: background 0.18s ease, transform 0.18s ease;
+				cursor: pointer;
 			}
 			.toc a:hover {
-				color: rgb(var(--gray-dark));
+				background: rgb(var(--gray-dark));
+				transform: scale(1.25);
 			}
 			.toc a.is-active {
-				color: rgb(var(--black));
-				font-weight: 600;
-				border-left-color: var(--accent);
+				background: var(--accent);
+				transform: scale(1.35);
 			}
-			.toc::-webkit-scrollbar { width: 6px; }
-			.toc::-webkit-scrollbar-thumb {
-				background: rgb(var(--gray-light));
-				border-radius: 3px;
+			/* Tooltip label appears on the LEFT of the dot on hover */
+			.toc a::after {
+				content: attr(data-label);
+				position: absolute;
+				right: 18px;
+				top: 50%;
+				transform: translateY(-50%) translateX(4px);
+				background: rgb(var(--gray-dark));
+				color: #fff;
+				font-size: 12px;
+				font-weight: 500;
+				padding: 5px 10px;
+				border-radius: 4px;
+				white-space: nowrap;
+				max-width: 240px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity 0.15s ease, transform 0.15s ease;
+				box-shadow: var(--shadow-md);
 			}
-			@media (min-width: 1280px) {
+			.toc a::before {
+				/* tiny caret pointing right toward the dot */
+				content: '';
+				position: absolute;
+				right: 13px;
+				top: 50%;
+				transform: translateY(-50%);
+				border: 5px solid transparent;
+				border-left-color: rgb(var(--gray-dark));
+				border-right: none;
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity 0.15s ease;
+			}
+			.toc a:hover::after,
+			.toc a:hover::before,
+			.toc a.is-active::after,
+			.toc a.is-active::before {
+				opacity: 1;
+				transform: translateY(-50%) translateX(0);
+			}
+			.toc a.is-active::after { background: var(--accent); }
+			.toc a.is-active::before { border-left-color: var(--accent); }
+			@media (min-width: 1024px) {
 				.toc { display: block; }
-				.article-header { max-width: 720px; }
-				.hero-image { max-width: 760px; }
-				.article-header h1 { font-size: 2.5em; }
 			}
+			/* Article column stays at its natural width — TOC dot column
+			   only takes ~20px on the right edge so there is no overlap. */
 
 			/* ------- Floating action buttons ------- */
 			.fab-stack {
@@ -509,8 +539,9 @@ const { title, description, pubDate, updatedDate, heroImage, readingTime } = Ast
 				});
 				if (tocItems.length >= 2 && tocListEl && tocEl) {
 					tocEl.hidden = false;
+					const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 					tocListEl.innerHTML = tocItems
-						.map((it) => `<li><a href="#${it.id}" data-id="${it.id}">${it.text}</a></li>`)
+						.map((it) => `<li><a href="#${it.id}" data-id="${it.id}" data-label="${esc(it.text)}" aria-label="${esc(it.text)}"></a></li>`)
 						.join('');
 					const anchors = Array.from(tocListEl.querySelectorAll('a'));
 					anchors.forEach((a) =>
