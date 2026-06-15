@@ -43,9 +43,9 @@ I subscribe to both ChatGPT Plus and Claude Pro because they're genuinely good a
 
 **My honest take:** Pick ONE of ChatGPT Plus or Claude Pro if budget is tight. Pick both if your work spans both speed-mode and depth-mode tasks.
 
-## 3. Notion AI (~$10/mo add-on) — the second brain that actually helps
+## 3. Notion AI (Business plan, $20/mo) — the second brain that actually helps
 
-I've been using Notion for years. I avoided their AI add-on for a long time because it felt like a sales tactic. I was wrong. Notion AI inside an existing Notion workspace is much more useful than ChatGPT inside a separate tab, because it has context on what you're working on.
+I've been using Notion for years. I avoided their AI features for a long time because they felt like a sales tactic. I was wrong. Notion AI inside an existing Notion workspace is much more useful than ChatGPT inside a separate tab, because it has context on what you're working on. (As of May 2025, Notion folded AI into the Business plan rather than selling it as a separate add-on.)
 
 **Killer use case:** Click into any Notion page and say "summarize this and write a 3-sentence client update." Saves me 15 minutes per client per week.
 
@@ -131,7 +131,7 @@ If you've been using one of these and finding it valuable, keep using it. But if
 If you're new to running a solo business and asking "which of these should I buy first?" — here's my recommendation in order:
 
 1. **ChatGPT Plus** ($20/mo) — week 1, mandatory
-2. **Notion AI add-on** (if you use Notion) OR **Claude Pro** (if you don't) — week 2
+2. **Notion Business** (if you use Notion — full AI included at $20/mo) OR **Claude Pro** (if you don't) — week 2
 3. **Loom Pro** ($15/mo) — week 3, once you have client touchpoints
 4. **ClickUp / Fathom** — when you have 3+ projects or 5+ meetings per week
 

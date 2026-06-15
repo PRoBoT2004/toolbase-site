@@ -6,19 +6,33 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & { readingTime?: number };
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, readingTime } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={heroImage} />
 		<style>
+			html {
+				scroll-behavior: smooth;
+			}
 			main {
 				width: calc(100% - 2em);
 				max-width: 100%;
 				margin: 0;
+			}
+			.reading-progress {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 0%;
+				height: 3px;
+				background: var(--accent);
+				z-index: 100;
+				transition: width 0.08s linear;
+				will-change: width;
 			}
 			.hero-image {
 				width: 100%;
@@ -45,35 +59,54 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.title h1 {
 				margin: 0 0 0.5em 0;
 			}
-			.date {
+			.meta {
 				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
+				font-size: 0.9em;
+				display: inline-flex;
+				align-items: center;
+				gap: 0.6em;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			.meta .sep {
+				opacity: 0.5;
 			}
 			.last-updated-on {
 				font-style: italic;
+				display: block;
+				margin-top: 0.4em;
+				font-size: 0.85em;
 			}
 		</style>
 	</head>
 
 	<body>
+		<div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
 		<Header />
 		<main>
-			<article>
+			<article id="article">
 				<div class="hero-image">
 					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
 				</div>
 				<div class="prose">
 					<div class="title">
-						<div class="date">
+						<div class="meta">
 							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+							{readingTime && (
+								<>
+									<span class="sep">·</span>
+									<span>{readingTime} min read</span>
+								</>
+							)}
 						</div>
+						{
+							updatedDate && (
+								<div class="last-updated-on">
+									Last updated on <FormattedDate date={updatedDate} />
+								</div>
+							)
+						}
 						<h1>{title}</h1>
 						<hr />
 					</div>
@@ -82,5 +115,33 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			</article>
 		</main>
 		<Footer />
+
+		<script>
+			(function () {
+				const bar = document.getElementById('reading-progress');
+				const article = document.getElementById('article');
+				if (!bar || !article) return;
+
+				let ticking = false;
+				function update() {
+					const rect = article.getBoundingClientRect();
+					const articleTop = rect.top + window.scrollY;
+					const articleEnd = articleTop + article.scrollHeight - window.innerHeight;
+					const range = Math.max(1, articleEnd - articleTop);
+					const progress = Math.max(0, Math.min(1, (window.scrollY - articleTop) / range));
+					bar.style.width = progress * 100 + '%';
+					ticking = false;
+				}
+				function onScroll() {
+					if (!ticking) {
+						requestAnimationFrame(update);
+						ticking = true;
+					}
+				}
+				window.addEventListener('scroll', onScroll, { passive: true });
+				window.addEventListener('resize', onScroll);
+				update();
+			})();
+		</script>
 	</body>
 </html>
