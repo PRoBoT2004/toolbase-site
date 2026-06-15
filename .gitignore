@@ -4,6 +4,7 @@ dist/
 .vercel/
 .netlify/
 .wrangler/
+.astro/
 
 # dependencies
 node_modules/

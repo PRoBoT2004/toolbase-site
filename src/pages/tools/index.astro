@@ -1,0 +1,92 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+
+const title = 'Free Tools for Solopreneurs & Freelancers | Toolbase';
+const description =
+	'Free, no-sign-up tools for one-person businesses — calculators and generators that run instantly in your browser. New tool every week.';
+
+const tools = [
+	{
+		href: '/tools/freelance-rate-calculator/',
+		name: 'Freelance Hourly Rate Calculator',
+		blurb:
+			'Work out exactly what to charge per hour — after expenses, taxes, time off and the hours you can actually bill.',
+		tag: 'Pricing',
+	},
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Free tools for solo businesses</h1>
+			<p style="font-size:1.15em;">
+				Small, fast tools for freelancers and solopreneurs. No sign-up, no upload, nothing sent to a
+				server — they run entirely in your browser. A new one ships every week.
+			</p>
+			<ul class="tool-list">
+				{
+					tools.map((t) => (
+						<li>
+							<a href={t.href}>
+								<span class="tag">{t.tag}</span>
+								<strong>{t.name}</strong>
+								<span class="blurb">{t.blurb}</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+			<p style="color:rgb(var(--gray));font-size:0.9em;">More tools landing weekly. Got a request? It probably belongs here.</p>
+		</main>
+		<Footer />
+		<style>
+			.tool-list {
+				list-style: none;
+				padding: 0;
+				margin: 2em 0;
+				display: grid;
+				gap: 1em;
+			}
+			.tool-list a {
+				display: block;
+				text-decoration: none;
+				color: inherit;
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 12px;
+				padding: 1.25em;
+				transition: border-color 0.15s ease;
+			}
+			.tool-list a:hover {
+				border-color: var(--accent);
+			}
+			.tag {
+				display: inline-block;
+				font-size: 0.7em;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				color: var(--accent);
+				margin-bottom: 0.4em;
+			}
+			.tool-list strong {
+				display: block;
+				font-size: 1.2em;
+				color: rgb(var(--black));
+			}
+			.tool-list .blurb {
+				display: block;
+				color: rgb(var(--gray-dark));
+				font-size: 0.9em;
+				margin-top: 0.3em;
+			}
+		</style>
+	</body>
+</html>
