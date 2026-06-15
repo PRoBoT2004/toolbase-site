@@ -1,151 +1,182 @@
 /*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+  Toolbase — editorial theme
+  Warm cream background, charcoal text, burnt-orange accent, system serif headings.
+  Matches the editorial line-illustration aesthetic used in hero images.
+*/
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+	/* Brand */
+	--accent: #E07856;
+	--accent-dark: #B85A3D;
+	--accent-soft: rgba(224, 120, 86, 0.08);
+
+	/* Neutrals (warm) */
+	--black: 26, 26, 26;            /* warm charcoal */
+	--gray: 119, 109, 96;           /* warm mid */
+	--gray-light: 234, 226, 213;    /* cream-tinted border */
+	--gray-dark: 51, 46, 38;        /* warm dark */
+	--gray-gradient: rgba(234, 226, 213, 40%), #FBF6EC;
+
+	/* Surfaces */
+	--bg: #FBF6EC;                  /* warm cream — body */
+	--surface: #FFFFFF;             /* cards */
+	--surface-warm: #F7F0E0;        /* warm tinted surface */
+
+	/* Semantic */
+	--success: #1B7A3F;
+	--warning: #A07A0F;
+	--danger: #A22716;
+
+	/* Shadows */
+	--shadow-sm: 0 1px 2px rgba(26, 21, 14, 0.04), 0 2px 4px rgba(26, 21, 14, 0.04);
+	--shadow-md: 0 2px 6px rgba(26, 21, 14, 0.06), 0 8px 24px rgba(26, 21, 14, 0.08);
+	--shadow-lg: 0 4px 12px rgba(26, 21, 14, 0.08), 0 20px 40px rgba(26, 21, 14, 0.10);
+	--box-shadow: var(--shadow-md);
+
+	/* Fonts */
+	--font-body: var(--font-atkinson), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--font-serif: 'Charter', 'Iowan Old Style', 'Source Serif Pro', 'Georgia', 'Cambria', 'Times New Roman', serif;
+
+	/* Layout */
+	--max-w-prose: 720px;
+	--max-w-content: 960px;
+	--radius-sm: 8px;
+	--radius-md: 12px;
+	--radius-lg: 16px;
 }
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	background: var(--bg);
+}
+
 body {
-	font-family: var(--font-atkinson);
+	font-family: var(--font-body);
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
+	background: var(--bg);
+	color: rgb(var(--gray-dark));
+	font-size: 19px;
+	line-height: 1.75;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
+	min-height: 100vh;
 }
+
 main {
-	width: 720px;
+	width: var(--max-w-prose);
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-serif);
+	margin: 0 0 0.5em 0;
 	color: rgb(var(--black));
 	line-height: 1.2;
-}
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
+	letter-spacing: -0.01em;
 	font-weight: 700;
 }
+
+h1 { font-size: 2.75em; letter-spacing: -0.02em; line-height: 1.1; }
+h2 { font-size: 1.875em; letter-spacing: -0.015em; margin-top: 1.5em; }
+h3 { font-size: 1.4em; margin-top: 1.3em; }
+h4 { font-size: 1.2em; }
+h5 { font-size: 1.05em; }
+
+strong, b { font-weight: 700; color: rgb(var(--black)); }
+em, i { font-style: italic; }
+
 a {
-	color: var(--accent);
+	color: var(--accent-dark);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+	transition: color 0.15s ease;
 }
-a:hover {
-	color: var(--accent);
+a:hover { color: var(--accent); }
+
+p { margin-bottom: 1em; }
+.prose p { margin-bottom: 1.5em; }
+.prose ul, .prose ol { margin-bottom: 1.5em; }
+.prose li { margin-bottom: 0.4em; }
+
+textarea, input { font-size: 16px; font-family: inherit; }
+table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+table th, table td {
+	border-bottom: 1px solid rgb(var(--gray-light));
+	padding: 0.6em 0.4em;
+	text-align: left;
 }
-p {
-	margin-bottom: 1em;
-}
-.prose p {
-	margin-bottom: 2em;
-}
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-table {
-	width: 100%;
-}
+table th { font-weight: 700; color: rgb(var(--black)); }
+
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
+	border-radius: var(--radius-md);
 }
+
 code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+	padding: 2px 6px;
+	background: var(--surface-warm);
+	border-radius: 4px;
+	font-size: 0.92em;
+	color: rgb(var(--gray-dark));
 }
 pre {
-	padding: 1.5em;
-	border-radius: 8px;
+	padding: 1.25em;
+	border-radius: var(--radius-md);
+	background: var(--surface-warm);
+	overflow-x: auto;
+	border: 1px solid rgb(var(--gray-light));
 }
-pre > code {
-	all: unset;
-}
+pre > code { all: unset; }
+
 blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0;
-	font-size: 1.333em;
+	border-left: 3px solid var(--accent);
+	padding: 0.2em 0 0.2em 1.25em;
+	margin: 1.5em 0;
+	font-family: var(--font-serif);
+	font-style: italic;
+	font-size: 1.25em;
+	color: rgb(var(--gray-dark));
 }
+
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
-}
-@media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-	main {
-		padding: 1em;
-	}
-	h1 {
-		font-size: 2em;
-	}
-	h2 {
-		font-size: 1.5em;
-	}
-	h3 {
-		font-size: 1.3em;
-	}
-	h4 {
-		font-size: 1.15em;
-	}
-	blockquote {
-		font-size: 1.1em;
-		padding-left: 12px;
-	}
-}
-@media (max-width: 480px) {
-	h1 {
-		font-size: 1.75em;
-	}
-	h2 {
-		font-size: 1.35em;
-	}
+	margin: 2em 0;
 }
 
+::selection {
+	background: var(--accent-soft);
+	color: rgb(var(--black));
+}
+
+/* Mobile typography */
+@media (max-width: 720px) {
+	body { font-size: 17px; line-height: 1.7; }
+	main { padding: 1.5em 1em; }
+	h1 { font-size: 2em; }
+	h2 { font-size: 1.5em; }
+	h3 { font-size: 1.25em; }
+	h4 { font-size: 1.1em; }
+	blockquote { font-size: 1.1em; padding-left: 1em; }
+}
+@media (max-width: 480px) {
+	h1 { font-size: 1.75em; }
+	h2 { font-size: 1.35em; }
+}
+
+/* Accessibility helper */
 .sr-only {
 	border: 0;
 	padding: 0;
@@ -154,12 +185,29 @@ hr {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
 	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
 	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
 	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* Fade-in on scroll utility (used by IntersectionObserver) */
+.reveal {
+	opacity: 0;
+	transform: translateY(12px);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.is-visible {
+	opacity: 1;
+	transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+	.reveal { opacity: 1; transform: none; }
 }

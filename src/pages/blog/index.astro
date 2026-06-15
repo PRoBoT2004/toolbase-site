@@ -5,110 +5,166 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { SITE_TITLE } from '../../consts';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const title = `Blog — ${SITE_TITLE}`;
+const description =
+	'Honest, tested reviews and comparison guides for AI tools that solopreneurs and freelancers actually use.';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
+		<BaseHead title={title} description={description} />
 	</head>
 	<body>
 		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
+		<main class="blog-index">
+			<header class="page-head">
+				<span class="eyebrow">Reviews · Comparisons · Tutorials</span>
+				<h1>The Toolbase blog</h1>
+				<p class="lede">
+					Long-form reviews and head-to-head comparisons of the AI tools one-person businesses
+					actually use. Each piece is a real test, not a feature checklist.
+				</p>
+			</header>
+
+			<ul class="post-grid">
+				{
+					posts.map((post, i) => (
+						<li class:list={[i === 0 ? 'featured' : '']}>
+							<a href={`/blog/${post.id}/`}>
+								{post.data.heroImage && (
+									<div class="post-hero">
+										<Image width={1200} height={675} src={post.data.heroImage} alt="" />
+									</div>
+								)}
+								<div class="post-meta">
+									<span class="post-date">
 										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
+									</span>
+								</div>
+								<h2 class="post-title">{post.data.title}</h2>
+								<p class="post-desc">{post.data.description}</p>
+								<span class="read-more">Read review →</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
 		</main>
 		<Footer />
+		<style>
+			.blog-index {
+				width: var(--max-w-content);
+				max-width: calc(100% - 2em);
+			}
+			.page-head {
+				padding: 2em 0 2.5em;
+				border-bottom: 1px solid rgb(var(--gray-light));
+				margin-bottom: 2.5em;
+				max-width: 760px;
+			}
+			.eyebrow {
+				display: inline-block;
+				font-size: 0.75em;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.12em;
+				color: var(--accent-dark);
+				margin-bottom: 0.75em;
+			}
+			.page-head h1 {
+				font-size: 2.8em;
+				margin: 0 0 0.4em;
+				line-height: 1.1;
+			}
+			.lede {
+				font-size: 1.15em;
+				color: rgb(var(--gray-dark));
+				margin: 0;
+				max-width: 640px;
+			}
+			.post-grid {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 2em 1.75em;
+			}
+			.post-grid li.featured {
+				grid-column: 1 / -1;
+			}
+			.post-grid li.featured .post-title { font-size: 2.1em; }
+			.post-grid li.featured .post-hero { aspect-ratio: 21 / 9; }
+			.post-grid li.featured .post-desc { font-size: 1.05em; max-width: 720px; }
+			.post-grid a {
+				display: block;
+				text-decoration: none;
+				color: inherit;
+				transition: transform 0.2s ease;
+			}
+			.post-grid a:hover { transform: translateY(-2px); }
+			.post-hero {
+				overflow: hidden;
+				border-radius: var(--radius-md);
+				margin-bottom: 1em;
+				background: var(--surface-warm);
+				aspect-ratio: 16 / 9;
+				box-shadow: var(--shadow-sm);
+			}
+			.post-hero img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.5s ease;
+			}
+			.post-grid a:hover .post-hero img { transform: scale(1.04); }
+			.post-meta {
+				display: flex;
+				align-items: center;
+				gap: 0.8em;
+				margin-bottom: 0.5em;
+			}
+			.post-date {
+				font-size: 0.8em;
+				color: rgb(var(--gray));
+				text-transform: uppercase;
+				letter-spacing: 0.06em;
+				font-weight: 600;
+			}
+			.post-title {
+				font-size: 1.4em;
+				margin: 0 0 0.4em;
+				line-height: 1.2;
+				color: rgb(var(--black));
+				transition: color 0.15s ease;
+			}
+			.post-grid a:hover .post-title { color: var(--accent-dark); }
+			.post-desc {
+				font-size: 0.95em;
+				color: rgb(var(--gray-dark));
+				line-height: 1.55;
+				margin: 0 0 0.6em;
+			}
+			.read-more {
+				display: inline-block;
+				font-size: 0.85em;
+				color: var(--accent-dark);
+				font-weight: 600;
+				letter-spacing: 0.01em;
+			}
+			@media (max-width: 700px) {
+				.page-head h1 { font-size: 2em; }
+				.post-grid { grid-template-columns: 1fr; gap: 2em; }
+				.post-grid li.featured .post-title { font-size: 1.5em; }
+			}
+		</style>
 	</body>
 </html>

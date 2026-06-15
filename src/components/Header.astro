@@ -5,56 +5,75 @@ import HeaderLink from './HeaderLink.astro';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<a href="/" class="brand" aria-label={SITE_TITLE}>
+			<span class="brand-mark">{SITE_TITLE}</span>
+		</a>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/tools">Tools</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
-		<div class="social-links">
-			<!-- Social links to be added later (Twitter under pseudonym, etc.) -->
-		</div>
 	</nav>
 </header>
+<script>
+	(function () {
+		const header = document.querySelector('header');
+		if (!header) return;
+		function onScroll() {
+			if (window.scrollY > 4) header.classList.add('is-scrolled');
+			else header.classList.remove('is-scrolled');
+		}
+		window.addEventListener('scroll', onScroll, { passive: true });
+		onScroll();
+	})();
+</script>
 <style>
 	header {
+		position: sticky;
+		top: 0;
+		z-index: 50;
 		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		padding: 0 1.25em;
+		background: rgba(251, 246, 236, 0.78);
+		backdrop-filter: saturate(160%) blur(12px);
+		-webkit-backdrop-filter: saturate(160%) blur(12px);
+		border-bottom: 1px solid transparent;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
+	header.is-scrolled {
+		border-bottom-color: rgb(var(--gray-light));
+		background: rgba(251, 246, 236, 0.92);
+		box-shadow: 0 1px 0 rgba(26, 21, 14, 0.03);
 	}
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		max-width: var(--max-w-content);
+		margin: 0 auto;
+		padding: 0.85em 0;
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
+	.brand {
 		text-decoration: none;
+		display: inline-flex;
+		align-items: baseline;
+		gap: 0.4em;
+		color: rgb(var(--black));
 	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+	.brand-mark {
+		font-family: var(--font-serif);
+		font-size: 1.35em;
+		font-weight: 700;
+		letter-spacing: -0.02em;
 	}
-	.social-links,
-	.social-links a {
+	.internal-links {
 		display: flex;
+		gap: 0.25em;
 	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
+	@media (max-width: 480px) {
+		header { padding: 0 1em; }
+		.brand-mark { font-size: 1.2em; }
+		.internal-links { gap: 0; }
 	}
 </style>
