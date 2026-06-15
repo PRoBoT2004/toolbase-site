@@ -63,7 +63,7 @@ The Stripe integration matters more for **deposits on actual project starts** �
 
 **Why this matters:** A paid deposit kills the "ghosted between discovery and start" failure mode. People who pay $500–$2,000 don't disappear. People who didn't pay anything will.
 
-<!-- IMAGE: Editorial line illustration, 16:9, warm cream background (#F4EBD8). Subject: a horizontal flow with 3 small connected boxes — left box has a small calendar icon, middle box has a small dollar sign, right box has a small folder icon. Each box connected to the next by a wobbly hand-drawn arrow. Charcoal black hand-drawn lines (#1A1A1A), deliberately imperfect. The middle (dollar) box accented in burnt orange (#E07856). Subtle paper grain. No text. No people. Style: New Yorker editorial illustration. Save as: onboarding-three-tools.webp -->
+![The 3-tool stack: Calendly books the call, Stripe captures the deposit, Notion stores the record.](../../assets/onboarding-three-tools.webp)
 
 ## Step 3: The Notion client database template (20 minutes)
 
@@ -122,7 +122,7 @@ This single automation eliminates the manual "now I have to set up everything fo
 
 [Sign up free at Make.com →](https://www.make.com/en/register?pc=toolbase)
 
-<!-- IMAGE: Editorial line illustration, 16:9, warm cream background (#F4EBD8). Subject: a horizontal "before and after" composition. Left half shows a chaotic scattered pile of small shapes (papers, notes, envelopes) with a tiny clock face showing "many hours." Right half shows a single tidy stack of organized rectangles with a tiny clock face showing "minutes." A simple hand-drawn arrow between the two halves. Charcoal black hand-drawn lines (#1A1A1A), deliberately imperfect. The right-side clock face accented in burnt orange (#E07856). Subtle paper grain. No text. No people. Style: New Yorker editorial illustration. Save as: onboarding-before-after.webp -->
+![Before the system: 7–10 days of back-and-forth and lost momentum. After: 48 hours, on autopilot.](../../assets/onboarding-before-after.webp)
 
 ## The complete client journey, end to end
 
