@@ -151,7 +151,14 @@ const breadcrumbJsonLd = JSON.stringify({
 		<Footer />
 
 		<script>
-			import { PDFDocument } from 'pdf-lib';
+			// pdf-lib is ~180KB gzipped. Load it lazily so visitors who never use the
+			// tool (landed from search, bounced) never pay for it. Kicked off on first
+			// file add so it's usually ready by the time they hit Merge.
+			let _pdfLibPromise = null;
+			function loadPdfLib() {
+				if (!_pdfLibPromise) _pdfLibPromise = import('pdf-lib');
+				return _pdfLibPromise;
+			}
 
 			let items = [];
 			let seq = 0;
@@ -176,11 +183,14 @@ const breadcrumbJsonLd = JSON.stringify({
 			}
 
 			function addFiles(fileList) {
+				let added = false;
 				for (const file of fileList) {
 					const kind = kindOf(file);
 					if (!kind) continue;
 					items.push({ id: ++seq, file, kind, range: '' });
+					added = true;
 				}
+				if (added) loadPdfLib(); // warm up the library in the background
 				render();
 			}
 
@@ -268,6 +278,7 @@ const breadcrumbJsonLd = JSON.stringify({
 				if (items.length === 0) return;
 				setBusy(true, 'Merging…');
 				try {
+					const { PDFDocument } = await loadPdfLib();
 					const out = await PDFDocument.create();
 					for (const it of items) {
 						const bytes = new Uint8Array(await it.file.arrayBuffer());
