@@ -90,7 +90,7 @@ A database with date and status columns, AI-suggested topic prompts inside a "Br
 **ClickUp Brain:**
 Native recurring tasks. AI generated weekly topic suggestions on click. Calendar view, list view, board view — all from the same data. Reminders fire reliably.
 
-**Verdict:** **ClickUp.** Notion is a great content idea bank. ClickUp is a great content production system. For a calendar that runs your week, you want production.
+**Verdict:** **ClickUp.** Notion is a great content idea bank. ClickUp is a great content production system. For a calendar that runs your week, you want production. ([Here's the lean 5-workflow ClickUp setup for solopreneurs](/blog/clickup-for-solo-project-management-2026/) if you go this route.)
 
 ## Test 4: Capturing a client call and turning it into action items
 

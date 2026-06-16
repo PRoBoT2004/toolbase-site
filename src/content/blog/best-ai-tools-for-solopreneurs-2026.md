@@ -35,7 +35,7 @@ The most useful AI tool I pay for, by a mile. ChatGPT Plus (or Claude Pro, see b
 
 ## 2. Claude Pro ($20/mo) — the long-form thinker
 
-I subscribe to both ChatGPT Plus and Claude Pro because they're genuinely good at different things. Claude is better for: long-form writing, careful analysis of large documents, code review, and anything where I want a thoughtful answer rather than a fast one.
+I subscribe to both ChatGPT Plus and Claude Pro because they're genuinely good at different things ([here's how they compared in 6 real writing tasks](/blog/chatgpt-vs-claude-for-writing-2026/)). Claude is better for: long-form writing, careful analysis of large documents, code review, and anything where I want a thoughtful answer rather than a fast one.
 
 **Why it's on the list:** For writing-heavy work (articles, proposals, client deliverables), Claude's outputs need less editing than ChatGPT's. That difference adds up.
 

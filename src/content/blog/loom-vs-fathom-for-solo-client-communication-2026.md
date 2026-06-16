@@ -127,7 +127,7 @@ For 30 days each, I forced myself to use only one of them for all client video t
 
 Both tools are excellent in their categories — they just aim at different jobs. **Loom is built to replace a meeting** (you record once, send a link, the client watches when they want). **Fathom is built to summarize a meeting** (it sits in the call you were already having and turns it into structured notes).
 
-Solopreneurs whose week leans heavily async benefit more from Loom. Solopreneurs whose week is live-call heavy benefit more from Fathom. Most one-person businesses are somewhere in between — and the good news is that both tools have meaningful free tiers, so you don't have to pick blindly.
+Solopreneurs whose week leans heavily async benefit more from Loom. Solopreneurs whose week is live-call heavy benefit more from Fathom (the [full Fathom setup walkthrough is here](/blog/fathom-setup-guide-solo-client-calls-2026/) if that's you). Most one-person businesses are somewhere in between — and the good news is that both tools have meaningful free tiers, so you don't have to pick blindly.
 
 ![Loom and Fathom map to different jobs in your week — async monologue vs live-meeting capture.](../../assets/loom-vs-fathom-scoreboard.webp)
 

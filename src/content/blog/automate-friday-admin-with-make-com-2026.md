@@ -226,4 +226,4 @@ You can pay that tax in 4 hours of your time every week forever — or you can p
 
 *Want more practical automation playbooks like this? Next up: how I built a complete client-onboarding system in Notion + Make for under $15/month. Subscribe to the [blog](/blog) so you don't miss it.*
 
-*This post contains affiliate links. We only recommend tools we'd use ourselves — Make.com is what I run my own operations on.*
+*This post contains affiliate links. We only recommend tools we'd use ourselves — Make.com is what I run my own operations on (see the [full Make.com vs Zapier cost breakdown](/blog/make-vs-zapier-for-solopreneur-automation-2026/) for why).*

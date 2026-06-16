@@ -36,7 +36,7 @@ But the headline numbers aren't quite apples-to-apples, because Make and Zapier 
 
 **Zapier charges per completed action.** Triggers, filters, paths, polling, formatter steps — these are *free*. You only pay when an action actually runs successfully (an email is sent, a row is created, a Slack message is posted).
 
-**Make charges per operation (credit).** Every step in a scenario counts toward the credit total: trigger, filters, router branches, iterator passes, aggregators, and retries. A 5-step Make scenario can consume 7–10 credits per run once filters and retries are included. The same outcome on Zapier maps to ~3 tasks, because Zapier only counts completed actions.
+**Make charges per operation (credit).** Every step in a scenario counts toward the credit total: trigger, filters, router branches, iterator passes, aggregators, and retries. A 5-step Make scenario can consume 7–10 credits per run once filters and retries are included (the [7 Friday-admin Make scenarios I run weekly](/blog/automate-friday-admin-with-make-com-2026/) show this credit math in practice). The same outcome on Zapier maps to ~3 tasks, because Zapier only counts completed actions.
 
 A real example I ran on both:
 

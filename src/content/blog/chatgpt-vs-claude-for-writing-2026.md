@@ -9,7 +9,7 @@ Every "ChatGPT vs Claude for writing" article on the internet says the same thin
 
 If you've ever paid for both of these and tried to pick one, you know that answer is useless.
 
-I've been paying for both ChatGPT Plus and Claude Pro for about 14 months. I write for a living — blog posts, client emails, ad copy, technical docs, the occasional ghost-written LinkedIn thing. So I did what every other comparison article should have done in the first place: I ran both models through six real writing tasks I actually do, gave them the **exact same prompt**, and compared the outputs.
+I've been paying for both ChatGPT Plus and Claude Pro for about 14 months (they sit near the top of [my full AI stack for solopreneurs](/blog/best-ai-tools-for-solopreneurs-2026/)). I write for a living — blog posts, client emails, ad copy, technical docs, the occasional ghost-written LinkedIn thing. So I did what every other comparison article should have done in the first place: I ran both models through six real writing tasks I actually do, gave them the **exact same prompt**, and compared the outputs.
 
 This is the result. Real prompts, real outputs (lightly trimmed for length), and a clear verdict for each one.
 
