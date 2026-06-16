@@ -1,6 +1,6 @@
 ---
 title: 'How Indian Solopreneurs Should Take Foreign Client Payments in 2026'
-description: 'Stripe vs Razorpay International vs Wise Business for Indian solo founders receiving USD/EUR/GBP from foreign clients. Honest comparison of fees, GST treatment, withdrawal speed, and what to actually use at each revenue stage.'
+description: 'Stripe vs Razorpay vs Wise for Indian solo founders taking foreign payments. Real fees, GST treatment, and what to actually use at each revenue stage.'
 pubDate: 'Jun 16 2026'
 heroImage: '../../assets/india-payments-stripe-razorpay-wise-2026.webp'
 ---

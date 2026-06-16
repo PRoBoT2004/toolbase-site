@@ -1,6 +1,6 @@
 ---
 title: '7 Mistakes I Made in My First Year as a Solopreneur (And What I Wish I Knew)'
-description: 'A working solopreneur looks back at the first year. Seven mistakes that cost real money, real time, and real momentum — with the specific lessons I wish someone had told me before I started.'
+description: '7 mistakes solopreneurs make in their first year — costing real money, time, momentum. The specific lessons I wish someone had told me before starting.'
 pubDate: 'Jun 15 2026'
 heroImage: '../../assets/seven-mistakes-first-year-solopreneur-2026.webp'
 ---

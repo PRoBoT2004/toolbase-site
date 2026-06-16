@@ -1,6 +1,6 @@
 ---
 title: 'Build a Frictionless Client Onboarding System (Calendly + Stripe + Notion) for 2026'
-description: 'Most solopreneurs lose clients between "interested" and "signed" because the onboarding feels manual and slow. Here is the exact 3-tool stack I use to take a new client from inquiry to kickoff in under 24 hours — set up in an afternoon, $0 to start.'
+description: 'The 3-tool onboarding stack (Calendly + Stripe + Notion) that takes a new client from inquiry to kickoff in under 24 hours. $0 to start, set up in an afternoon.'
 pubDate: 'Jun 15 2026'
 heroImage: '../../assets/frictionless-client-onboarding-calendly-stripe-notion-2026.webp'
 ---

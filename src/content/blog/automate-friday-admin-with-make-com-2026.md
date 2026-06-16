@@ -1,6 +1,6 @@
 ---
 title: 'Automate Your Solo Friday Admin with Make.com: 7 Scenarios (Free Tier-Friendly)'
-description: 'Friday admin is the silent time sink of every solo business. Here are 7 Make.com scenarios I run every week to handle invoicing, follow-ups, content, and metrics — fits comfortably under the $9/month Core plan, two of them run on the free tier.'
+description: '7 Make.com scenarios for solopreneur Friday admin — invoicing, follow-ups, content, metrics. Two run on the free tier; the full set fits under $9/month.'
 pubDate: 'Jun 15 2026'
 heroImage: '../../assets/automate-friday-admin-with-make-com-2026.webp'
 ---

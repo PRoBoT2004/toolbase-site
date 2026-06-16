@@ -1,6 +1,6 @@
 ---
 title: 'How to Use ClickUp for Solo Project Management (5 Weekly Workflows for 2026)'
-description: 'ClickUp has a reputation for being overwhelming. As a solopreneur, you only need a tiny fraction of it. Here are the 5 weekly workflows that justify the $7/month — set up in under an hour, run themselves after that.'
+description: 'ClickUp for solopreneurs — the 5 weekly workflows that justify the $7/month. Set up in under an hour. The small fraction of ClickUp you actually need.'
 pubDate: 'Jun 15 2026'
 heroImage: '../../assets/clickup-for-solo-project-management-2026.webp'
 ---

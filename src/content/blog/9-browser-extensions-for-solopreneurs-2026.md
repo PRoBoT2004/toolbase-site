@@ -1,6 +1,6 @@
 ---
 title: '9 Browser Extensions That Save Solopreneurs 5+ Hours a Week (2026)'
-description: 'The browser is where solo work actually happens. These 9 free Chrome extensions handle password management, time tracking, ad blocking, task capture, writing, screen recording, SOPs, and form-filling — collectively saving most solopreneurs a full working day per month.'
+description: '9 free Chrome extensions for solopreneurs covering passwords, time tracking, writing, screen recording, SOPs. Save 5+ hours a week without subscriptions.'
 pubDate: 'Jun 16 2026'
 heroImage: '../../assets/9-browser-extensions-for-solopreneurs-2026.webp'
 ---

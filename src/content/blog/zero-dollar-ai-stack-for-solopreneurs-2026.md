@@ -1,6 +1,6 @@
 ---
 title: 'The $0 AI Stack for Solopreneurs (Every Free Tier Worth Using in 2026)'
-description: 'You can run a serious solo business in 2026 entirely on free AI tiers. Here are the 11 that genuinely deliver — what each one does, when you will outgrow it, and the four that are not worth using even at zero cost.'
+description: 'Run a serious solo business in 2026 entirely on free AI tiers. The 11 tools that genuinely deliver, when you outgrow each, plus 4 worth skipping.'
 pubDate: 'Jun 15 2026'
 heroImage: '../../assets/zero-dollar-ai-stack-for-solopreneurs-2026.webp'
 ---

@@ -1,6 +1,6 @@
 ---
 title: 'How to Use Notion as a Solo CRM (No Plus Plan Needed) — 2026 Setup Guide'
-description: 'Notion''s free tier is more than enough to run a CRM for a one-person business. Here is the 30-minute setup that handles contacts, deal pipeline, follow-ups, and client notes — without upgrading and without buying a template.'
+description: 'Notion''s free tier is enough to run a CRM for a one-person business. 30-minute setup for contacts, deals, follow-ups, client notes. No upgrade needed.'
 pubDate: 'Jun 16 2026'
 heroImage: '../../assets/notion-as-solo-crm-no-plus-plan-2026.webp'
 ---

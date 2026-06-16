@@ -1,6 +1,6 @@
 ---
 title: 'Loom vs Fathom for Solo Client Communication (2026): I Used Both for 60 Days'
-description: 'A working solo consultant tests Loom and Fathom side-by-side on real client work. Which actually replaces a meeting, which one is worth paying for, and the surprise about Fathom that nobody else mentions.'
+description: 'A solo consultant tests Loom and Fathom on real client work. Which actually replaces a meeting, which is worth paying for, and the Fathom surprise.'
 pubDate: 'Jun 15 2026'
 heroImage: '../../assets/loom-vs-fathom-for-solo-client-communication-2026.webp'
 ---

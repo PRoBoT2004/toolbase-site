@@ -1,6 +1,6 @@
 ---
 title: 'How to Set Your Freelance Hourly Rate (2026 Pricing Framework)'
-description: 'The standard "cost + markup" rate-setting advice is wrong because it assumes someone will pay your calculated number. Real freelance rate-setting is reverse-engineered from market clearing rates. Four frameworks, the imposter-rate trap, and the negotiation move that adds 30% without scaring the client.'
+description: 'Cost-plus pricing fails because clients won''t pay your math. Four real freelance rate frameworks plus the negotiation move that adds 30%.'
 pubDate: 'Jun 16 2026'
 heroImage: '../../assets/freelance-hourly-rate-2026.webp'
 ---

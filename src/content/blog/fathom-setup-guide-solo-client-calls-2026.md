@@ -1,6 +1,6 @@
 ---
 title: 'How to Set Up Fathom for Solo Client Calls (Free Tier Walkthrough, 2026)'
-description: 'The complete setup guide for using Fathom to capture every solo client call — recordings, transcripts, AI summaries, action items. Covers the free tier limits honestly, the workarounds, and when (if ever) you actually need to upgrade.'
+description: 'Set up Fathom AI to capture every solo client call — recordings, transcripts, summaries. Free tier limits, workarounds, and when (if ever) to upgrade.'
 pubDate: 'Jun 16 2026'
 heroImage: '../../assets/fathom-setup-guide-solo-client-calls-2026.webp'
 ---

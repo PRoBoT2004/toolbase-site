@@ -1,6 +1,6 @@
 ---
 title: 'Cold Email Subject Lines That Get Replies in 2026 (Solopreneur Edition)'
-description: 'The cold email subject lines that actually open in 2026 — for solopreneurs reaching SMBs, not BDRs spamming Fortune 500. Eight working patterns, the mistakes that send your email straight to spam, and the first-line preview trick most senders miss.'
+description: 'Cold email subject lines that get replies in 2026 — for solopreneurs reaching SMBs. Eight working patterns plus the first-line preview trick most senders miss.'
 pubDate: 'Jun 16 2026'
 heroImage: '../../assets/cold-email-subject-lines-that-actually-work-2026.webp'
 ---

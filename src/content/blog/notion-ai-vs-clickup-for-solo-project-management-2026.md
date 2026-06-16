@@ -1,6 +1,6 @@
 ---
 title: 'Notion AI vs ClickUp for Solo Project Management (2026): 60-Day Honest Test'
-description: 'I ran my entire solo business on Notion AI for 30 days, then on ClickUp Brain for 30 days. Real workflows, real pricing (June 2026), and the answer to which one a one-person business should actually pay for.'
+description: '30 days on Notion AI, then 30 on ClickUp Brain. Real workflows, June 2026 pricing, and which one a one-person business should actually pay for.'
 pubDate: 'Jun 15 2026'
 heroImage: '../../assets/notion-ai-vs-clickup-for-solo-project-management-2026.webp'
 ---

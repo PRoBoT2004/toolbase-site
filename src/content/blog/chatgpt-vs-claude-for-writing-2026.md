@@ -1,6 +1,6 @@
 ---
 title: 'ChatGPT vs Claude for Writing: I Ran Both Through 6 Real Tasks (2026)'
-description: 'Every comparison says "Claude is better for writing" but never shows you the actual outputs. I ran both through six real writing tasks I do every week. Here are the results, with the prompts and the outputs.'
+description: 'Most ChatGPT vs Claude comparisons skip the actual outputs. I ran both through 6 real writing tasks I do weekly — prompts, outputs, verdict.'
 pubDate: 'Jun 15 2026'
 heroImage: '../../assets/chatgpt-vs-claude-for-writing-2026.webp'
 ---

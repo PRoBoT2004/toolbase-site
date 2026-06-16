@@ -1,0 +1,36 @@
+# Toolbase
+
+> Honest AI-tool reviews, tutorials, and free in-browser tools for solopreneurs and freelancers. Editorial guides on automation, pricing, productivity stack, and async client workflow.
+
+## About
+Toolbase publishes editorial tool reviews, single-tool setup tutorials, and free browser-based calculators / utilities. Audience: solopreneurs and freelancers comparing tools before purchase. Content is editorial (not lived-experience first-person).
+
+## Tools (free, run in browser, no signup, no upload)
+- [Freelance Rate Calculator](https://gettoolbase.org/tools/freelance-rate-calculator/): Estimate market-anchored hourly rate from role + experience + market.
+- [Contract vs Salary Calculator](https://gettoolbase.org/tools/contract-vs-salary-calculator/): Side-by-side after-tax comparison of full-time salary versus freelance contract rate.
+- [Project Quote Calculator](https://gettoolbase.org/tools/project-quote-calculator/): Estimate fixed-price project quote from scope inputs + hourly floor.
+- [Rate Increase Calculator](https://gettoolbase.org/tools/rate-increase-calculator/): Model annual rate raise vs client churn impact on total income.
+- [Merge PDF](https://gettoolbase.org/tools/merge-pdf/): Combine PDFs in-browser. File never uploaded. Free, unlimited.
+- [Split PDF](https://gettoolbase.org/tools/split-pdf/): Split one PDF into multiple by custom ranges, every N pages, or one per page. In-browser. Multi-file output bundled as zip.
+
+## Articles
+- [Make.com vs Zapier for Solopreneur Automation 2026](https://gettoolbase.org/blog/make-vs-zapier-for-solopreneur-automation-2026/): Cost math + workflow comparison.
+- [Loom vs Fathom for Solo Client Communication 2026](https://gettoolbase.org/blog/loom-vs-fathom-for-solo-client-communication-2026/): Async-record vs AI-summarize trade-off.
+- [ChatGPT vs Claude for Writing 2026](https://gettoolbase.org/blog/chatgpt-vs-claude-for-writing-2026/): 6 real-task comparison.
+- [Notion AI vs ClickUp for Solo PM 2026](https://gettoolbase.org/blog/notion-ai-vs-clickup-for-solo-project-management-2026/): 60-day side-by-side test.
+- [Best AI Tools for Solopreneurs 2026](https://gettoolbase.org/blog/best-ai-tools-for-solopreneurs-2026/): 11 picks with honest fit assessment.
+- [The $0 AI Stack for Solopreneurs 2026](https://gettoolbase.org/blog/zero-dollar-ai-stack-for-solopreneurs-2026/): Free-tier-only solopreneur AI stack.
+- [Automate Friday Admin with Make.com](https://gettoolbase.org/blog/automate-friday-admin-with-make-com-2026/): 7 scenarios for solo founders.
+- [ClickUp for Solo Project Management](https://gettoolbase.org/blog/clickup-for-solo-project-management-2026/): 5 weekly workflows.
+- [Notion as Solo CRM (No Plus Plan)](https://gettoolbase.org/blog/notion-as-solo-crm-no-plus-plan-2026/): Free-tier 30-min setup.
+- [Fathom Setup Guide for Solo Client Calls](https://gettoolbase.org/blog/fathom-setup-guide-solo-client-calls-2026/): Free tier walkthrough.
+- [Frictionless Client Onboarding (Calendly + Stripe + Notion)](https://gettoolbase.org/blog/frictionless-client-onboarding-calendly-stripe-notion-2026/): End-to-end intake system.
+- [9 Browser Extensions for Solopreneurs 2026](https://gettoolbase.org/blog/9-browser-extensions-for-solopreneurs-2026/): Productivity extension shortlist.
+- [7 Mistakes First-Year Solopreneurs Make 2026](https://gettoolbase.org/blog/seven-mistakes-first-year-solopreneur-2026/): Reflective playbook.
+- [How Indian Solopreneurs Should Take Foreign Client Payments 2026](https://gettoolbase.org/blog/india-payments-stripe-razorpay-wise-2026/): Stripe vs Razorpay vs Wise with GST treatment.
+- [Cold Email Subject Lines That Get Replies 2026](https://gettoolbase.org/blog/cold-email-subject-lines-that-actually-work-2026/): Eight working patterns for SMB outreach.
+- [How to Set Your Freelance Hourly Rate 2026](https://gettoolbase.org/blog/freelance-hourly-rate-2026/): Four rate-setting frameworks + negotiation move.
+
+## Crawl preferences
+All AI crawlers welcome: GPTBot, ClaudeBot, PerplexityBot, Bingbot, Google-Extended.
+Sitemap: https://gettoolbase.org/sitemap-index.xml

@@ -1,6 +1,6 @@
 ---
 title: 'Make.com vs Zapier for Solopreneur Automation (2026): Honest Cost Math'
-description: 'Make looks half the price of Zapier on the box. Then your workflows hit production and the math flips. I ran the same 6 automations on both for 60 days. Real costs, real edge cases, and which one a one-person business should actually start with.'
+description: 'Make looks half the price of Zapier. I ran the same 6 automations on both for 60 days. Real costs, real edge cases, which one to actually start with.'
 pubDate: 'Jun 15 2026'
 heroImage: '../../assets/make-vs-zapier-for-solopreneur-automation-2026.webp'
 ---
