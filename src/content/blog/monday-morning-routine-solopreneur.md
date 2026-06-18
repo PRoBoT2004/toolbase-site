@@ -1,7 +1,7 @@
 ---
 title: 'How to Build a Monday Morning Routine That Doesn''t Suck'
 description: 'Most solopreneur Monday-routine advice is performative. The actual framework that gets your week started without the gym-at-5am theater.'
-pubDate: 'Jun 23 2026'
+pubDate: 'Jun 18 2026'
 heroImage: '../../assets/monday-morning-routine-solopreneur.webp'
 ---
 
