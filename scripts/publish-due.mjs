@@ -96,12 +96,15 @@ for (const entry of due) {
 
   if (fs.existsSync(libraryAsset)) {
     fs.renameSync(libraryAsset, liveAsset);
+    console.log(`PUB   ${entry.slug}`);
+    moved++;
   } else {
-    console.log(`  (no library asset for ${entry.slug} — make sure src/assets/${entry.slug}.webp exists)`);
+    console.error(`REFUSED to publish ${entry.slug}: no hero image found at _library/assets/${entry.slug}.webp`);
+    console.error(`  Generate the real image first, save it there, then re-run.`);
+    console.error(`  Skipping this article (no placeholder will be used).`);
+    // article was moved to live folder; move it back so publish stays atomic
+    fs.renameSync(liveArticle, entry.fullPath);
   }
-
-  console.log(`PUB   ${entry.slug}`);
-  moved++;
 }
 
 console.log(`\n${moved} article(s) published locally.\n`);
