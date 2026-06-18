@@ -1,0 +1,374 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+
+const title = 'JPG to PDF Free — Convert Images to PDF in Your Browser | Toolbase';
+const description =
+	'Convert JPG and PNG images into a single PDF — reorder them, choose fit-to-image, A4 or Letter pages, and download. Runs entirely in your browser; your images are never uploaded. Free, unlimited, no sign-up.';
+
+const faqs = [
+	{
+		q: 'Are my images uploaded to a server?',
+		a: 'No. The conversion runs inside your browser on your own device. Your images are never sent over the internet or stored anywhere, which makes it safe for receipts, IDs and private photos, and it keeps working even offline once the page has loaded.',
+	},
+	{
+		q: 'How do I convert multiple JPGs into one PDF?',
+		a: 'Add all your images, drag-free reorder them with the arrows into the order you want, pick a page size, then click Convert. Each image becomes one page and they are combined into a single downloadable PDF.',
+	},
+	{
+		q: 'What does "fit to image" mean versus A4 or Letter?',
+		a: 'Fit to image makes each PDF page exactly the size of its image, with no borders — best for screenshots and graphics. A4 or Letter places each image, scaled to fit and centred, on a standard document page — best when the PDF will be printed.',
+	},
+	{
+		q: 'Does it support PNG too?',
+		a: 'Yes. JPG and PNG are both supported and can be mixed in the same PDF. PNG transparency is flattened onto a white page.',
+	},
+	{
+		q: 'Is there a limit on how many images I can convert?',
+		a: 'No artificial limit — no signup, no daily cap, no watermark. Everything runs locally, so the only real ceiling is your device’s memory. Most batches convert in a second or two.',
+	},
+];
+
+const faqJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((f) => ({
+		'@type': 'Question',
+		name: f.q,
+		acceptedAnswer: { '@type': 'Answer', text: f.a },
+	})),
+});
+const appJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'WebApplication',
+	name: 'JPG to PDF',
+	applicationCategory: 'UtilitiesApplication',
+	operatingSystem: 'Any (web browser)',
+	url: 'https://gettoolbase.org/tools/jpg-to-pdf/',
+	offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+	description: description,
+});
+const breadcrumbJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://gettoolbase.org/' },
+		{ '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://gettoolbase.org/tools/' },
+		{ '@type': 'ListItem', position: 3, name: 'JPG to PDF', item: 'https://gettoolbase.org/tools/jpg-to-pdf/' },
+	],
+});
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<script type="application/ld+json" is:inline set:html={faqJsonLd} />
+		<script type="application/ld+json" is:inline set:html={appJsonLd} />
+		<script type="application/ld+json" is:inline set:html={breadcrumbJsonLd} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="crumbs" aria-label="Breadcrumb">
+				<a href="/">Home</a> › <a href="/tools/">Tools</a> › <span>JPG to PDF</span>
+			</nav>
+
+			<h1>JPG to PDF</h1>
+			<p class="lede">
+				Turn JPG and PNG images into a single PDF — reorder them, pick the page size, and download.
+				<strong>Everything happens in your browser:</strong> your images are never uploaded, never sent
+				anywhere, never stored. Free, unlimited, no sign-up.
+			</p>
+
+			<section class="app" aria-label="JPG to PDF tool">
+				<div id="drop" class="drop" tabindex="0" role="button" aria-label="Add image files">
+					<p class="drop-big">Drop JPG or PNG images here</p>
+					<p class="drop-sub">or <span class="link">browse your device</span></p>
+					<input id="file-input" type="file" accept="image/jpeg,image/png" multiple hidden />
+				</div>
+
+				<ul id="file-list" class="file-list"></ul>
+
+				<div id="actions" class="actions" hidden>
+					<div class="opts">
+						<label>Page size
+							<select id="pagesize">
+								<option value="fit">Fit to image (no borders)</option>
+								<option value="a4">A4</option>
+								<option value="letter">Letter</option>
+							</select>
+						</label>
+						<label id="margin-wrap" hidden>Margin
+							<select id="margin">
+								<option value="0">None</option>
+								<option value="18" selected>Small</option>
+								<option value="36">Medium</option>
+							</select>
+						</label>
+					</div>
+					<div class="run">
+						<button id="convert-btn" type="button" class="primary">Convert &amp; Download</button>
+						<button id="clear-btn" type="button" class="ghost">Clear all</button>
+						<span id="status" class="status" aria-live="polite"></span>
+					</div>
+				</div>
+
+				<p class="privacy">🔒 100% private — processed locally in your browser. Nothing is uploaded.</p>
+			</section>
+
+			<div class="prose">
+				<h2>How to convert images to PDF in your browser</h2>
+				<ol>
+					<li><strong>Add your images.</strong> Drop in JPGs or PNGs — as many as you like.</li>
+					<li><strong>Order them.</strong> Use the arrows to set the page order.</li>
+					<li><strong>Pick a page size.</strong> Fit-to-image for screenshots, A4/Letter for printing.</li>
+					<li><strong>Convert &amp; download.</strong> One PDF is built on your device — no upload.</li>
+				</ol>
+
+				<h2>Why convert images locally instead of uploading?</h2>
+				<p>
+					Most "JPG to PDF" sites upload your pictures to their servers — a real privacy problem for
+					receipts, ID scans or personal photos — and add limits or watermarks. This tool builds the PDF
+					entirely on your own device, so nothing leaves your computer, there are no limits, and it works
+					offline once loaded. Need to take a PDF apart again? Use <a href="/tools/split-pdf/">Split PDF</a>,
+					or combine finished PDFs with <a href="/tools/merge-pdf/">Merge PDF</a>.
+				</p>
+
+				<h2>Frequently asked questions</h2>
+				{
+					faqs.map((f) => (
+						<details class="faq">
+							<summary>{f.q}</summary>
+							<p>{f.a}</p>
+						</details>
+					))
+				}
+			</div>
+
+			<aside class="recommends">
+				<h2>More PDF tools</h2>
+				<ul>
+					<li><a href="/tools/merge-pdf/">Merge PDF</a> — combine PDFs and images into one file.</li>
+					<li><a href="/tools/split-pdf/">Split PDF</a> — break a PDF into multiple files.</li>
+					<li><a href="/tools/rotate-pdf/">Rotate PDF</a> — fix sideways pages.</li>
+				</ul>
+			</aside>
+
+			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
+		</main>
+		<Footer />
+
+		<script>
+			let _pdfLibPromise = null;
+			function loadPdfLib() {
+				if (!_pdfLibPromise) _pdfLibPromise = import('pdf-lib');
+				return _pdfLibPromise;
+			}
+
+			const SIZES = { a4: [595.28, 841.89], letter: [612, 792] };
+			let items = [];
+			let seq = 0;
+
+			const $ = (id) => document.getElementById(id);
+			const drop = $('drop');
+			const input = $('file-input');
+			const list = $('file-list');
+			const actions = $('actions');
+			const statusEl = $('status');
+
+			function fmtSize(b) {
+				if (b < 1024) return b + ' B';
+				if (b < 1024 * 1024) return (b / 1024).toFixed(0) + ' KB';
+				return (b / 1024 / 1024).toFixed(1) + ' MB';
+			}
+			function kindOf(file) {
+				if (file.type === 'image/jpeg' || /\.jpe?g$/i.test(file.name)) return 'jpg';
+				if (file.type === 'image/png' || /\.png$/i.test(file.name)) return 'png';
+				return null;
+			}
+
+			function addFiles(fileList) {
+				let added = false;
+				for (const file of fileList) {
+					const kind = kindOf(file);
+					if (!kind) continue;
+					items.push({ id: ++seq, file, kind });
+					added = true;
+				}
+				if (added) loadPdfLib();
+				render();
+			}
+			function move(id, dir) {
+				const i = items.findIndex((x) => x.id === id);
+				const j = i + dir;
+				if (i < 0 || j < 0 || j >= items.length) return;
+				[items[i], items[j]] = [items[j], items[i]];
+				render();
+			}
+			function remove(id) {
+				items = items.filter((x) => x.id !== id);
+				render();
+			}
+			function render() {
+				list.innerHTML = '';
+				items.forEach((it, idx) => {
+					const li = document.createElement('li');
+					li.className = 'file-row';
+					li.innerHTML =
+						'<span class="idx">' + (idx + 1) + '</span>' +
+						'<span class="badge ' + it.kind + '">' + it.kind.toUpperCase() + '</span>' +
+						'<span class="meta"><span class="fname"></span><span class="fsize">' + fmtSize(it.file.size) + '</span></span>' +
+						'<span class="row-btns">' +
+						'<button class="rb" data-act="up" aria-label="move up">↑</button>' +
+						'<button class="rb" data-act="down" aria-label="move down">↓</button>' +
+						'<button class="rb del" data-act="del" aria-label="remove">✕</button>' +
+						'</span>';
+					li.querySelector('.fname').textContent = it.file.name;
+					li.querySelector('[data-act="up"]').addEventListener('click', () => move(it.id, -1));
+					li.querySelector('[data-act="down"]').addEventListener('click', () => move(it.id, 1));
+					li.querySelector('[data-act="del"]').addEventListener('click', () => remove(it.id));
+					list.appendChild(li);
+				});
+				actions.hidden = items.length === 0;
+				statusEl.textContent = '';
+			}
+
+			async function convert() {
+				if (items.length === 0) return;
+				setBusy(true, 'Converting…');
+				try {
+					const { PDFDocument } = await loadPdfLib();
+					const pageSize = $('pagesize').value;
+					const margin = parseInt($('margin').value, 10) || 0;
+					const out = await PDFDocument.create();
+					for (const it of items) {
+						const bytes = new Uint8Array(await it.file.arrayBuffer());
+						const img = it.kind === 'jpg' ? await out.embedJpg(bytes) : await out.embedPng(bytes);
+						if (pageSize === 'fit') {
+							const page = out.addPage([img.width, img.height]);
+							page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
+						} else {
+							let [pw, ph] = SIZES[pageSize];
+							if (img.width > img.height && pw < ph) [pw, ph] = [ph, pw]; // auto landscape
+							const availW = pw - 2 * margin;
+							const availH = ph - 2 * margin;
+							const scale = Math.min(availW / img.width, availH / img.height);
+							const dw = img.width * scale;
+							const dh = img.height * scale;
+							const page = out.addPage([pw, ph]);
+							page.drawImage(img, { x: (pw - dw) / 2, y: (ph - dh) / 2, width: dw, height: dh });
+						}
+					}
+					const data = await out.save();
+					downloadBlob(data, 'converted.pdf');
+					setBusy(false, '✓ Built a ' + out.getPageCount() + '-page PDF — downloaded.');
+				} catch (err) {
+					console.error(err);
+					setBusy(false, '⚠ ' + (err && err.message ? err.message : 'Something went wrong.'));
+				}
+			}
+
+			function downloadBlob(data, name) {
+				const blob = new Blob([data], { type: 'application/pdf' });
+				const url = URL.createObjectURL(blob);
+				const a = document.createElement('a');
+				a.href = url;
+				a.download = name;
+				document.body.appendChild(a);
+				a.click();
+				a.remove();
+				setTimeout(() => URL.revokeObjectURL(url), 5000);
+			}
+			function setBusy(busy, msg) {
+				$('convert-btn').disabled = busy;
+				statusEl.textContent = msg || '';
+				statusEl.className = 'status' + (msg && msg[0] === '⚠' ? ' err' : '');
+			}
+
+			drop.addEventListener('click', () => input.click());
+			drop.addEventListener('keydown', (e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					input.click();
+				}
+			});
+			input.addEventListener('change', (e) => {
+				addFiles(e.target.files);
+				input.value = '';
+			});
+			['dragover', 'dragenter'].forEach((ev) =>
+				drop.addEventListener(ev, (e) => {
+					e.preventDefault();
+					drop.classList.add('over');
+				})
+			);
+			['dragleave', 'drop'].forEach((ev) =>
+				drop.addEventListener(ev, (e) => {
+					e.preventDefault();
+					drop.classList.remove('over');
+				})
+			);
+			drop.addEventListener('drop', (e) => {
+				if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files);
+			});
+			$('convert-btn').addEventListener('click', convert);
+			$('clear-btn').addEventListener('click', () => {
+				items = [];
+				render();
+			});
+			$('pagesize').addEventListener('change', () => {
+				$('margin-wrap').hidden = $('pagesize').value === 'fit';
+			});
+		</script>
+
+		<style>
+			.crumbs { font-size: 0.8em; color: rgb(var(--gray)); margin-bottom: 1em; }
+			.crumbs a { color: rgb(var(--gray)); }
+			.lede { font-size: 1.15em; color: rgb(var(--gray-dark)); }
+			.app { margin: 2em 0 3em; }
+			.drop {
+				border: 2px dashed rgb(var(--gray)); border-radius: 14px; padding: 2.5em 1em;
+				text-align: center; cursor: pointer; background: #fff;
+				transition: border-color 0.15s ease, background 0.15s ease;
+			}
+			.drop:hover, .drop:focus, .drop.over { border-color: var(--accent); background: rgba(35,55,255,0.04); outline: none; }
+			.drop-big { font-size: 1.3em; font-weight: 700; margin: 0 0 0.25em; }
+			.drop-sub { margin: 0; color: rgb(var(--gray)); font-size: 0.9em; }
+			.drop .link { color: var(--accent); text-decoration: underline; }
+			.file-list { list-style: none; padding: 0; margin: 1em 0 0; display: grid; gap: 0.5em; }
+			.file-row {
+				display: flex; align-items: center; gap: 0.6em; background: #fff;
+				border: 1px solid rgb(var(--gray-light)); border-radius: 10px; padding: 0.6em 0.75em;
+			}
+			.file-row .idx { font-weight: 700; color: rgb(var(--gray)); width: 1.2em; text-align: center; flex: none; }
+			.badge { font-size: 0.65em; font-weight: 700; padding: 0.2em 0.45em; border-radius: 4px; color: #fff; flex: none; background: #0d7a3f; }
+			.meta { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+			.fname { font-size: 0.9em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+			.fsize { font-size: 0.72em; color: rgb(var(--gray)); }
+			.row-btns { display: flex; gap: 0.25em; flex: none; }
+			.rb { border: 1px solid rgb(var(--gray-light)); background: #fff; border-radius: 6px; width: 2em; height: 2em; cursor: pointer; font-size: 0.9em; line-height: 1; }
+			.rb:hover { border-color: var(--accent); color: var(--accent); }
+			.rb.del:hover { border-color: #9a2515; color: #9a2515; }
+			.actions { margin-top: 1.25em; }
+			.opts { display: flex; gap: 1em; flex-wrap: wrap; margin-bottom: 1em; }
+			.opts label { font-size: 0.85em; font-weight: 700; display: flex; flex-direction: column; gap: 0.25em; }
+			.opts select { padding: 0.45em 0.6em; border: 1px solid rgb(var(--gray-light)); border-radius: 6px; font-weight: 400; }
+			.run { display: flex; align-items: center; gap: 0.75em; flex-wrap: wrap; }
+			button.primary { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 0.7em 1.4em; font-size: 1em; font-weight: 700; cursor: pointer; }
+			button.primary:disabled { opacity: 0.6; cursor: default; }
+			button.ghost { background: none; border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.7em 1.1em; cursor: pointer; color: rgb(var(--gray-dark)); }
+			.status { font-size: 0.85em; color: #0d7a3f; font-weight: 700; }
+			.status.err { color: #9a2515; }
+			.privacy { margin: 1em 0 0; font-size: 0.82em; color: rgb(var(--gray-dark)); }
+			.prose h2 { margin-top: 1.5em; }
+			.prose .faq { border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.75em 1em; margin-bottom: 0.6em; }
+			.prose .faq summary { cursor: pointer; font-weight: 700; font-size: 0.95em; }
+			.prose .faq p { margin: 0.75em 0 0; font-size: 0.92em; }
+			.recommends { background: rgba(var(--gray-light), 40%); border-radius: 12px; padding: 1.25em 1.5em; margin: 2.5em 0; }
+			.recommends h2 { margin-top: 0; font-size: 1.6em; }
+			.back { margin-top: 2em; }
+		</style>
+	</body>
+</html>
