@@ -30,7 +30,7 @@ const latest = posts.slice(0, 3);
 				</p>
 				<p class="lede subdued">
 					Toolbase tests, compares, and reviews the AI tools that actually save time and make money
-					for one-person businesses — no fluff, no paid placements, no &quot;10 ways AI will change
+					for one-person businesses, no fluff, no paid placements, no &quot;10 ways AI will change
 					your life&quot; listicles.
 				</p>
 				<div class="cta-row">
@@ -43,18 +43,47 @@ const latest = posts.slice(0, 3);
 				<a class="card" href="/blog/">
 					<span class="card-tag">Reviews</span>
 					<h3>Comparison guides</h3>
-					<p>Head-to-head tests of the tools you're trying to choose between — actual outputs, not feature checklists.</p>
+					<p>Head-to-head tests of the tools you're trying to choose between, actual outputs, not feature checklists.</p>
 				</a>
 				<a class="card" href="/tools/">
 					<span class="card-tag">Free</span>
 					<h3>Tools we built</h3>
-					<p>Small browser-based calculators for freelancers and solopreneurs. No sign-up, nothing sent to a server.</p>
+					<p>Calculators, PDF, image and text tools for one-person businesses. No sign-up, nothing sent to a server.</p>
 				</a>
 				<a class="card" href="/about/">
 					<span class="card-tag">About</span>
 					<h3>Why we exist</h3>
 					<p>Who's behind Toolbase, how we test, and how an honest review site stays honest when it earns from affiliate links.</p>
 				</a>
+			</section>
+
+			<section class="tools-showcase">
+				<div class="ts-head">
+					<h2>Free tools, no sign-up</h2>
+					<a href="/tools/" class="all-link">All tools →</a>
+				</div>
+				<div class="ts-grid">
+					<a class="card" href="/tools/freelance-rate-calculator/">
+						<span class="card-tag">Calculators</span>
+						<h3>Freelance &amp; money</h3>
+						<p>Rate, contract-vs-salary, project quote and rate-increase calculators.</p>
+					</a>
+					<a class="card" href="/tools/merge-pdf/">
+						<span class="card-tag">PDF</span>
+						<h3>PDF tools</h3>
+						<p>Merge, split, JPG-to-PDF and rotate, your files never leave the browser.</p>
+					</a>
+					<a class="card" href="/tools/compress-image/">
+						<span class="card-tag">Image</span>
+						<h3>Image tools</h3>
+						<p>Compress to a target KB, resize to exact pixels, convert PNG/JPG/WebP.</p>
+					</a>
+					<a class="card" href="/tools/word-counter/">
+						<span class="card-tag">Text</span>
+						<h3>Text &amp; dev tools</h3>
+						<p>Word counter, case converter and a JSON formatter &amp; validator.</p>
+					</a>
+				</div>
 			</section>
 
 			<section class="latest">
@@ -187,6 +216,21 @@ const latest = posts.slice(0, 3);
 			.card h3 { font-size: 1.25em; margin: 0 0 0.4em; }
 			.card p { font-size: 0.92em; color: rgb(var(--gray-dark)); margin: 0; line-height: 1.5; }
 
+			/* Tools showcase */
+			.tools-showcase { margin-top: 1em; }
+			.ts-head {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				margin-bottom: 1.25em;
+			}
+			.ts-head h2 { margin: 0; }
+			.ts-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 1em;
+			}
+
 			/* Latest articles */
 			.latest { margin-top: 3em; }
 			.latest-head {
@@ -258,12 +302,12 @@ const latest = posts.slice(0, 3);
 			}
 
 			@media (max-width: 860px) {
-				.cards, .post-grid { grid-template-columns: 1fr 1fr; }
+				.cards, .post-grid, .ts-grid { grid-template-columns: 1fr 1fr; }
 			}
 			@media (max-width: 600px) {
 				.hero { padding: 1.5em 0 0.5em; }
 				.hero h1 { font-size: 2.2em; }
-				.cards, .post-grid { grid-template-columns: 1fr; gap: 1em; }
+				.cards, .post-grid, .ts-grid { grid-template-columns: 1fr; gap: 1em; }
 				.btn { width: 100%; text-align: center; }
 				.cta-row { flex-direction: column; }
 			}

@@ -1,0 +1,257 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+
+const title = 'Word Counter, Free Word & Character Count Tool | Toolbase';
+const description =
+	'Count words, characters, sentences and paragraphs as you type, plus reading and speaking time. Runs entirely in your browser; nothing is uploaded. Free, instant, no sign-up.';
+
+const faqs = [
+	{
+		q: 'Is my text sent anywhere?',
+		a: 'No. Counting happens entirely in your browser as you type. Your text is never uploaded or stored on a server, so it is safe for drafts, private notes and confidential work, and it keeps working offline.',
+	},
+	{
+		q: 'How is reading time calculated?',
+		a: 'Reading time assumes an average adult silent reading speed of about 200 words per minute; speaking time assumes around 130 words per minute, a typical presentation pace. They are estimates to help you size an article, speech or video script.',
+	},
+	{
+		q: 'How are sentences and paragraphs counted?',
+		a: 'Sentences are counted by terminal punctuation (. ! ?), with any trailing unpunctuated text counted as one more. Paragraphs are blocks of text separated by line breaks. Both are good approximations rather than grammatical analysis.',
+	},
+	{
+		q: 'Does it count characters with and without spaces?',
+		a: 'Yes, both are shown. "Characters" includes spaces and line breaks (useful for SEO meta limits and social posts); "no spaces" is handy for character-limited fields that ignore whitespace.',
+	},
+	{
+		q: 'What word and character limits should I know?',
+		a: 'Common ones: an SEO meta description is best kept under ~160 characters, a page title under ~60, and a post on X under 280. Reading-time-friendly blog posts often run 1,000–2,000 words. The live counts here make hitting any limit easy.',
+	},
+];
+
+const faqJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+});
+const appJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'WebApplication',
+	name: 'Word Counter',
+	applicationCategory: 'UtilitiesApplication',
+	operatingSystem: 'Any (web browser)',
+	url: 'https://gettoolbase.org/tools/word-counter/',
+	offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+	description: description,
+});
+const breadcrumbJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://gettoolbase.org/' },
+		{ '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://gettoolbase.org/tools/' },
+		{ '@type': 'ListItem', position: 3, name: 'Word Counter', item: 'https://gettoolbase.org/tools/word-counter/' },
+	],
+});
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<script type="application/ld+json" is:inline set:html={faqJsonLd} />
+		<script type="application/ld+json" is:inline set:html={appJsonLd} />
+		<script type="application/ld+json" is:inline set:html={breadcrumbJsonLd} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="crumbs" aria-label="Breadcrumb">
+				<a href="/">Home</a> › <a href="/tools/">Tools</a> › <span>Word Counter</span>
+			</nav>
+
+			<h1>Word Counter</h1>
+			<p class="lede">
+				Count words, characters, sentences and paragraphs as you type, plus reading and speaking time.
+				<strong>Everything happens in your browser:</strong> your text is never uploaded. Free, instant,
+				no sign-up.
+			</p>
+
+			<section class="app" aria-label="Word counter">
+				<div class="stats" id="stats">
+					<div class="stat"><span class="num" id="s-words">0</span><span class="lbl">Words</span></div>
+					<div class="stat"><span class="num" id="s-chars">0</span><span class="lbl">Characters</span></div>
+					<div class="stat"><span class="num" id="s-nospace">0</span><span class="lbl">No spaces</span></div>
+					<div class="stat"><span class="num" id="s-sentences">0</span><span class="lbl">Sentences</span></div>
+					<div class="stat"><span class="num" id="s-paras">0</span><span class="lbl">Paragraphs</span></div>
+					<div class="stat"><span class="num" id="s-read">0s</span><span class="lbl">Reading time</span></div>
+					<div class="stat"><span class="num" id="s-speak">0s</span><span class="lbl">Speaking time</span></div>
+				</div>
+
+				<textarea id="text" rows="12" placeholder="Type or paste your text here…" aria-label="Text to count"></textarea>
+
+				<div class="actions">
+					<button id="copy-btn" type="button" class="ghost">Copy text</button>
+					<button id="clear-btn" type="button" class="ghost">Clear</button>
+					<span id="status" class="status" aria-live="polite"></span>
+				</div>
+				<p class="privacy">🔒 100% private, counted locally in your browser. Nothing is uploaded.</p>
+			</section>
+
+			<div class="prose">
+				<h2>Why word and character count matters</h2>
+				<p>
+					Most writing happens against a limit. Search engines truncate a page title around 60 characters
+					and a meta description around 160. A post on X stops at 280. An essay has a target range; a
+					talk has a time slot. A word counter turns "is this the right length?" from a guess into a
+					number you can see while you write, and the reading-time estimate tells you whether a reader
+					will actually finish it.
+				</p>
+
+				<h2>How the counts work</h2>
+				<ul>
+					<li><strong>Words</strong>, runs of non-space characters.</li>
+					<li><strong>Characters</strong>, everything including spaces and line breaks; <strong>no spaces</strong> strips whitespace.</li>
+					<li><strong>Sentences</strong>, counted by . ! ? endings (plus a trailing unpunctuated line).</li>
+					<li><strong>Paragraphs</strong>, text blocks separated by line breaks.</li>
+					<li><strong>Reading / speaking time</strong>, based on ~200 and ~130 words per minute.</li>
+				</ul>
+
+				<h2>Frequently asked questions</h2>
+				{
+					faqs.map((f) => (
+						<details class="faq">
+							<summary>{f.q}</summary>
+							<p>{f.a}</p>
+						</details>
+					))
+				}
+			</div>
+
+			<aside class="recommends">
+				<h2>More text tools</h2>
+				<ul>
+					<li><a href="/tools/case-converter/">Case Converter</a>, change text to UPPER, lower, Title and more.</li>
+				</ul>
+			</aside>
+
+			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
+		</main>
+		<Footer />
+
+		<script>
+			const KEY = 'tb-word-counter';
+			const $ = (id) => document.getElementById(id);
+			const ta = $('text');
+
+			function fmtTime(totalSec) {
+				totalSec = Math.round(totalSec);
+				if (totalSec <= 0) return '0s';
+				const m = Math.floor(totalSec / 60);
+				const s = totalSec % 60;
+				if (m === 0) return s + 's';
+				if (s === 0) return m + 'm';
+				return m + 'm ' + s + 's';
+			}
+
+			function stats(text) {
+				const words = (text.trim().match(/\S+/g) || []).length;
+				const chars = text.length;
+				const noSpace = text.replace(/\s/g, '').length;
+				const matched = text.match(/[^.!?]+[.!?]+/g);
+				let sentences = matched ? matched.length : 0;
+				const trailing = text.replace(/[^.!?]+[.!?]+/g, '').trim();
+				if (trailing.length) sentences++;
+				const paragraphs = text.split(/\n+/).filter((p) => p.trim().length).length;
+				return {
+					words,
+					chars,
+					noSpace,
+					sentences,
+					paragraphs,
+					readSec: (words / 200) * 60,
+					speakSec: (words / 130) * 60,
+				};
+			}
+
+			function render() {
+				const t = ta.value;
+				const r = stats(t);
+				$('s-words').textContent = r.words.toLocaleString();
+				$('s-chars').textContent = r.chars.toLocaleString();
+				$('s-nospace').textContent = r.noSpace.toLocaleString();
+				$('s-sentences').textContent = r.sentences.toLocaleString();
+				$('s-paras').textContent = r.paragraphs.toLocaleString();
+				$('s-read').textContent = fmtTime(r.readSec);
+				$('s-speak').textContent = fmtTime(r.speakSec);
+				try {
+					localStorage.setItem(KEY, t);
+				} catch (e) {}
+			}
+
+			ta.addEventListener('input', render);
+			$('clear-btn').addEventListener('click', () => {
+				ta.value = '';
+				render();
+				ta.focus();
+			});
+			$('copy-btn').addEventListener('click', async () => {
+				try {
+					await navigator.clipboard.writeText(ta.value);
+					setStatus('✓ Copied');
+				} catch (e) {
+					setStatus('⚠ Copy failed, select and copy manually');
+				}
+			});
+			function setStatus(m) {
+				const s = $('status');
+				s.textContent = m;
+				s.className = 'status' + (m[0] === '⚠' ? ' err' : '');
+				setTimeout(() => (s.textContent = ''), 2500);
+			}
+
+			try {
+				const saved = localStorage.getItem(KEY);
+				if (saved) ta.value = saved;
+			} catch (e) {}
+			render();
+		</script>
+
+		<style>
+			.crumbs { font-size: 0.8em; color: rgb(var(--gray)); margin-bottom: 1em; }
+			.crumbs a { color: rgb(var(--gray)); }
+			.lede { font-size: 1.15em; color: rgb(var(--gray-dark)); }
+			.app { margin: 2em 0 3em; }
+			.stats {
+				display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+				gap: 0.6em; margin-bottom: 1em;
+			}
+			.stat {
+				background: #fff; border: 1px solid rgb(var(--gray-light)); border-radius: 10px;
+				padding: 0.75em; text-align: center;
+			}
+			.stat .num { display: block; font-size: 1.5em; font-weight: 700; color: rgb(var(--black)); line-height: 1.1; }
+			.stat .lbl { display: block; font-size: 0.72em; color: rgb(var(--gray)); text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.2em; }
+			textarea#text {
+				width: 100%; box-sizing: border-box; border: 1px solid rgb(var(--gray-light));
+				border-radius: 10px; padding: 0.9em; font-size: 1em; line-height: 1.6; resize: vertical;
+				font-family: inherit;
+			}
+			textarea#text:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+			.actions { display: flex; align-items: center; gap: 0.6em; margin-top: 0.75em; flex-wrap: wrap; }
+			button.ghost { background: none; border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.55em 1em; cursor: pointer; color: rgb(var(--gray-dark)); }
+			button.ghost:hover { border-color: var(--accent); color: var(--accent); }
+			.status { font-size: 0.85em; color: #0d7a3f; font-weight: 700; }
+			.status.err { color: #9a2515; }
+			.privacy { margin: 1em 0 0; font-size: 0.82em; color: rgb(var(--gray-dark)); }
+			.prose h2 { margin-top: 1.5em; }
+			.prose .faq { border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.75em 1em; margin-bottom: 0.6em; }
+			.prose .faq summary { cursor: pointer; font-weight: 700; font-size: 0.95em; }
+			.prose .faq p { margin: 0.75em 0 0; font-size: 0.92em; }
+			.recommends { background: rgba(var(--gray-light), 40%); border-radius: 12px; padding: 1.25em 1.5em; margin: 2.5em 0; }
+			.recommends h2 { margin-top: 0; font-size: 1.6em; }
+			.back { margin-top: 2em; }
+		</style>
+	</body>
+</html>

@@ -1,4 +1,4 @@
-# Hero image prompts — library queue (37 articles)
+# Hero image prompts, library queue (38 articles)
 
 All prompts use the Toolbase brand:
 - Editorial line illustration, 16:9 wide aspect ratio
@@ -19,66 +19,66 @@ When the article publishes (via `publish-due.mjs`), the asset moves automaticall
 
 ## Productivity & time management (6)
 
-### 1. `thirty-min-weekly-review-solopreneur` — The 30-Minute Weekly Review
+### 1. `thirty-min-weekly-review-solopreneur`: The 30-Minute Weekly Review
 ```
 Editorial line illustration, 16:9, cream background. A single open notebook lying flat on a wood-grain table, with a fountain pen resting diagonally across the page. The notebook page has 4 horizontal lines suggesting weekly review entries, with small checkbox marks at the start of each line. A small analog clock face is partially visible in the upper-right corner showing exactly 30 minutes. Charcoal ink lines throughout. Burnt orange accent on the topmost notebook line (the "Did this week" entry). Hand-drawn editorial style, lots of negative space.
 ```
 
-### 2. `monday-morning-routine-solopreneur` — Monday Morning Routine That Doesn't Suck
+### 2. `monday-morning-routine-solopreneur`: Monday Morning Routine That Doesn't Suck
 ```
 Editorial line illustration, 16:9, cream background. A coffee cup with steam rising, sitting next to an open laptop with a closed lid (so just the line of the laptop edge visible from the side). A single window in the background suggests morning light with line-drawn sun rays angled in. Charcoal ink lines for everything. Burnt orange accent only on the steam curls from the coffee cup. No clock or text. Hand-drawn editorial style, calm composition.
 ```
 
-### 3. `calendar-blocking-solopreneurs` — Calendar Blocking for Solopreneurs
+### 3. `calendar-blocking-solopreneurs`: Calendar Blocking for Solopreneurs
 ```
 Editorial line illustration, 16:9, cream background. A vertical week-view calendar grid (5 columns Mon-Fri, 8 rows). Most cells are empty white space with thin charcoal borders. Three large vertical blocks (spanning multiple rows) are filled in burnt orange with diagonal hatch-line texture, suggesting protected deep-work blocks. Hand-drawn lines, intentionally slightly imperfect. Editorial style, generous whitespace.
 ```
 
-### 4. `energy-vs-time-management-solopreneurs` — Energy vs Time Management
+### 4. `energy-vs-time-management-solopreneurs`: Energy vs Time Management
 ```
 Editorial line illustration, 16:9, cream background. Two side-by-side gauges or meters, each circular. Left gauge labeled with a tiny clock icon (representing time), needle pointing midway. Right gauge with a small line-drawn battery icon (representing energy), needle pointing higher into the burnt orange zone at the top. Both gauges in charcoal lines; the orange accent zone on only the right gauge. Editorial hand-drawn style.
 ```
 
-### 5. `deep-work-blocks-no-boss` — Deep Work Blocks When You Have No Boss
+### 5. `deep-work-blocks-no-boss`: Deep Work Blocks When You Have No Boss
 ```
-Editorial line illustration, 16:9, cream background. A solitary chair facing a desk with a laptop on it, viewed from a 3/4 angle. Above the desk, a single oversized hour-glass with sand mid-flow. The chair is empty — implying the person is mentally absorbed in the work. Charcoal ink lines throughout. Burnt orange accent on the sand inside the hour-glass. Quiet, contemplative editorial composition.
+Editorial line illustration, 16:9, cream background. A solitary chair facing a desk with a laptop on it, viewed from a 3/4 angle. Above the desk, a single oversized hour-glass with sand mid-flow. The chair is empty, implying the person is mentally absorbed in the work. Charcoal ink lines throughout. Burnt orange accent on the sand inside the hour-glass. Quiet, contemplative editorial composition.
 ```
 
-### 6. `stop-attending-meetings-solopreneurs` — Stop Attending Meetings (5-Tier Framework)
+### 6. `stop-attending-meetings-solopreneurs`: Stop Attending Meetings (5-Tier Framework)
 ```
-Editorial line illustration, 16:9, cream background. A round meeting table viewed from directly above with 5 empty chairs around it. One chair (positioned away from the others) is highlighted with burnt orange. The table center has a small icon suggesting "do not enter" — a simple circle with a horizontal line through it (subtle, not literal stop sign). Charcoal ink throughout. Hand-drawn editorial style.
+Editorial line illustration, 16:9, cream background. A round meeting table viewed from directly above with 5 empty chairs around it. One chair (positioned away from the others) is highlighted with burnt orange. The table center has a small icon suggesting "do not enter", a simple circle with a horizontal line through it (subtle, not literal stop sign). Charcoal ink throughout. Hand-drawn editorial style.
 ```
 
 ---
 
 ## AI tools & workflows (6)
 
-### 7. `ai-for-client-work-without-losing-voice` — Using AI Without Losing Your Voice
+### 7. `ai-for-client-work-without-losing-voice`: Using AI Without Losing Your Voice
 ```
 Editorial line illustration, 16:9, cream background. A speech bubble or quote mark shape in the center, drawn with one half in clean editorial charcoal lines (representing the human voice) and the other half in a slightly more mechanical, geometric line style (representing AI output). The two halves meet at a soft border line. Burnt orange accent on the human-side outline only. Negative space dominates. Editorial illustration style.
 ```
 
-### 8. `chatgpt-custom-gpts-solopreneur-time` — ChatGPT Custom GPTs That Save Time
+### 8. `chatgpt-custom-gpts-solopreneur-time`: ChatGPT Custom GPTs That Save Time
 ```
 Editorial line illustration, 16:9, cream background. A row of 6 small box icons arranged horizontally, each representing a different "tool" or "GPT module". The boxes are minimalist: just outlined squares with a tiny distinguishing symbol inside each (a gear, a magnifying glass, a chat bubble, a clock, a document, a checkmark). The third box is highlighted with burnt orange fill while others remain charcoal outline. Editorial flat style.
 ```
 
-### 9. `claude-projects-vs-chatgpt-custom-gpts` — Claude Projects vs ChatGPT GPTs
+### 9. `claude-projects-vs-chatgpt-custom-gpts`: Claude Projects vs ChatGPT GPTs
 ```
 Editorial line illustration, 16:9, cream background. Two folders side by side, viewed from a 3/4 angle. The left folder slightly larger with a subtle "C" line motif on the tab. The right folder with a small chat-bubble motif on the tab. A thin vertical line separates them in the middle of the composition. Charcoal lines throughout. Burnt orange accent on the divider line and one folder tab. Hand-drawn editorial style.
 ```
 
-### 10. `perplexity-research-workflows-solopreneurs` — Perplexity Research Workflows
+### 10. `perplexity-research-workflows-solopreneurs`: Perplexity Research Workflows
 ```
 Editorial line illustration, 16:9, cream background. A magnifying glass viewed straight-on, with three thin radiating lines coming out of the lens like search beams pointing in different directions. Each beam ends in a small icon: a document, a globe, a question mark. Charcoal ink lines throughout. Burnt orange accent only on the magnifying glass lens rim. Editorial style, plenty of negative space.
 ```
 
-### 11. `ai-transcription-tools-compared` — AI Transcription Tools Compared
+### 11. `ai-transcription-tools-compared`: AI Transcription Tools Compared
 ```
 Editorial line illustration, 16:9, cream background. A horizontal sound waveform stretching across the center of the composition, drawn as a series of vertical lines of varying heights. The waveform transitions into typed text lines on the right side (suggesting "speech to text"). Four small dots above the waveform represent the four transcription tools being compared. Charcoal throughout. Burnt orange accent on two of the dots (highlighting winners). Editorial style.
 ```
 
-### 12. `four-ai-workflows-pay-for-themselves` — 4 AI Workflows That Pay For Themselves
+### 12. `four-ai-workflows-pay-for-themselves`: 4 AI Workflows That Pay For Themselves
 ```
 Editorial line illustration, 16:9, cream background. Four arrows pointing right, each starting from a tiny rupee symbol (₹) on the left and ending at a larger rupee symbol (₹) on the right, showing the growth/payback. The arrows are stacked vertically with consistent spacing. Burnt orange accent only on the larger rupee symbols. Charcoal lines throughout. Editorial hand-drawn style.
 ```
@@ -87,153 +87,162 @@ Editorial line illustration, 16:9, cream background. Four arrows pointing right,
 
 ## Pricing & money (5)
 
-### 13. `stripe-vs-razorpay-indian-freelancers-local` — Stripe vs Razorpay (Local Payments)
+### 13. `stripe-vs-razorpay-indian-freelancers-local`: Stripe vs Razorpay (Local Payments)
 ```
 Editorial line illustration, 16:9, cream background. Two parallel pipes (or channels) running horizontally across the composition, each carrying small flowing dots/coins from left to right. The top pipe is slightly thicker. A small rupee symbol ₹ at the right end of both pipes. Charcoal ink lines for all pipes. Burnt orange accent only on the dots flowing through the upper pipe (the recommended option). Editorial style.
 ```
 
-### 14. `project-quote-framework-new-freelancers` — Project Quote Framework
+### 14. `project-quote-framework-new-freelancers`: Project Quote Framework
 ```
-Editorial line illustration, 16:9, cream background. A document or invoice viewed from a slight angle, lying flat. On the document, three horizontal lines representing line items, with a horizontal sum-line below them and a slightly bolder line for the total. To the side of the document, a small calculator icon. Charcoal lines throughout. Burnt orange accent only on the total line. Editorial style, generous space around the document.
-```
-
-### 15. `annual-rate-increase-script` — Annual Rate Increase
-```
-Editorial line illustration, 16:9, cream background. A simple staircase going up from left to right with 4 steps. A small line-drawn figure stands at the bottom step looking up. Above the highest step, a small rupee symbol ₹. Charcoal lines throughout. Burnt orange accent on the top step only. Editorial style, hand-drawn, generous negative space around the staircase.
+Editorial line illustration, 16:9, cream background. A writing desk viewed from a 3/4 angle. On the desk: a clipboard with a printed quote document attached, showing 5 visible line items and a bolder total line at the bottom. A fountain pen rests diagonally across the clipboard at the total line. Beside the clipboard, a small desk calculator with a partial number visible on its display. A coffee cup at the upper-right corner of the frame, partially out of view. Charcoal ink lines throughout. Burnt orange accent only on the total line of the quote and the calculator's equals key. Editorial style, generous negative space around the desk surface.
 ```
 
-### 16. `handle-discount-question-prospects` — Handle the "Discount" Question
+### 15. `annual-rate-increase-script`: Annual Rate Increase
 ```
-Editorial line illustration, 16:9, cream background. A handshake viewed from above, with two hands meeting in the middle. A small percentage sign % floats above the handshake. Charcoal ink lines throughout. Burnt orange accent only on one of the hand outlines (the freelancer's). Editorial style, balanced composition.
+Editorial line illustration, 16:9, cream background. Side profile view. A short flight of 3 stone or wooden steps rising from left to right, leading up to a small standing desk at the upper-right. On the desk surface, a single document with a rupee symbol ₹ visible at the top. Resting on the bottom step, a crumpled piece of paper (the old rate sheet, discarded). Above the desk, a small wall-mounted lamp drawn as thin radiating lines. Charcoal lines throughout. Burnt orange accent only on the ₹ symbol on the desk document. Editorial side-profile composition, hand-drawn feel.
 ```
 
-### 17. `late-payment-recovery-script` — Late Payment Recovery
+### 16. `handle-discount-question-prospects`: Handle the "Discount" Question
 ```
-Editorial line illustration, 16:9, cream background. An envelope (representing the invoice/reminder) with a small clock face beside it showing time slightly past a marked deadline. A subtle arrow indicating the envelope being sent. Charcoal lines throughout. Burnt orange accent only on the clock's hour hand. Editorial style.
+Editorial line illustration, 16:9, cream background. A small round table viewed from a 3/4 angle, with two coffee cups across from each other (one closer to the viewer). Between the cups, a single sheet of paper with a percentage sign % drawn in the center. A pair of fingertips visible from each side of the frame (just the tips, no full hands) hovering near the sheet, mid-conversation. Charcoal ink lines throughout. Burnt orange accent only on the % sign. Editorial composition with table edge grounding the scene.
+```
+
+### 17. `late-payment-recovery-script`: Late Payment Recovery
+```
+Editorial line illustration, 16:9, cream background. Top-down view of a writing desk. Objects: a sealed envelope (no text shown) resting on top of a small wall calendar that shows a circled past date. Beside the envelope, a smartphone laid flat (outline only) with a small notification dot in the corner. At the top of the frame, a partial view of a wall clock hanging above, reading slightly past a marked hour. Charcoal ink throughout. Burnt orange accent only on the circled date and the smartphone's notification dot. Editorial top-down composition, generous space.
 ```
 
 ---
 
 ## Client operations (5)
 
-### 18. `simple-personal-brand-without-influencer` — Personal Brand Without Influencer
+### 18. `simple-personal-brand-without-influencer`: Personal Brand Without Influencer
 ```
-Editorial line illustration, 16:9, cream background. A simple business card viewed at a 3/4 angle on a flat surface. The card has a name placeholder line and a small line-drawn portrait silhouette (no facial features) in the corner. To the side of the card, a single subtle "pen stroke" line. Charcoal throughout. Burnt orange accent only on the name line of the card. Editorial style.
-```
-
-### 19. `project-brief-prevents-scope-creep` — Project Brief Prevents Scope Creep
-```
-Editorial line illustration, 16:9, cream background. A document with 7 visible horizontal lines (the 7 sections of the brief). Around the document's outer edge, a clear border line indicating "scope". A small dotted line extending outward from the document border represents creep being deflected back. Charcoal ink throughout. Burnt orange accent only on the solid border line. Editorial style.
+Editorial line illustration, 16:9, cream background. A wooden desk surface viewed from a 3/4 angle. On the desk: a single business card (no portrait, just a name line and a small geometric maker's mark in the corner), beside it a fountain pen, and beside the pen an open notebook with one short line of handwritten text visible (the "voice" being shaped). A small ceramic mug at the upper edge of the frame, partially visible. Charcoal ink lines throughout. Burnt orange accent only on the geometric mark on the business card. Editorial composition.
 ```
 
-### 20. `async-client-communication-three-channels` — Async Communication (3 Channels)
+### 19. `project-brief-prevents-scope-creep`: Project Brief Prevents Scope Creep
 ```
-Editorial line illustration, 16:9, cream background. Three vertical lanes stacked horizontally, each labeled with a small subtle icon at the top: a chat bubble (WhatsApp), an envelope (email), a hash symbol (Slack). The lanes are separated by thin vertical lines. Each lane contains a few horizontal lines suggesting messages. Charcoal throughout. Burnt orange accent only on the divider lines between lanes. Editorial style.
-```
-
-### 21. `client-friction-audit` — The Client Friction Audit
-```
-Editorial line illustration, 16:9, cream background. A magnifying glass hovering over a flowchart or process diagram showing 4 connected boxes (representing a delivery process). The magnifying glass is positioned over the middle connection between boxes, where a small "snag" line indicates friction. Charcoal lines throughout. Burnt orange accent only on the snag line being inspected. Editorial style.
+Editorial line illustration, 16:9, cream background. Top-down view of a desk. A printed brief document sits in the center, showing 6 section header lines, surrounded by a clearly drawn rectangular border. Just outside the border, three small Post-it-shaped notes are scattered, each attempting to push inward but blocked by the border line. A fountain pen rests diagonally across the brief. Charcoal ink throughout. Burnt orange accent only on the document's border line and one of the deflected Post-it shapes. Editorial top-down composition.
 ```
 
-### 22. `set-expectations-without-rigid` — Set Expectations Without Being Rigid
+### 20. `async-client-communication-three-channels`: Async Communication (3 Channels)
 ```
-Editorial line illustration, 16:9, cream background. A flexible rope or rubber-band-like line stretched between two anchor points. The rope has gentle curves indicating flexibility. Two simple anchor circles at each end. Charcoal lines throughout. Burnt orange accent only on the rope (not the anchors). Editorial style, generous negative space.
+Editorial line illustration, 16:9, cream background. A desk surface viewed from a 3/4 angle. Three small devices laid out side by side: a smartphone (showing a chat bubble icon on its screen), a partial view of a laptop edge with an envelope icon visible at the corner, and a small notepad with a hash symbol drawn at its top. A coffee cup at the top of the composition, partially visible above the desk surface. Charcoal lines throughout. Burnt orange accent only on the chat bubble icon (the highest-priority channel). Editorial composition.
+```
+
+### 21. `client-friction-audit`: The Client Friction Audit
+```
+Editorial line illustration, 16:9, cream background. Side-profile view. A vertical flowchart drawn on a wall in the upper portion of the frame, with 4 boxes connected by thin arrows. In the lower portion of the frame, a small silhouetted figure (viewed from behind, no facial features) holds up a magnifying glass to inspect the middle connection between boxes, a small "snag" line is visible at that junction. A desk lamp arches in from the upper-left corner, partially visible. Charcoal lines throughout. Burnt orange accent only on the snag line being inspected. Editorial composition.
+```
+
+### 22. `set-expectations-without-rigid`: Set Expectations Without Being Rigid
+```
+Editorial line illustration, 16:9, cream background. A wooden desk viewed from a 3/4 angle. Two small wooden anchor blocks sit at either edge of the desk. A flexible rope is strung between them, sagging gently in the middle. From the lowest point of the rope, a small paper slip hangs down, labelled with a tiny calendar icon. A coffee cup at the upper-right corner of the frame, partially visible. Charcoal lines throughout. Burnt orange accent only on the rope and the hanging paper's icon. Editorial composition.
 ```
 
 ---
 
 ## Distribution & content (4)
 
-### 23. `seo-for-solopreneurs-2026` — SEO for Solopreneurs
+### 23. `seo-for-solopreneurs-2026`: SEO for Solopreneurs
 ```
-Editorial line illustration, 16:9, cream background. A globe viewed at an angle with a magnifying glass hovering over part of it. From the magnifying glass, a thin line trails up to a small flag pin at the top of the composition (indicating "ranked"). Charcoal ink lines throughout. Burnt orange accent only on the flag pin. Editorial style.
-```
-
-### 24. `twitter-for-founders-who-hate-twitter` — Twitter for Founders Who Hate Twitter
-```
-Editorial line illustration, 16:9, cream background. A small bird silhouette outlined in charcoal lines, sitting on a thin horizontal branch. The bird is mid-tweet (a small speech bubble with a single dot inside it floats nearby). The bird's eye is the only burnt orange detail. Hand-drawn editorial style, minimalist, lots of negative space.
+Editorial line illustration, 16:9, cream background. A desk surface viewed from a 3/4 angle. On the desk: an open laptop showing a search input bar (just the outline of the bar, no text inside), beside the laptop a small notebook with 3 keyword entries drawn as short horizontal lines, and beside the notebook a magnifying glass laid flat. Standing upright at the back of the desk, a small flag pin attached to a tiny stand or post. Charcoal lines throughout. Burnt orange accent only on the flag pin. Editorial composition.
 ```
 
-### 25. `reddit-karma-strategy-not-gross` — Reddit Karma Strategy
+### 24. `twitter-for-founders-who-hate-twitter`: Twitter for Founders Who Hate Twitter
 ```
-Editorial line illustration, 16:9, cream background. A simple line-drawn upward-pointing arrow inside a circle (representing an upvote). Beside it, a small horizontal counter line showing increasing numbers (suggested by ascending dashes, not actual numbers). Charcoal throughout. Burnt orange accent only on the arrow itself. Editorial style.
+Editorial line illustration, 16:9, cream background. A 3/4 view of a windowsill with the window frame visible at the upper-right of the composition. A small bird perches on the outside edge of the sill, mid-tweet, with a tiny speech bubble containing a single dot floating just beside its beak. Just inside the room, on the lower-left of the frame, a partial view of an open laptop screen showing a single stylized chat-bubble icon. Charcoal lines throughout. Burnt orange accent only on the bird's eye. Editorial composition, lots of negative space.
 ```
 
-### 26. `repurpose-content-into-ten-honest` — Repurpose Content Into Ten
+### 25. `reddit-karma-strategy-not-gross`: Reddit Karma Strategy
 ```
-Editorial line illustration, 16:9, cream background. A single large document on the left side of the composition with 10 small arrows fanning out from it toward the right, each arrow ending at a tiny different shape (a tweet bubble, a photo card, a video play button, etc — 10 different small icons). Charcoal lines throughout. Burnt orange accent only on the source document's outline. Editorial style.
+Editorial line illustration, 16:9, cream background. A desk viewed from a 3/4 angle. On the desk: a smartphone propped up on a small stand, showing an upvote arrow inside a circle on its screen. Beside the phone, a small notepad with 5 tally marks drawn in a row (representing karma earned). A pen rests across the notepad. A coffee cup at the upper-right corner of the frame, partially visible. Charcoal throughout. Burnt orange accent only on the upvote arrow on the phone screen. Editorial composition.
+```
+
+### 26. `repurpose-content-into-ten-honest`: Repurpose Content Into Ten
+```
+Editorial line illustration, 16:9, cream background. Top-down view of a desk surface. A single large source document sits on the center-left of the desk. Fanning outward to the right, 10 smaller paper slips of varied shapes (squares, rectangles, a circle, a triangle, a folded card), each suggesting a different repurposed format. A fountain pen rests diagonally across the source document. A coffee cup at the upper-right corner of the frame, partially visible. Charcoal lines throughout. Burnt orange accent only on the source document's outline. Editorial top-down composition.
 ```
 
 ---
 
 ## Health & sustainability (3)
 
-### 27. `avoiding-burnout-year-one-solo` — Avoiding Burnout in Year One
+### 27. `avoiding-burnout-year-one-solo`: Avoiding Burnout in Year One
 ```
-Editorial line illustration, 16:9, cream background. A candle drawn in side profile, with a small flame on top. The candle wax is partially melted, drawn with a few drip lines. A subtle "low" indicator line beside the candle (a tiny horizontal mark at mid-height). Charcoal throughout. Burnt orange accent only on the flame. Editorial style, contemplative composition.
-```
-
-### 28. `no-meetings-before-noon-rule` — No Meetings Before Noon
-```
-Editorial line illustration, 16:9, cream background. An analog clock face showing roughly 12:00, with the clock body resting on a small horizontal surface. To the left of the clock, a "no entry" circle (just a circle with a horizontal line through it, very subtle). Charcoal ink throughout. Burnt orange accent only on the clock's hour hand pointing exactly at 12. Editorial style.
+Editorial line illustration, 16:9, cream background. Eye-level side profile view. A single candle on a small wooden block in the center of the composition, with a soft flame burning. Beside the candle, a closed book lying flat (suggesting work being set down). Behind the candle, a window frame partially visible on the right side of the composition, with thin lines suggesting a darkening evening sky. A small wall clock above the window shows roughly 7pm. Charcoal throughout. Burnt orange accent only on the candle flame. Editorial composition, quiet and contemplative.
 ```
 
-### 29. `two-week-vacation-as-solopreneur` — Two-Week Vacation as a Solopreneur
+### 28. `no-meetings-before-noon-rule`: No Meetings Before Noon
 ```
-Editorial line illustration, 16:9, cream background. A small suitcase resting flat on a horizontal line (suggesting the ground). The suitcase handle has a small luggage tag attached, with two parallel horizontal lines on the tag (representing dates). Charcoal lines throughout. Burnt orange accent only on the luggage tag. Editorial style, minimalist composition.
+Editorial line illustration, 16:9, cream background. A 3/4 view of a desk with a wall behind it. On the wall above the desk: an analog clock showing 11:30 (minute hand approaching 12), with a small "do not enter" circle (just a circle with a horizontal line) drawn subtly beside the clock face. On the desk below: a closed laptop and a steaming coffee cup. Charcoal ink throughout. Burnt orange accent only on the clock's minute hand. Editorial composition.
+```
+
+### 29. `two-week-vacation-as-solopreneur`: Two-Week Vacation as a Solopreneur
+```
+Editorial line illustration, 16:9, cream background. A 3/4 view. A small suitcase stands upright on a wooden floor in the center of the frame. A luggage tag hangs from the handle, showing two short horizontal lines (suggesting two dates). On top of the suitcase, a sun hat rests. Behind the suitcase, the partial outline of a door frame visible on the right side of the composition (suggesting the act of leaving). Charcoal lines throughout. Burnt orange accent only on the luggage tag. Editorial composition.
 ```
 
 ---
 
 ## India-specific (3)
 
-### 30. `gst-registration-indian-solopreneurs` — GST Registration for Indian Solopreneurs
+### 30. `gst-registration-indian-solopreneurs`: GST Registration for Indian Solopreneurs
 ```
-Editorial line illustration, 16:9, cream background. A stamped form/document viewed flat from above. The document has a few horizontal lines (form fields), a clear box at the bottom-right for the stamp, and a subtle "GST" letters inside the stamp box (drawn as thin line characters, not bold). Charcoal ink lines throughout. Burnt orange accent only on the stamp box outline. Editorial style.
-```
-
-### 31. `sole-proprietorship-india-2026-update` — Sole Proprietorship India
-```
-Editorial line illustration, 16:9, cream background. A small flag or banner attached to a tall slender pole. The banner is plain (no text), drawn in clean line-art. The pole stands on a small horizontal base. Charcoal ink throughout. Burnt orange accent only on the banner fabric. Editorial style, vertical composition, generous space.
+Editorial line illustration, 16:9, cream background. Top-down view of a desk surface. A printed GST registration form lies flat in the center, with several horizontal field lines visible and a clearly drawn stamp box at the bottom-right corner. Resting on the form at one of the fields, a fountain pen. Beside the form, a small rubber stamp standing upright and a flat stamp pad. Charcoal ink throughout. Burnt orange accent only on the stamp box outline on the form. Editorial top-down composition.
 ```
 
-### 32. `tier-2-india-solo-founder-advantage` — Tier-2 India Advantage
+### 31. `sole-proprietorship-india-2026-update`: Sole Proprietorship India
 ```
-Editorial line illustration, 16:9, cream background. A simple line-drawn map outline of India (very abstract, just the rough silhouette), with three small dot markers positioned in Tier-2 city locations (Bharuch area, Indore area, Coimbatore area). Charcoal ink for the map outline. Burnt orange accent only on the three dot markers. Editorial style, lots of negative space around the map.
+Editorial line illustration, 16:9, cream background. A 3/4 view of a desk surface. On the desk: a small desk-mounted flagpole holding a plain flag (no text). Leaning against the flagpole base, a single business card. Beside the flagpole, a closed leather-bound notebook with a small pen resting on top. A coffee cup at the upper-right corner of the frame, partially visible. Charcoal ink throughout. Burnt orange accent only on the flag fabric. Editorial composition, balanced layout.
+```
+
+### 32. `tier-2-india-solo-founder-advantage`: Tier-2 India Advantage
+```
+Editorial line illustration, 16:9, cream background. Top-down view of a desk. A printed map of India lies flat on the desk surface (abstract silhouette, not detailed), with three small location pins placed roughly in Tier-2 city positions (Bharuch area west, Indore area central, Coimbatore area south). Beside the map, an open notebook with a few short handwritten lines, and a fountain pen resting diagonally across the notebook. A coffee cup at the upper-right corner of the frame, partially visible. Charcoal ink for the map outline. Burnt orange accent only on the three location pins. Editorial top-down composition.
 ```
 
 ---
 
 ## Career & mindset (3)
 
-### 33. `should-you-go-solo-readiness-checklist` — Should You Go Solo Readiness Checklist
+### 33. `should-you-go-solo-readiness-checklist`: Should You Go Solo Readiness Checklist
 ```
-Editorial line illustration, 16:9, cream background. A clipboard viewed at a slight 3/4 angle with a checklist of 5-7 items visible. Some items have small checkmarks beside them, others have empty squares. The clip at the top of the clipboard is clearly drawn. Charcoal ink throughout. Burnt orange accent only on the checkmarks (not the squares). Editorial style.
-```
-
-### 34. `first-year-decisions-that-compound` — First Year Decisions That Compound
-```
-Editorial line illustration, 16:9, cream background. A small tree growing from a single seed, with branches splitting outward and upward. The tree is drawn with clean editorial lines (not highly detailed). 5 specific branches are marked with small dot accents. Charcoal ink lines throughout. Burnt orange accent only on the topmost branch tips. Editorial style.
+Editorial line illustration, 16:9, cream background. A 3/4 view of a desk surface. A clipboard angled across the desk with a 6-item checklist visible, 4 items have checkmarks, 2 have empty squares. A fountain pen rests diagonally across the clipboard at the last checked item. Beside the clipboard, a small coffee cup. In the background of the frame (slightly out of focus), a closed laptop. Charcoal ink throughout. Burnt orange accent only on the checkmarks (not the empty squares). Editorial composition.
 ```
 
-### 35. `when-to-stay-solo-vs-small-team` — Stay Solo vs Small Team
+### 34. `first-year-decisions-that-compound`: First Year Decisions That Compound
 ```
-Editorial line illustration, 16:9, cream background. Two simple silhouette outlines side by side: on the left, one figure standing alone; on the right, three figures standing close together as a small team. A thin vertical decision line separates them. Charcoal ink lines throughout. Burnt orange accent only on the decision line. Editorial style, balanced composition.
+Editorial line illustration, 16:9, cream background. A 3/4 view of a desk near a window. On the desk: a small potted plant in a clay pot, with branches splitting outward and upward, 5 visible decision-node points marked by small dots along the branches. Beside the pot, a small open notebook with 4 short handwritten lines (suggesting decisions written down). Behind the desk, the partial outline of a window frame visible at the upper-right of the composition. Charcoal lines throughout. Burnt orange accent only on the topmost branch tips of the plant. Editorial composition.
+```
+
+### 35. `when-to-stay-solo-vs-small-team`: Stay Solo vs Small Team
+```
+Editorial line illustration, 16:9, cream background. Top-down view of a desk surface. On the left side of the desk, a single tall chess-piece-style wooden figure standing alone. On the right side, three shorter wooden figures clustered close together. Between them, a thin folder spine laid vertically on the desk, separating the two sides. A coffee cup at the upper-right corner of the frame, partially visible. Charcoal lines throughout. Burnt orange accent only on the folder spine (the dividing line). Editorial top-down composition.
 ```
 
 ---
 
-## Weekend articles (2 — already past pubDate but still queued in `_library/`)
+## Weekend articles (2: already past pubDate but still queued in `_library/`)
 
-### 36. `b2b-outreach-ladder-solo-founders-2026` — B2B Outreach Ladder
+### 36. `b2b-outreach-ladder-solo-founders-2026`: B2B Outreach Ladder
 ```
-(already provided in earlier session — see solo-os memory)
-Editorial line illustration, 16:9 wide aspect ratio. Cream background (#F4EBD8). A clean abstract ladder going from bottom-left to upper-right, with 5 visible rungs. Each rung is slightly thicker / more substantial than the one below it, suggesting increasing commitment as you climb. A small minimalist line-drawn figure stands at the bottom of the ladder, hand raised toward the first rung. Charcoal black ink lines (#1A1A1A) for all linework — ladder, figure, ground line. The top rung is highlighted with burnt orange (#E07856) — the only color accent. Editorial style, hand-drawn feel, lots of negative space.
+(already provided in earlier session, see solo-os memory)
+Editorial line illustration, 16:9 wide aspect ratio. Cream background (#F4EBD8). A clean abstract ladder going from bottom-left to upper-right, with 5 visible rungs. Each rung is slightly thicker / more substantial than the one below it, suggesting increasing commitment as you climb. A small minimalist line-drawn figure stands at the bottom of the ladder, hand raised toward the first rung. Charcoal black ink lines (#1A1A1A) for all linework, ladder, figure, ground line. The top rung is highlighted with burnt orange (#E07856), the only color accent. Editorial style, hand-drawn feel, lots of negative space.
 ```
 
-### 37. `how-to-fire-a-bad-client-solopreneur-2026` — Fire a Bad Client
+### 37. `how-to-fire-a-bad-client-solopreneur-2026`: Fire a Bad Client
 ```
-(already provided in earlier session — see solo-os memory)
-Editorial line illustration, 16:9 wide aspect ratio. Cream background (#F4EBD8). A formal envelope viewed from a 3/4 angle, sealed and centered, slightly elevated as if mid-send. The envelope has a clean wax-seal-style circle on the front. A subtle hand from the right side (only the wrist and fingertips visible) appears to have just released the envelope. Charcoal ink lines for envelope and hand. The wax seal circle is burnt orange (#E07856) — the only color accent. No text on the envelope. Editorial style, professional and dignified composition.
+(already provided in earlier session, see solo-os memory)
+Editorial line illustration, 16:9 wide aspect ratio. Cream background (#F4EBD8). A formal envelope viewed from a 3/4 angle, sealed and centered, slightly elevated as if mid-send. The envelope has a clean wax-seal-style circle on the front. A subtle hand from the right side (only the wrist and fingertips visible) appears to have just released the envelope. Charcoal ink lines for envelope and hand. The wax seal circle is burnt orange (#E07856), the only color accent. No text on the envelope. Editorial style, professional and dignified composition.
+```
+
+---
+
+## Same-day add (Jun 19)
+
+### 38. `bulk-ai-output-drift-trap-2026`: The Bulk AI Output Trap
+```
+Editorial line illustration, 16:9 wide aspect ratio. Cream background (#F4EBD8). A 3/4 angled view of a writing desk surface. A vertical cascade of 7 narrow rectangular printout pages flows from upper-left down toward lower-right, like a fanned printout strip. The TOP TWO pages show crisp neat horizontal lines suggesting clean structured text. As the stack descends, the lines on each subsequent page get progressively rougher and more broken. By the bottom three pages the lines have collapsed into rough scribbles. Beside the stack on the desk, a small handheld magnifying glass with its lens resting over the fourth page from the top (where the drift begins). A graphite pencil lies on the lower-left of the desk. A small coffee cup sits at the upper-right corner of the frame, partially visible. Charcoal black ink (#1A1A1A) for all linework, page outlines, scribbles, magnifying glass, pencil, cup. The magnifying glass lens rim is burnt orange (#E07856), the only color accent. Editorial style, hand-drawn feel, generous negative space.
 ```

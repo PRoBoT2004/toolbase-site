@@ -3,9 +3,9 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 
-const title = 'Freelance Project Quote Calculator — Price Any Project (and Know If It’s Worth It) | Toolbase';
+const title = 'Freelance Project Quote Calculator, Price Any Project (and Know If It’s Worth It) | Toolbase';
 const description =
-	'Turn your hourly rate into a fixed project quote — with a scope buffer, costs and margin built in. Then paste a client’s budget and see the real hourly rate it pays you, with a clear go / renegotiate / walk-away verdict. Free, instant, no sign-up.';
+	'Turn your hourly rate into a fixed project quote, with a scope buffer, costs and margin built in. Then paste a client’s budget and see the real hourly rate it pays you, with a clear go / renegotiate / walk-away verdict. Free, instant, no sign-up.';
 
 const faqs = [
 	{
@@ -21,12 +21,12 @@ const faqs = [
 		a: 'It is the fixed fee (minus any direct costs) divided by the hours you actually spend, including the buffer. It is the number that tells the truth: a $4,000 project that eats 80 hours pays $50/hour, not whatever the headline implies. If your effective rate falls below your floor, the project is losing you money versus hourly work.',
 	},
 	{
-		q: 'A client gave me a budget — how do I know if it is worth taking?',
+		q: 'A client gave me a budget, how do I know if it is worth taking?',
 		a: 'Put their budget in the optional field. The calculator divides it by your buffered hours to show the real hourly rate it pays, and compares that to your floor: take it, renegotiate, or walk away. It removes the emotion from "this is a big number" by showing what the number actually means per hour.',
 	},
 	{
 		q: 'Should I tell the client my hourly rate?',
-		a: 'Usually no. Quote a single fixed price for the outcome. Use your hourly rate privately as the floor this calculator builds from. Clients buy results and price certainty, not a timesheet — and fixed pricing lets you keep the upside when you work efficiently.',
+		a: 'Usually no. Quote a single fixed price for the outcome. Use your hourly rate privately as the floor this calculator builds from. Clients buy results and price certainty, not a timesheet, and fixed pricing lets you keep the upside when you work efficiently.',
 	},
 ];
 
@@ -84,7 +84,7 @@ const breadcrumbJsonLd = JSON.stringify({
 
 			<h1>Freelance Project Quote Calculator</h1>
 			<p class="lede">
-				Turn your hourly rate into a fixed project price — with the scope buffer, costs and margin most
+				Turn your hourly rate into a fixed project price, with the scope buffer, costs and margin most
 				freelancers forget. Then drop in a client's budget and see the <em>real</em> hourly rate it pays
 				you, with a straight go / renegotiate / walk-away verdict. Runs entirely in your browser.
 			</p>
@@ -93,12 +93,12 @@ const breadcrumbJsonLd = JSON.stringify({
 				<div class="field currency-field">
 					<label for="currency">Currency</label>
 					<select id="currency">
-						<option value="USD">$ USD — US Dollar</option>
-						<option value="EUR">€ EUR — Euro</option>
-						<option value="GBP">£ GBP — British Pound</option>
-						<option value="INR">₹ INR — Indian Rupee</option>
-						<option value="CAD">$ CAD — Canadian Dollar</option>
-						<option value="AUD">$ AUD — Australian Dollar</option>
+						<option value="USD">$ USD, US Dollar</option>
+						<option value="EUR">€ EUR, Euro</option>
+						<option value="GBP">£ GBP, British Pound</option>
+						<option value="INR">₹ INR, Indian Rupee</option>
+						<option value="CAD">$ CAD, Canadian Dollar</option>
+						<option value="AUD">$ AUD, Australian Dollar</option>
 					</select>
 				</div>
 
@@ -139,21 +139,21 @@ const breadcrumbJsonLd = JSON.stringify({
 					<div class="result">
 						<div class="headline">
 							<span class="label">Quote this project at</span>
-							<span class="rate" id="out-quote">—</span>
+							<span class="rate" id="out-quote">,</span>
 						</div>
 						<div class="secondary">
 							<div>
 								<span class="s-label">Effective rate at this quote</span>
-								<span class="s-val" id="out-eff-quote">—</span>
+								<span class="s-val" id="out-eff-quote">,</span>
 							</div>
 							<div>
 								<span class="s-label">Buffered hours</span>
-								<span class="s-val" id="out-hours">—</span>
+								<span class="s-val" id="out-hours">,</span>
 							</div>
 						</div>
 
 						<div class="verdict" id="verdict">
-							<span class="v-line" id="v-line">—</span>
+							<span class="v-line" id="v-line">,</span>
 							<span class="v-sub" id="v-sub"></span>
 						</div>
 
@@ -166,7 +166,7 @@ const breadcrumbJsonLd = JSON.stringify({
 					</div>
 				</div>
 				<p class="disclaimer">
-					A pricing floor, not a ceiling — value-based pricing can go far higher. Estimate only; your
+					A pricing floor, not a ceiling, value-based pricing can go far higher. Estimate only; your
 					market and the client's perceived value set the final number.
 				</p>
 				<p class="cross">Related: <a href="/tools/contract-vs-salary-calculator/">Contract vs salary calculator</a> · <a href="/tools/freelance-rate-calculator/">Freelance rate calculator</a></p>
@@ -175,22 +175,22 @@ const breadcrumbJsonLd = JSON.stringify({
 			<div class="prose">
 				<h2>How to price a freelance project (without losing money)</h2>
 				<p>
-					Most freelancers price a project by feel — they picture a number that sounds reasonable to
+					Most freelancers price a project by feel, they picture a number that sounds reasonable to
 					the client and hope it works out. It usually doesn't, because the number ignores revisions,
 					admin and the hours the project quietly balloons into. Price it from the bottom up instead:
 				</p>
 				<ol>
-					<li><strong>Start from your hourly floor.</strong> The minimum your time is worth — taxes, expenses and unpaid time already baked in.</li>
+					<li><strong>Start from your hourly floor.</strong> The minimum your time is worth, taxes, expenses and unpaid time already baked in.</li>
 					<li><strong>Estimate the real hours,</strong> then add a buffer for the revisions and scope creep that are guaranteed, not hypothetical.</li>
-					<li><strong>Add direct costs</strong> you'll pass through — stock, subcontractors, paid tools.</li>
+					<li><strong>Add direct costs</strong> you'll pass through, stock, subcontractors, paid tools.</li>
 					<li><strong>Add a margin</strong> so the project builds your business, not just covers it.</li>
-					<li><strong>Check the effective hourly rate.</strong> If a client's budget drags it below your floor, you now know — before you say yes.</li>
+					<li><strong>Check the effective hourly rate.</strong> If a client's budget drags it below your floor, you now know, before you say yes.</li>
 				</ol>
 
 				<h2>Hourly vs fixed vs value pricing</h2>
 				<p>
 					<strong>Hourly</strong> is safest for open-ended work but caps your upside and punishes you for
-					getting faster. <strong>Fixed price</strong> — what this calculator produces — gives the client
+					getting faster. <strong>Fixed price</strong>, what this calculator produces, gives the client
 					certainty and lets you keep the gains from working efficiently, as long as you buffered for
 					scope. <strong>Value pricing</strong> ignores hours entirely and charges a slice of the outcome's
 					worth; it pays the most but needs a clear, measurable result. Use this tool's fixed price as
@@ -212,17 +212,17 @@ const breadcrumbJsonLd = JSON.stringify({
 				MONETIZATION: outbound links are affiliate-ready.
 				Swap each href for the tracked affiliate URL on approval and change
 				rel to "sponsored noopener". Until then: plain rel="nofollow noopener"
-				links to the real homepages — nothing fake is shipped.
+				links to the real homepages, nothing fake is shipped.
 			-->
 			<aside class="recommends">
 				<h2>Turn the quote into a signed project</h2>
 				<p>What freelancers use to send the proposal and get paid:</p>
 				<ul>
-					<li><a href="https://www.bonsai.com/" rel="nofollow noopener" target="_blank">Bonsai</a> — proposals, contracts and invoicing in one flow.</li>
-					<li><a href="https://www.freshbooks.com/" rel="nofollow noopener" target="_blank">FreshBooks</a> — turn the accepted quote into an invoice and track it.</li>
-					<li><a href="https://www.getharvest.com/" rel="nofollow noopener" target="_blank">Harvest</a> — track actual hours so your next estimate is sharper.</li>
+					<li><a href="https://www.bonsai.com/" rel="nofollow noopener" target="_blank">Bonsai</a>, proposals, contracts and invoicing in one flow.</li>
+					<li><a href="https://www.freshbooks.com/" rel="nofollow noopener" target="_blank">FreshBooks</a>, turn the accepted quote into an invoice and track it.</li>
+					<li><a href="https://www.getharvest.com/" rel="nofollow noopener" target="_blank">Harvest</a>, track actual hours so your next estimate is sharper.</li>
 				</ul>
-				<p class="tiny">We only list tools we'd use ourselves. Some links may become affiliate links — it never changes what we recommend or costs you anything.</p>
+				<p class="tiny">We only list tools we'd use ourselves. Some links may become affiliate links, it never changes what we recommend or costs you anything.</p>
 			</aside>
 
 			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
@@ -287,9 +287,9 @@ const breadcrumbJsonLd = JSON.stringify({
 				const effAtQuote = bufHours > 0 ? (quote - costs) / bufHours : 0;
 				const valid = bufHours > 0 && rate > 0;
 
-				$('out-quote').textContent = valid ? money(quote, currency) : '—';
-				$('out-eff-quote').textContent = valid ? money2(effAtQuote, currency) + ' / hr' : '—';
-				$('out-hours').textContent = valid ? bufHours.toLocaleString() + ' hrs' : '—';
+				$('out-quote').textContent = valid ? money(quote, currency) : ',';
+				$('out-eff-quote').textContent = valid ? money2(effAtQuote, currency) + ' / hr' : ',';
+				$('out-hours').textContent = valid ? bufHours.toLocaleString() + ' hrs' : ',';
 
 				const v = $('verdict');
 				const vLine = $('v-line');
@@ -301,16 +301,16 @@ const breadcrumbJsonLd = JSON.stringify({
 					const effAtBudget = (budget - costs) / bufHours;
 					if (effAtBudget >= rate) {
 						v.classList.add('win');
-						vLine.textContent = 'Worth it — pays ' + money2(effAtBudget, currency) + ' / hr';
+						vLine.textContent = 'Worth it, pays ' + money2(effAtBudget, currency) + ' / hr';
 						vSub.textContent = 'Their budget clears your ' + money2(rate, currency) + ' floor. Take it.';
 					} else if (effAtBudget >= rate * 0.85) {
 						v.classList.add('warn');
-						vLine.textContent = 'Thin — pays ' + money2(effAtBudget, currency) + ' / hr';
+						vLine.textContent = 'Thin, pays ' + money2(effAtBudget, currency) + ' / hr';
 						vSub.textContent =
 							'Just under your ' + money2(rate, currency) + ' floor. Renegotiate or trim scope.';
 					} else {
 						v.classList.add('lose');
-						vLine.textContent = 'Walk away — pays ' + money2(effAtBudget, currency) + ' / hr';
+						vLine.textContent = 'Walk away, pays ' + money2(effAtBudget, currency) + ' / hr';
 						vSub.textContent =
 							'Well below your ' + money2(rate, currency) + ' floor. This loses you money.';
 					}
@@ -323,7 +323,7 @@ const breadcrumbJsonLd = JSON.stringify({
 				}
 
 				const rows = [
-					[`Buffered hours (${hours} + ${(buffer * 100).toFixed(0)}%)`, valid ? bufHours.toLocaleString() + ' hrs' : '—'],
+					[`Buffered hours (${hours} + ${(buffer * 100).toFixed(0)}%)`, valid ? bufHours.toLocaleString() + ' hrs' : ','],
 					[`Labour (${bufHours.toLocaleString()} × ${money2(rate, currency)})`, money(labor, currency)],
 					['+ Direct costs', money(costs, currency)],
 					['= Before margin', money(beforeMargin, currency)],

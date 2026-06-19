@@ -1,0 +1,412 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+
+const title = 'Resize Image Free, to Exact Pixels or %, In Your Browser | Toolbase';
+const description =
+	'Resize JPG, PNG and WebP images by percentage or to an exact width/height, keeping aspect ratio. Batch resize many at once and download as a zip. Runs entirely in your browser; your images are never uploaded. Free, unlimited, no sign-up.';
+
+const faqs = [
+	{
+		q: 'Are my images uploaded to a server?',
+		a: 'No. Resizing runs inside your browser on your own device using the built-in canvas. Your images are never sent over the internet or stored anywhere, and it works even offline once the page has loaded.',
+	},
+	{
+		q: 'How do I resize an image to an exact width, like 800px?',
+		a: 'Choose "Width (px)", type 800, and the height is calculated automatically to keep the proportions. Choose "Height (px)" to pin the height instead, or "Scale %" to shrink or enlarge everything by a percentage.',
+	},
+	{
+		q: 'Will resizing keep the aspect ratio?',
+		a: 'Yes. Every mode preserves the original proportions, so images never look stretched or squashed. Set the dimension you care about and the other one follows automatically.',
+	},
+	{
+		q: 'Can I resize many images at once?',
+		a: 'Yes. Add a whole batch, apply one rule, say "width 1200px" or "scale 50%", and download them individually or as a single zip. No signup, daily cap or watermark.',
+	},
+	{
+		q: 'Does resizing reduce file size too?',
+		a: 'Usually a lot, fewer pixels means a smaller file. If your main goal is a specific file size rather than dimensions, use the Compress Image tool, which can target a KB limit directly.',
+	},
+];
+
+const faqJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+});
+const appJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'WebApplication',
+	name: 'Resize Image',
+	applicationCategory: 'UtilitiesApplication',
+	operatingSystem: 'Any (web browser)',
+	url: 'https://gettoolbase.org/tools/resize-image/',
+	offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+	description: description,
+});
+const breadcrumbJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://gettoolbase.org/' },
+		{ '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://gettoolbase.org/tools/' },
+		{ '@type': 'ListItem', position: 3, name: 'Resize Image', item: 'https://gettoolbase.org/tools/resize-image/' },
+	],
+});
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<script type="application/ld+json" is:inline set:html={faqJsonLd} />
+		<script type="application/ld+json" is:inline set:html={appJsonLd} />
+		<script type="application/ld+json" is:inline set:html={breadcrumbJsonLd} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="crumbs" aria-label="Breadcrumb">
+				<a href="/">Home</a> › <a href="/tools/">Tools</a> › <span>Resize Image</span>
+			</nav>
+
+			<h1>Resize Image</h1>
+			<p class="lede">
+				Resize JPG, PNG and WebP images by percentage or to an exact width or height, proportions kept,
+				no stretching. <strong>Everything happens in your browser:</strong> your images are never uploaded,
+				never sent anywhere, never stored. Free, unlimited, no sign-up.
+			</p>
+
+			<section class="app" aria-label="Image resizer">
+				<div id="drop" class="drop" tabindex="0" role="button" aria-label="Add image files">
+					<p class="drop-big">Drop JPG, PNG or WebP images here</p>
+					<p class="drop-sub">or <span class="link">browse your device</span></p>
+					<input id="file-input" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden />
+				</div>
+
+				<div id="panel" class="panel" hidden>
+					<div class="opts">
+						<div class="opt">
+							<span class="opt-label">Resize by</span>
+							<div class="seg" role="radiogroup" aria-label="Resize mode">
+								<label><input type="radio" name="mode" value="percent" checked /> <span>Scale %</span></label>
+								<label><input type="radio" name="mode" value="width" /> <span>Width (px)</span></label>
+								<label><input type="radio" name="mode" value="height" /> <span>Height (px)</span></label>
+							</div>
+						</div>
+						<div class="opt" id="val-opt">
+							<label class="opt-label" for="val"><span id="val-label">Scale</span></label>
+							<span class="inline"><input id="val" type="number" min="1" step="1" value="50" /> <span id="val-suffix">%</span></span>
+						</div>
+						<div class="opt">
+							<label class="opt-label" for="format">Output format</label>
+							<select id="format">
+								<option value="keep">Keep original</option>
+								<option value="image/jpeg">JPEG</option>
+								<option value="image/png">PNG</option>
+								<option value="image/webp">WebP</option>
+							</select>
+						</div>
+					</div>
+					<div class="run">
+						<button id="resize-btn" type="button" class="primary">Resize</button>
+						<button id="zip-btn" type="button" class="ghost" hidden>Download all (zip)</button>
+						<button id="clear-btn" type="button" class="ghost">Clear all</button>
+						<span id="status" class="status" aria-live="polite"></span>
+					</div>
+				</div>
+
+				<ul id="file-list" class="file-list"></ul>
+				<p class="privacy">🔒 100% private, processed locally in your browser. Nothing is uploaded.</p>
+			</section>
+
+			<div class="prose">
+				<h2>How to resize an image in your browser</h2>
+				<ol>
+					<li><strong>Add your images.</strong> Drop in JPG, PNG or WebP, one or a whole batch.</li>
+					<li><strong>Pick a rule.</strong> Scale by %, or set an exact width or height; the other dimension follows.</li>
+					<li><strong>Resize &amp; download</strong> each file, or grab them all as a zip. Nothing is uploaded.</li>
+				</ol>
+
+				<h2>Resize vs compress, which do you need?</h2>
+				<p>
+					Resize when the <em>dimensions</em> matter, fitting a 1200px content width, a profile photo's
+					required size, or thumbnails. Compress when the <em>file size</em> matters, meeting an upload
+					or email limit. They work together: resizing down is often the biggest file-size win, and the
+					<a href="/tools/compress-image/">Compress Image</a> tool can then hit an exact KB target.
+				</p>
+
+				<h2>Frequently asked questions</h2>
+				{
+					faqs.map((f) => (
+						<details class="faq">
+							<summary>{f.q}</summary>
+							<p>{f.a}</p>
+						</details>
+					))
+				}
+			</div>
+
+			<aside class="recommends">
+				<h2>More image &amp; file tools</h2>
+				<ul>
+					<li><a href="/tools/compress-image/">Compress Image</a>, hit a target file size.</li>
+					<li><a href="/tools/convert-image/">Convert Image</a>, PNG ↔ JPG ↔ WebP.</li>
+					<li><a href="/tools/jpg-to-pdf/">JPG to PDF</a>, turn images into a PDF.</li>
+				</ul>
+			</aside>
+
+			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
+		</main>
+		<Footer />
+
+		<script>
+			let _jszipPromise = null;
+			function loadJsZip() {
+				if (!_jszipPromise) _jszipPromise = import('jszip');
+				return _jszipPromise;
+			}
+			let items = [];
+			let seq = 0;
+			const $ = (id) => document.getElementById(id);
+			const drop = $('drop');
+			const input = $('file-input');
+			const panel = $('panel');
+			const list = $('file-list');
+			const statusEl = $('status');
+
+			function fmtSize(b) {
+				if (b < 1024) return b + ' B';
+				if (b < 1024 * 1024) return (b / 1024).toFixed(0) + ' KB';
+				return (b / 1024 / 1024).toFixed(2) + ' MB';
+			}
+			function extFor(type) {
+				return type === 'image/png' ? 'png' : type === 'image/webp' ? 'webp' : 'jpg';
+			}
+			function toBlob(canvas, type, q) {
+				return new Promise((res) => canvas.toBlob(res, type, q));
+			}
+			// keep aspect ratio
+			function targetDims(w, h, mode, val) {
+				if (mode === 'percent') {
+					const s = val / 100;
+					return [Math.max(1, Math.round(w * s)), Math.max(1, Math.round(h * s))];
+				}
+				if (mode === 'width') return [Math.max(1, Math.round(val)), Math.max(1, Math.round(h * (val / w)))];
+				return [Math.max(1, Math.round(w * (val / h))), Math.max(1, Math.round(val))]; // height
+			}
+
+			function addFiles(fileList) {
+				let added = false;
+				for (const file of fileList) {
+					if (!/^image\/(jpeg|png|webp)$/.test(file.type) && !/\.(jpe?g|png|webp)$/i.test(file.name)) continue;
+					items.push({ id: ++seq, file, resultBlob: null, resultName: null, url: null, dims: null });
+					added = true;
+				}
+				if (added) {
+					panel.hidden = false;
+					render();
+				}
+			}
+			function remove(id) {
+				const it = items.find((x) => x.id === id);
+				if (it && it.url) URL.revokeObjectURL(it.url);
+				items = items.filter((x) => x.id !== id);
+				if (items.length === 0) panel.hidden = true;
+				render();
+			}
+			function render() {
+				list.innerHTML = '';
+				items.forEach((it) => {
+					const li = document.createElement('li');
+					li.className = 'file-row';
+					let right;
+					if (it.resultBlob) {
+						right =
+							'<span class="result"><span class="sizes">' +
+							(it.dims ? it.dims + ' · ' : '') +
+							fmtSize(it.resultBlob.size) +
+							'</span></span><a class="dl" href="' +
+							it.url +
+							'" download="' +
+							it.resultName +
+							'">Download</a>';
+					} else {
+						right = '<span class="result"><span class="sizes">' + fmtSize(it.file.size) + '</span></span>';
+					}
+					li.innerHTML =
+						'<span class="thumb"' + (it.url ? ' style="background-image:url(' + it.url + ')"' : '') + '></span>' +
+						'<span class="meta"><span class="fname"></span></span>' +
+						right +
+						'<button class="rb del" data-act="del" aria-label="remove">✕</button>';
+					li.querySelector('.fname').textContent = it.file.name;
+					li.querySelector('[data-act="del"]').addEventListener('click', () => remove(it.id));
+					list.appendChild(li);
+				});
+			}
+			async function loadBitmap(file) {
+				try {
+					return await createImageBitmap(file, { imageOrientation: 'from-image' });
+				} catch (e) {
+					return await createImageBitmap(file);
+				}
+			}
+			async function resizeOne(it, opts) {
+				const bmp = await loadBitmap(it.file);
+				const [w, h] = targetDims(bmp.width, bmp.height, opts.mode, opts.val);
+				const canvas = document.createElement('canvas');
+				canvas.width = w;
+				canvas.height = h;
+				const ctx = canvas.getContext('2d');
+				if (opts.type === 'image/jpeg') {
+					ctx.fillStyle = '#ffffff';
+					ctx.fillRect(0, 0, w, h);
+				}
+				ctx.imageSmoothingQuality = 'high';
+				ctx.drawImage(bmp, 0, 0, w, h);
+				if (bmp.close) bmp.close();
+				const blob = await toBlob(canvas, opts.type, opts.type === 'image/png' ? undefined : 0.9);
+				return { blob, dims: w + '×' + h };
+			}
+			async function resizeAll() {
+				if (items.length === 0) return;
+				const mode = document.querySelector('input[name="mode"]:checked').value;
+				const val = parseFloat($('val').value);
+				if (!(val > 0)) {
+					setBusy(false, '⚠ Enter a valid number.');
+					return;
+				}
+				const fmtSel = $('format').value;
+				setBusy(true, 'Resizing…');
+				try {
+					for (const it of items) {
+						const type = fmtSel === 'keep' ? (/png$/i.test(it.file.type) ? 'image/png' : /webp$/i.test(it.file.type) ? 'image/webp' : 'image/jpeg') : fmtSel;
+						if (it.url) URL.revokeObjectURL(it.url);
+						const { blob, dims } = await resizeOne(it, { mode, val, type });
+						it.resultBlob = blob;
+						it.dims = dims;
+						it.url = URL.createObjectURL(blob);
+						const base = it.file.name.replace(/\.[^.]+$/, '') || 'image';
+						it.resultName = base + '-' + dims.replace('×', 'x') + '.' + extFor(type);
+						render();
+					}
+					$('zip-btn').hidden = items.length < 2;
+					setBusy(false, '✓ Resized ' + items.length + ' image' + (items.length === 1 ? '' : 's') + '.');
+				} catch (err) {
+					console.error(err);
+					setBusy(false, '⚠ ' + (err && err.message ? err.message : 'Something went wrong.'));
+				}
+			}
+			async function downloadZip() {
+				const done = items.filter((x) => x.resultBlob);
+				if (!done.length) return;
+				setBusy(true, 'Zipping…');
+				try {
+					const JSZip = (await loadJsZip()).default;
+					const zip = new JSZip();
+					done.forEach((it) => zip.file(it.resultName, it.resultBlob));
+					const blob = await zip.generateAsync({ type: 'blob' });
+					const url = URL.createObjectURL(blob);
+					const a = document.createElement('a');
+					a.href = url;
+					a.download = 'resized-images.zip';
+					document.body.appendChild(a);
+					a.click();
+					a.remove();
+					setTimeout(() => URL.revokeObjectURL(url), 5000);
+					setBusy(false, '✓ Downloaded ' + done.length + ' files as zip.');
+				} catch (e) {
+					setBusy(false, '⚠ Could not build zip.');
+				}
+			}
+			function setBusy(busy, msg) {
+				$('resize-btn').disabled = busy;
+				statusEl.textContent = msg || '';
+				statusEl.className = 'status' + (msg && msg[0] === '⚠' ? ' err' : '');
+			}
+			function syncMode() {
+				const m = document.querySelector('input[name="mode"]:checked').value;
+				$('val-label').textContent = m === 'percent' ? 'Scale' : m === 'width' ? 'Width' : 'Height';
+				$('val-suffix').textContent = m === 'percent' ? '%' : 'px';
+				if (m !== 'percent' && parseFloat($('val').value) < 16) $('val').value = 800;
+				if (m === 'percent' && parseFloat($('val').value) > 100) $('val').value = 50;
+			}
+
+			drop.addEventListener('click', () => input.click());
+			drop.addEventListener('keydown', (e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					input.click();
+				}
+			});
+			input.addEventListener('change', (e) => {
+				addFiles(e.target.files);
+				input.value = '';
+			});
+			['dragover', 'dragenter'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('over'); }));
+			['dragleave', 'drop'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove('over'); }));
+			drop.addEventListener('drop', (e) => { if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files); });
+			$('resize-btn').addEventListener('click', resizeAll);
+			$('zip-btn').addEventListener('click', downloadZip);
+			$('clear-btn').addEventListener('click', () => {
+				items.forEach((x) => x.url && URL.revokeObjectURL(x.url));
+				items = [];
+				panel.hidden = true;
+				$('zip-btn').hidden = true;
+				render();
+				setBusy(false, '');
+			});
+			document.querySelectorAll('input[name="mode"]').forEach((r) => r.addEventListener('change', syncMode));
+		</script>
+
+		<style>
+			.crumbs { font-size: 0.8em; color: rgb(var(--gray)); margin-bottom: 1em; }
+			.crumbs a { color: rgb(var(--gray)); }
+			.lede { font-size: 1.15em; color: rgb(var(--gray-dark)); }
+			.app { margin: 2em 0 3em; }
+			.drop { border: 2px dashed rgb(var(--gray)); border-radius: 14px; padding: 2.5em 1em; text-align: center; cursor: pointer; background: #fff; transition: border-color 0.15s ease, background 0.15s ease; }
+			.drop:hover, .drop:focus, .drop.over { border-color: var(--accent); background: rgba(35,55,255,0.04); outline: none; }
+			.drop-big { font-size: 1.3em; font-weight: 700; margin: 0 0 0.25em; }
+			.drop-sub { margin: 0; color: rgb(var(--gray)); font-size: 0.9em; }
+			.drop .link { color: var(--accent); text-decoration: underline; }
+			.panel { margin-top: 1.25em; border: 1px solid rgb(var(--gray-light)); border-radius: 12px; padding: 1.1em; background: #fff; }
+			.opts { display: flex; flex-wrap: wrap; gap: 1.25em; align-items: flex-end; }
+			.opt { display: flex; flex-direction: column; gap: 0.35em; }
+			.opt-label { font-size: 0.8em; font-weight: 700; }
+			.seg { display: inline-flex; border: 1px solid rgb(var(--gray-light)); border-radius: 8px; overflow: hidden; }
+			.seg label { padding: 0.45em 0.9em; cursor: pointer; border-right: 1px solid rgb(var(--gray-light)); font-size: 0.85em; }
+			.seg label:last-child { border-right: none; }
+			.seg input { position: absolute; opacity: 0; pointer-events: none; }
+			.seg label:has(input:checked) { background: var(--accent); color: #fff; }
+			.opt select, .opt input[type='number'] { padding: 0.45em 0.6em; border: 1px solid rgb(var(--gray-light)); border-radius: 6px; }
+			.inline { display: inline-flex; align-items: center; gap: 0.4em; font-size: 0.85em; color: rgb(var(--gray)); }
+			.inline input { width: 6em; }
+			.run { display: flex; align-items: center; gap: 0.6em; margin-top: 1em; flex-wrap: wrap; }
+			button.primary { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 0.7em 1.4em; font-size: 1em; font-weight: 700; cursor: pointer; }
+			button.primary:disabled { opacity: 0.6; cursor: default; }
+			button.ghost { background: none; border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.7em 1.1em; cursor: pointer; color: rgb(var(--gray-dark)); }
+			.status { font-size: 0.85em; color: #0d7a3f; font-weight: 700; }
+			.status.err { color: #9a2515; }
+			.file-list { list-style: none; padding: 0; margin: 1em 0 0; display: grid; gap: 0.5em; }
+			.file-row { display: flex; align-items: center; gap: 0.75em; background: #fff; border: 1px solid rgb(var(--gray-light)); border-radius: 10px; padding: 0.5em 0.75em; }
+			.thumb { width: 40px; height: 40px; border-radius: 6px; background: rgb(var(--gray-light)) center/cover no-repeat; flex: none; }
+			.meta { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+			.fname { font-size: 0.9em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+			.result { display: flex; align-items: center; gap: 0.5em; flex: none; }
+			.sizes { font-size: 0.82em; color: rgb(var(--gray-dark)); white-space: nowrap; }
+			.dl { font-size: 0.82em; font-weight: 700; flex: none; }
+			.rb { border: 1px solid rgb(var(--gray-light)); background: #fff; border-radius: 6px; width: 1.9em; height: 1.9em; cursor: pointer; flex: none; }
+			.rb.del:hover { border-color: #9a2515; color: #9a2515; }
+			.privacy { margin: 1em 0 0; font-size: 0.82em; color: rgb(var(--gray-dark)); }
+			.prose h2 { margin-top: 1.5em; }
+			.prose .faq { border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.75em 1em; margin-bottom: 0.6em; }
+			.prose .faq summary { cursor: pointer; font-weight: 700; font-size: 0.95em; }
+			.prose .faq p { margin: 0.75em 0 0; font-size: 0.92em; }
+			.recommends { background: rgba(var(--gray-light), 40%); border-radius: 12px; padding: 1.25em 1.5em; margin: 2.5em 0; }
+			.recommends h2 { margin-top: 0; font-size: 1.6em; }
+			.back { margin-top: 2em; }
+			@media (max-width: 720px) { .result { flex-direction: column; align-items: flex-end; gap: 0.1em; } }
+		</style>
+	</body>
+</html>

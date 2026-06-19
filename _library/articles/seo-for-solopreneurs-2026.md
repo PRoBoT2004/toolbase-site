@@ -30,7 +30,7 @@ Technical SEO is where solopreneurs lose the most time for the least return. Her
 3. One H1 per page. H2s for sections. Don't skip levels.
 4. Submit a sitemap to Google Search Console. Once. Done.
 
-That's it. Schema markup, breadcrumb optimization, hreflang tags, canonical chains — none of it matters for a site with under 50 pages. The folks selling technical SEO audits to solopreneurs are selling fear. A Hugo or Astro site with a clean theme passes 95% of these checks by default, which is why the [zero-dollar AI stack for solopreneurs](/blog/zero-dollar-ai-stack-for-solopreneurs-2026/) tends to outperform expensive WordPress builds on Core Web Vitals.
+That's it. Schema markup, breadcrumb optimization, hreflang tags, canonical chains, none of it matters for a site with under 50 pages. The folks selling technical SEO audits to solopreneurs are selling fear. A Hugo or Astro site with a clean theme passes 95% of these checks by default, which is why the [zero-dollar AI stack for solopreneurs](/blog/zero-dollar-ai-stack-for-solopreneurs-2026/) tends to outperform expensive WordPress builds on Core Web Vitals.
 
 The one exception: if the site runs on WordPress with 14 plugins, technical debt compounds fast. Rip out everything except the theme, a caching plugin, and one SEO plugin (Rank Math, free version). Three plugins total. Anything more and the speed score collapses.
 

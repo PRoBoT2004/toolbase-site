@@ -3,9 +3,9 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 
-const title = 'Merge PDF Free — 100% In Your Browser, No Upload | Toolbase';
+const title = 'Merge PDF Free, 100% In Your Browser, No Upload | Toolbase';
 const description =
-	'Combine PDFs (and JPG/PNG images) into one file — right in your browser. Reorder files, pull out specific page ranges, and download. Your files are never uploaded to a server. Free, unlimited, no sign-up.';
+	'Combine PDFs (and JPG/PNG images) into one file, right in your browser. Reorder files, pull out specific page ranges, and download. Your files are never uploaded to a server. Free, unlimited, no sign-up.';
 
 const faqs = [
 	{
@@ -18,7 +18,7 @@ const faqs = [
 	},
 	{
 		q: 'Can I merge only certain pages from a PDF?',
-		a: 'Yes. Each PDF has a "pages" box — leave it as "all", or type a range like 1-3, 5, 8-10 to include only those pages. It is an instant way to split or extract pages while merging, without a separate tool.',
+		a: 'Yes. Each PDF has a "pages" box, leave it as "all", or type a range like 1-3, 5, 8-10 to include only those pages. It is an instant way to split or extract pages while merging, without a separate tool.',
 	},
 	{
 		q: 'Can I combine images into a PDF?',
@@ -26,7 +26,7 @@ const faqs = [
 	},
 	{
 		q: 'Is there a file size or file count limit?',
-		a: 'There is no artificial limit — no signup, no daily cap, no watermark. The only real ceiling is your device’s memory, since everything runs locally. Very large files (hundreds of MB) may be slow on older machines, but typical documents merge in a second or two.',
+		a: 'There is no artificial limit, no signup, no daily cap, no watermark. The only real ceiling is your device’s memory, since everything runs locally. Very large files (hundreds of MB) may be slow on older machines, but typical documents merge in a second or two.',
 	},
 ];
 
@@ -79,7 +79,7 @@ const breadcrumbJsonLd = JSON.stringify({
 
 			<h1>Merge PDF</h1>
 			<p class="lede">
-				Combine PDFs and images into one file — reorder them, pull out specific pages, and download.
+				Combine PDFs and images into one file, reorder them, pull out specific pages, and download.
 				<strong>Everything happens in your browser:</strong> your files are never uploaded, never sent
 				anywhere, never stored. Free, unlimited, no sign-up.
 			</p>
@@ -87,7 +87,7 @@ const breadcrumbJsonLd = JSON.stringify({
 			<section class="app" aria-label="Merge PDF tool">
 				<div id="drop" class="drop" tabindex="0" role="button" aria-label="Add PDF or image files">
 					<p class="drop-big">Drop PDFs or images here</p>
-					<p class="drop-sub">or <span class="link">browse your device</span> — PDF, JPG, PNG</p>
+					<p class="drop-sub">or <span class="link">browse your device</span>, PDF, JPG, PNG</p>
 					<input id="file-input" type="file" accept="application/pdf,image/jpeg,image/png" multiple hidden />
 				</div>
 
@@ -99,23 +99,22 @@ const breadcrumbJsonLd = JSON.stringify({
 					<span id="status" class="status" aria-live="polite"></span>
 				</div>
 
-				<p class="privacy">🔒 100% private — processed locally in your browser. Nothing is uploaded.</p>
+				<p class="privacy">🔒 100% private, processed locally in your browser. Nothing is uploaded.</p>
 			</section>
 
 			<div class="prose">
 				<h2>How to merge PDF files in your browser</h2>
 				<ol>
-					<li><strong>Add your files.</strong> Drop in PDFs, JPGs or PNGs — as many as you like.</li>
+					<li><strong>Add your files.</strong> Drop in PDFs, JPGs or PNGs, as many as you like.</li>
 					<li><strong>Put them in order.</strong> Use the arrows to arrange the files top-to-bottom.</li>
 					<li><strong>Pick pages (optional).</strong> For any PDF, type a range like <code>1-3, 5</code> to include only those pages.</li>
-					<li><strong>Merge &amp; download.</strong> One click builds a single PDF and saves it — no upload, no waiting on a server.</li>
+					<li><strong>Merge &amp; download.</strong> One click builds a single PDF and saves it, no upload, no waiting on a server.</li>
 				</ol>
 
 				<h2>Why merge PDFs in the browser instead of an online uploader?</h2>
 				<p>
 					Most "free" PDF mergers upload your documents to their servers, cap you at a few files a day,
-					stamp a watermark, or push you to sign up. That's a privacy risk for anything confidential —
-					contracts, IDs, financials — and it's slow. This tool runs entirely on your own device using
+					stamp a watermark, or push you to sign up. That's a privacy risk for anything confidential, 					contracts, IDs, financials, and it's slow. This tool runs entirely on your own device using
 					your browser's built-in capabilities, so your files never travel over the internet, there are
 					no limits, and it keeps working even offline once the page has loaded.
 				</p>
@@ -140,10 +139,10 @@ const breadcrumbJsonLd = JSON.stringify({
 				<h2>Working with PDFs a lot?</h2>
 				<p>Tools worth knowing when you outgrow the basics:</p>
 				<ul>
-					<li><a href="https://www.adobe.com/acrobat/online.html" rel="nofollow noopener" target="_blank">Adobe Acrobat online</a> — when you need OCR, redaction or e-signatures.</li>
-					<li><a href="https://www.pdfgear.com/" rel="nofollow noopener" target="_blank">PDFgear</a> — free desktop editor for heavier offline work.</li>
+					<li><a href="https://www.adobe.com/acrobat/online.html" rel="nofollow noopener" target="_blank">Adobe Acrobat online</a>, when you need OCR, redaction or e-signatures.</li>
+					<li><a href="https://www.pdfgear.com/" rel="nofollow noopener" target="_blank">PDFgear</a>, free desktop editor for heavier offline work.</li>
 				</ul>
-				<p class="tiny">We only list tools we'd use ourselves. Some links may become affiliate links — it never changes what we recommend or costs you anything.</p>
+				<p class="tiny">We only list tools we'd use ourselves. Some links may become affiliate links, it never changes what we recommend or costs you anything.</p>
 			</aside>
 
 			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
@@ -294,10 +293,10 @@ const breadcrumbJsonLd = JSON.stringify({
 							page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
 						}
 					}
-					if (out.getPageCount() === 0) throw new Error('Nothing to merge — every page range was empty.');
+					if (out.getPageCount() === 0) throw new Error('Nothing to merge, every page range was empty.');
 					const data = await out.save();
 					downloadBlob(data, 'merged.pdf');
-					setBusy(false, '✓ Merged ' + out.getPageCount() + ' pages — downloaded.');
+					setBusy(false, '✓ Merged ' + out.getPageCount() + ' pages, downloaded.');
 				} catch (err) {
 					console.error(err);
 					setBusy(false, '⚠ ' + (err && err.message ? err.message : 'Something went wrong.'));

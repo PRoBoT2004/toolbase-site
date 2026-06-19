@@ -13,6 +13,14 @@ const today = new Date();
 			<a href="/blog/">Blog</a>
 			<a href="/about/">About</a>
 		</nav>
+		<nav class="links tools-col" aria-label="Popular tools">
+			<span class="col-label">Popular tools</span>
+			<a href="/tools/freelance-rate-calculator/">Rate calculator</a>
+			<a href="/tools/merge-pdf/">Merge PDF</a>
+			<a href="/tools/compress-image/">Compress image</a>
+			<a href="/tools/word-counter/">Word counter</a>
+			<a href="/tools/">All tools →</a>
+		</nav>
 		<div class="legal">
 			<p class="copyright">&copy; {today.getFullYear()} Toolbase</p>
 			<p class="disclosure">
@@ -34,9 +42,17 @@ const today = new Date();
 		max-width: var(--max-w-content);
 		margin: 0 auto;
 		display: grid;
-		grid-template-columns: 1.5fr 1fr 1.5fr;
+		grid-template-columns: 1.6fr 0.9fr 1.1fr 1.5fr;
 		gap: 2em;
 		align-items: start;
+	}
+	.col-label {
+		font-size: 0.72em;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: rgb(var(--gray));
+		margin-bottom: 0.2em;
 	}
 	.brand-mark {
 		font-family: var(--font-serif);
@@ -92,5 +108,7 @@ const today = new Date();
 			gap: 1.5em;
 		}
 		.links { flex-direction: row; flex-wrap: wrap; gap: 1em; padding-top: 0; }
+		.tools-col { flex-direction: column; gap: 0.5em; }
+		.col-label { width: 100%; }
 	}
 </style>

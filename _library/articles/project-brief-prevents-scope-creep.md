@@ -33,7 +33,7 @@ The acceptance criterion is the part everyone skips. Without it, "logo design" c
 
 ### What a real deliverable line looks like
 
-> D2: Landing page copy — homepage hero, 3 service blocks, FAQ section (8 questions), footer CTA. Acceptance: client signs off on Google Doc draft within 7 days of delivery. Two rounds of edits included; round 3 onwards billed at the hourly rate in Section 6.
+> D2: Landing page copy, homepage hero, 3 service blocks, FAQ section (8 questions), footer CTA. Acceptance: client signs off on Google Doc draft within 7 days of delivery. Two rounds of edits included; round 3 onwards billed at the hourly rate in Section 6.
 
 Notice the link back to the rate. That's how you stop the round-three argument before it starts.
 

@@ -43,11 +43,11 @@ The announcement email has four jobs: state the increase, give a reason, set a d
 
 Here's the structure that delivers the 85% retention rate:
 
-> Subject: Rate adjustment for [Client Name] — effective [Date]
+> Subject: Rate adjustment for [Client Name], effective [Date]
 >
 > Hi [Name],
 >
-> Quick note on pricing. Starting [Date, 30+ days out], the monthly retainer will move from ₹[Current] to ₹[New] — a 15% adjustment. This is the first increase since we started working together in [Month Year], and it brings the rate in line with what new clients have been paying since [Month].
+> Quick note on pricing. Starting [Date, 30+ days out], the monthly retainer will move from ₹[Current] to ₹[New], a 15% adjustment. This is the first increase since we started working together in [Month Year], and it brings the rate in line with what new clients have been paying since [Month].
 >
 > Everything else stays the same: scope, deliverables, response times, the way we work. The new rate will apply to the [Month] invoice and forward.
 >

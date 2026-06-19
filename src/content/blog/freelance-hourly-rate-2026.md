@@ -11,7 +11,7 @@ This is the realistic version. Four frameworks, the trade-offs of each, and the 
 
 ## Why cost-plus pricing fails for freelancers
 
-Cost-plus says: figure out your annual income target, add your operating costs, divide by billable hours per year, that's your rate. Looks rigorous. Has one fatal assumption baked in — that clients exist who'll pay whatever number you arrive at.
+Cost-plus says: figure out your annual income target, add your operating costs, divide by billable hours per year, that's your rate. Looks rigorous. Has one fatal assumption baked in, that clients exist who'll pay whatever number you arrive at.
 
 Real freelance rates are set by what your local market clears, not what your spreadsheet says you need. A graphic designer in Hyderabad charging ₹1,500/hour gets work. The same designer charging ₹3,000/hour (correctly calculated from cost-plus to hit a comfortable income) gets ghosted. The number on the invoice doesn't move the market by itself.
 
@@ -35,7 +35,7 @@ A 4-week project rate should be 20-40% higher than a 6-month-plus engagement rat
 
 ## The four frameworks (pick one)
 
-### Framework 1 — Market-anchored hourly
+### Framework 1: Market-anchored hourly
 
 Set your rate at the 75th percentile for your specific niche plus geography. Pull data from a few sources:
 
@@ -44,19 +44,19 @@ Set your rate at the 75th percentile for your specific niche plus geography. Pul
 - Toptal and Contra public talent profiles in your niche
 - LinkedIn polls inside niche groups
 
-The Toolbase [Freelance Rate Calculator](/tools/freelance-rate-calculator/) is a faster way to estimate the 50th-75th percentile range for common roles. Then add 15% for the friction tax — chasing invoices, negotiating, kickoff calls, all the unbillable surrounding work.
+The Toolbase [Freelance Rate Calculator](/tools/freelance-rate-calculator/) is a faster way to estimate the 50th-75th percentile range for common roles. Then add 15% for the friction tax, chasing invoices, negotiating, kickoff calls, all the unbillable surrounding work.
 
 Best for: people just starting freelance, people in well-defined roles like designer, copywriter, developer.
 
-### Framework 2 — Value-based with hourly floor
+### Framework 2: Value-based with hourly floor
 
-Charge by project deliverable, with an internal hourly floor you don't go below. Example: a 3-week brand identity project at $4,500 fixed. If the project actually takes 60 hours, that's $75/hour effective. If it takes 100 hours because of scope creep, that's $45/hour — your floor.
+Charge by project deliverable, with an internal hourly floor you don't go below. Example: a 3-week brand identity project at $4,500 fixed. If the project actually takes 60 hours, that's $75/hour effective. If it takes 100 hours because of scope creep, that's $45/hour, your floor.
 
 Value-based pricing is taught endlessly but only works for outcomes you can pre-quantify. "I'll redesign your sales page and increase conversion by 15%" sounds great until the redesign converts at -3%. Most freelance work isn't outcome-measurable in a clean way.
 
 Best for: experienced freelancers with clear case studies and outcome-measurable deliverables.
 
-### Framework 3 — Retainer with capped hours
+### Framework 3: Retainer with capped hours
 
 Bill a monthly fixed fee for up to N hours of work per month. Overflow billed at a higher hourly rate. The client gets predictability. You get base income.
 
@@ -64,7 +64,7 @@ The retainer rate should be roughly 20% less than your standard hourly multiplie
 
 Best for: ongoing maintenance work like marketing ops, content production, dev maintenance; trusted long-term clients.
 
-### Framework 4 — Two-tier menu (the negotiation move)
+### Framework 4: Two-tier menu (the negotiation move)
 
 When proposing, present two options: a "standard" and a "premium." Standard is what you actually want them to buy. Premium is 1.5-2x the price with deliverables they probably don't need.
 

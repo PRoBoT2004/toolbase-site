@@ -1,0 +1,294 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+
+const title = 'JSON Formatter & Validator, Free, In Your Browser | Toolbase';
+const description =
+	'Format, beautify, minify and validate JSON instantly, with clear error messages and line numbers. Optionally sort keys. Runs entirely in your browser; nothing is uploaded. Free, no sign-up.';
+
+const faqs = [
+	{
+		q: 'Is my JSON uploaded to a server?',
+		a: 'No. Formatting and validation run entirely in your browser. Your data is never sent over the internet or stored anywhere, which makes it safe for API responses, config files and anything containing keys or personal data. It also works offline.',
+	},
+	{
+		q: 'What is the difference between format and minify?',
+		a: 'Format (beautify) adds indentation and line breaks so JSON is easy to read. Minify strips all unnecessary whitespace to make the smallest possible payload, which is what you want for production APIs and config. Both produce valid, equivalent JSON.',
+	},
+	{
+		q: 'How does validation help me find errors?',
+		a: 'If the JSON is invalid, the tool shows the parser’s error message and points to the position, line and column, where it failed, so you can jump straight to the trailing comma, missing quote or stray bracket instead of hunting.',
+	},
+	{
+		q: 'What does "sort keys" do?',
+		a: 'It recursively reorders every object’s keys alphabetically. That makes two JSON files easy to compare in a diff, and gives you a consistent, canonical order, useful for config files and snapshots.',
+	},
+	{
+		q: 'Does it handle large JSON files?',
+		a: 'Yes, within your device’s memory, everything runs locally with no upload, so there is no size cap imposed by a server. Very large files (tens of MB) may take a moment to render.',
+	},
+];
+
+const faqJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+});
+const appJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'WebApplication',
+	name: 'JSON Formatter & Validator',
+	applicationCategory: 'DeveloperApplication',
+	operatingSystem: 'Any (web browser)',
+	url: 'https://gettoolbase.org/tools/json-formatter/',
+	offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+	description: description,
+});
+const breadcrumbJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://gettoolbase.org/' },
+		{ '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://gettoolbase.org/tools/' },
+		{ '@type': 'ListItem', position: 3, name: 'JSON Formatter', item: 'https://gettoolbase.org/tools/json-formatter/' },
+	],
+});
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<script type="application/ld+json" is:inline set:html={faqJsonLd} />
+		<script type="application/ld+json" is:inline set:html={appJsonLd} />
+		<script type="application/ld+json" is:inline set:html={breadcrumbJsonLd} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="crumbs" aria-label="Breadcrumb">
+				<a href="/">Home</a> › <a href="/tools/">Tools</a> › <span>JSON Formatter</span>
+			</nav>
+
+			<h1>JSON Formatter &amp; Validator</h1>
+			<p class="lede">
+				Beautify, minify and validate JSON instantly, with clear errors and line numbers.
+				<strong>Everything happens in your browser:</strong> your data is never uploaded. Free, no sign-up.
+			</p>
+
+			<section class="app" aria-label="JSON formatter">
+				<textarea id="text" rows="10" spellcheck="false" placeholder='Paste JSON here, e.g. {"hello":"world","items":[1,2,3]}' aria-label="JSON input"></textarea>
+
+				<div class="controls">
+					<button id="format-btn" type="button" class="primary">Format</button>
+					<button id="minify-btn" type="button" class="ghost">Minify</button>
+					<button id="validate-btn" type="button" class="ghost">Validate</button>
+					<label class="ind">Indent
+						<select id="indent">
+							<option value="2" selected>2 spaces</option>
+							<option value="4">4 spaces</option>
+							<option value="tab">Tab</option>
+						</select>
+					</label>
+					<label class="chk"><input type="checkbox" id="sort" /> Sort keys</label>
+				</div>
+				<div id="msg" class="msg" aria-live="polite"></div>
+
+				<div class="out-head">
+					<span>Output</span>
+					<span class="out-actions">
+						<button id="copy-btn" type="button" class="ghost sm">Copy</button>
+						<button id="download-btn" type="button" class="ghost sm">Download .json</button>
+						<button id="clear-btn" type="button" class="ghost sm">Clear</button>
+					</span>
+				</div>
+				<textarea id="out" rows="10" readonly spellcheck="false" aria-label="Formatted output" placeholder="Formatted JSON appears here…"></textarea>
+				<p class="privacy">🔒 100% private, processed locally in your browser. Nothing is uploaded.</p>
+			</section>
+
+			<div class="prose">
+				<h2>How to format JSON</h2>
+				<ol>
+					<li><strong>Paste your JSON</strong> into the top box.</li>
+					<li><strong>Click Format</strong> to indent it, <strong>Minify</strong> to compress it, or <strong>Validate</strong> to just check it.</li>
+					<li><strong>Fix errors fast</strong>, invalid JSON shows the exact line and column that broke.</li>
+					<li><strong>Copy or download</strong> the result. Nothing leaves your device.</li>
+				</ol>
+
+				<h2>Common JSON errors this catches</h2>
+				<ul>
+					<li><strong>Trailing commas</strong>, valid in JavaScript, invalid in JSON.</li>
+					<li><strong>Single quotes</strong>, JSON requires double quotes around keys and strings.</li>
+					<li><strong>Unquoted keys</strong>, every key must be a quoted string.</li>
+					<li><strong>Missing or extra brackets/braces</strong>, the position pointer takes you straight there.</li>
+				</ul>
+
+				<h2>Frequently asked questions</h2>
+				{
+					faqs.map((f) => (
+						<details class="faq">
+							<summary>{f.q}</summary>
+							<p>{f.a}</p>
+						</details>
+					))
+				}
+			</div>
+
+			<aside class="recommends">
+				<h2>More text &amp; dev tools</h2>
+				<ul>
+					<li><a href="/tools/word-counter/">Word Counter</a>, words, characters, reading time.</li>
+					<li><a href="/tools/case-converter/">Case Converter</a>, UPPER, lower, camelCase and more.</li>
+				</ul>
+			</aside>
+
+			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
+		</main>
+		<Footer />
+
+		<script>
+			const $ = (id) => document.getElementById(id);
+			const ta = $('text');
+			const out = $('out');
+			const msg = $('msg');
+
+			function indentValue() {
+				const v = $('indent').value;
+				return v === 'tab' ? '\t' : parseInt(v, 10);
+			}
+			function sortKeys(v) {
+				if (Array.isArray(v)) return v.map(sortKeys);
+				if (v && typeof v === 'object') {
+					const o = {};
+					for (const k of Object.keys(v).sort()) o[k] = sortKeys(v[k]);
+					return o;
+				}
+				return v;
+			}
+			function lineColFromPos(text, pos) {
+				const upto = text.slice(0, pos);
+				const line = (upto.match(/\n/g) || []).length + 1;
+				const col = pos - upto.lastIndexOf('\n');
+				return { line, col };
+			}
+			function showError(err) {
+				let m = err && err.message ? err.message : 'Invalid JSON';
+				const pm = m.match(/position (\d+)/);
+				if (pm) {
+					const { line, col } = lineColFromPos(ta.value, parseInt(pm[1], 10));
+					m += ' (line ' + line + ', column ' + col + ')';
+				}
+				msg.textContent = '⚠ ' + m;
+				msg.className = 'msg err';
+			}
+			function showOk(m) {
+				msg.textContent = '✓ ' + m;
+				msg.className = 'msg ok';
+			}
+
+			function parse() {
+				const raw = ta.value.trim();
+				if (!raw) {
+					msg.textContent = '';
+					msg.className = 'msg';
+					out.value = '';
+					return null;
+				}
+				let data = JSON.parse(raw); // throws on invalid
+				if ($('sort').checked) data = sortKeys(data);
+				return data;
+			}
+
+			function run(mode) {
+				try {
+					const data = parse();
+					if (data === null && ta.value.trim() === '') return;
+					if (mode === 'validate') {
+						const count = countNodes(data);
+						showOk('Valid JSON · ' + count + ' value' + (count === 1 ? '' : 's'));
+						out.value = JSON.stringify(data, null, indentValue());
+						return;
+					}
+					out.value = mode === 'minify' ? JSON.stringify(data) : JSON.stringify(data, null, indentValue());
+					showOk(mode === 'minify' ? 'Minified' : 'Formatted');
+				} catch (err) {
+					out.value = '';
+					showError(err);
+				}
+			}
+
+			function countNodes(v) {
+				if (Array.isArray(v)) return 1 + v.reduce((s, x) => s + countNodes(x), 0);
+				if (v && typeof v === 'object') return 1 + Object.values(v).reduce((s, x) => s + countNodes(x), 0);
+				return 1;
+			}
+
+			$('format-btn').addEventListener('click', () => run('format'));
+			$('minify-btn').addEventListener('click', () => run('minify'));
+			$('validate-btn').addEventListener('click', () => run('validate'));
+			$('copy-btn').addEventListener('click', async () => {
+				try {
+					await navigator.clipboard.writeText(out.value);
+					showOk('Copied');
+				} catch (e) {
+					showError({ message: 'Copy failed, select and copy manually' });
+				}
+			});
+			$('download-btn').addEventListener('click', () => {
+				if (!out.value) return;
+				const blob = new Blob([out.value], { type: 'application/json' });
+				const url = URL.createObjectURL(blob);
+				const a = document.createElement('a');
+				a.href = url;
+				a.download = 'formatted.json';
+				document.body.appendChild(a);
+				a.click();
+				a.remove();
+				setTimeout(() => URL.revokeObjectURL(url), 4000);
+			});
+			$('clear-btn').addEventListener('click', () => {
+				ta.value = '';
+				out.value = '';
+				msg.textContent = '';
+				msg.className = 'msg';
+				ta.focus();
+			});
+		</script>
+
+		<style>
+			.crumbs { font-size: 0.8em; color: rgb(var(--gray)); margin-bottom: 1em; }
+			.crumbs a { color: rgb(var(--gray)); }
+			.lede { font-size: 1.15em; color: rgb(var(--gray-dark)); }
+			.app { margin: 2em 0 3em; }
+			textarea {
+				width: 100%; box-sizing: border-box; border: 1px solid rgb(var(--gray-light)); border-radius: 10px;
+				padding: 0.9em; font-size: 0.92em; line-height: 1.55; resize: vertical;
+				font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+			}
+			textarea:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+			textarea[readonly] { background: rgba(var(--gray-light), 30%); }
+			.controls { display: flex; align-items: center; gap: 0.6em; margin: 0.8em 0 0.4em; flex-wrap: wrap; }
+			button.primary { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 0.6em 1.3em; font-size: 0.95em; font-weight: 700; cursor: pointer; }
+			button.ghost { background: none; border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.55em 1em; cursor: pointer; color: rgb(var(--gray-dark)); font-size: 0.9em; }
+			button.ghost:hover { border-color: var(--accent); color: var(--accent); }
+			button.ghost.sm { padding: 0.35em 0.7em; font-size: 0.82em; }
+			.ind, .chk { font-size: 0.85em; font-weight: 700; display: flex; align-items: center; gap: 0.35em; }
+			.ind select { padding: 0.4em 0.5em; border: 1px solid rgb(var(--gray-light)); border-radius: 6px; font-weight: 400; }
+			.chk { font-weight: 400; }
+			.msg { min-height: 1.4em; font-size: 0.85em; font-weight: 700; margin-bottom: 0.5em; }
+			.msg.ok { color: #0d7a3f; }
+			.msg.err { color: #9a2515; }
+			.out-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em; font-weight: 700; font-size: 0.85em; }
+			.out-actions { display: flex; gap: 0.4em; }
+			.privacy { margin: 1em 0 0; font-size: 0.82em; color: rgb(var(--gray-dark)); }
+			.prose h2 { margin-top: 1.5em; }
+			.prose .faq { border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.75em 1em; margin-bottom: 0.6em; }
+			.prose .faq summary { cursor: pointer; font-weight: 700; font-size: 0.95em; }
+			.prose .faq p { margin: 0.75em 0 0; font-size: 0.92em; }
+			.recommends { background: rgba(var(--gray-light), 40%); border-radius: 12px; padding: 1.25em 1.5em; margin: 2.5em 0; }
+			.recommends h2 { margin-top: 0; font-size: 1.6em; }
+			.back { margin-top: 2em; }
+		</style>
+	</body>
+</html>

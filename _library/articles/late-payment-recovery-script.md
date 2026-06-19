@@ -25,7 +25,7 @@ The sequence runs from day 1 of lateness to day 30. Each touch has a job. Skippi
 
 Sent the morning after the due date. Tone is neutral, not apologetic. Resend the invoice as an attachment, not a link, because finance teams forward attachments and ignore links.
 
-> Subject: Invoice #042 due yesterday — quick resend
+> Subject: Invoice #042 due yesterday, quick resend
 >
 > Hi [Name], invoice #042 (₹85,000) was due [date]. Attaching it again in case the original got buried. Could you confirm when it'll be processed? Happy to share a different format if your AP team needs one.
 
@@ -35,7 +35,7 @@ Note what this does. It states the fact (overdue), removes a possible excuse (lo
 
 If touch 1 got a thumbs-up but no payment, or got ignored, this one goes to a different person. The original contact stays cc'd. Add the founder, the operations lead, or the AP email if known.
 
-> Subject: Invoice #042 — payment status
+> Subject: Invoice #042, payment status
 >
 > Hi [Name], following up on invoice #042 (₹85,000), originally due [date]. [Original contact] confirmed receipt on [date] but the payment hasn't cleared. Could someone confirm the processing date by end of day Thursday? Looping in [Name 2] for visibility.
 
@@ -45,7 +45,7 @@ Cc'ing a second name changes the math for the original contact. They now have an
 
 This is the touch most solopreneurs refuse to send. It introduces the first real consequence: pausing work or pausing access. The wording matters.
 
-> Subject: Invoice #042 — pausing work Monday
+> Subject: Invoice #042, pausing work Monday
 >
 > Hi [Name], invoice #042 is now 10 days overdue. To stay aligned with our agreement, I'll be pausing all active work on [project] from Monday [date] until payment clears. This includes [specific deliverables in flight]. Let me know if there's a blocker on your end I can help unblock.
 
@@ -53,9 +53,9 @@ Two things are happening. The freelancer is signaling that the relationship has 
 
 ### Touch 4: Day +15 (the late fee or interest line)
 
-If the contract or invoice T&Cs include a late fee (and they should — 1.5% per month is standard), this touch activates it. If they don't, this touch references the GST/MSME 45-day rule for Indian clients, which is real legal leverage.
+If the contract or invoice T&Cs include a late fee (and they should, 1.5% per month is standard), this touch activates it. If they don't, this touch references the GST/MSME 45-day rule for Indian clients, which is real legal leverage.
 
-> Subject: Invoice #042 — late fee applied + revised total
+> Subject: Invoice #042, late fee applied + revised total
 >
 > Hi [Name], per the terms on invoice #042, a late fee of ₹1,275 (1.5% of ₹85,000) has been added. Revised total: ₹86,275. New invoice attached. If [registered as MSME], please also note that under the MSMED Act, payments past 45 days carry compound interest at 3x the RBI bank rate. Happy to discuss a payment plan if cash flow is the issue.
 
@@ -65,7 +65,7 @@ The "happy to discuss a payment plan" line is critical. It separates can't-pay c
 
 Short, formal, dated. This is the message that goes to legal counsel if it gets ignored.
 
-> Subject: Final notice — Invoice #042
+> Subject: Final notice, Invoice #042
 >
 > Hi [Name], this is a final notice for invoice #042 (revised total ₹86,275), now 25 days overdue. If payment is not received by [date, 7 days out], the matter will be escalated to [legal counsel / MSME Samadhaan portal / collection agency]. Please treat this as urgent.
 

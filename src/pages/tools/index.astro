@@ -5,74 +5,147 @@ import Header from '../../components/Header.astro';
 
 const title = 'Free Tools for Solopreneurs & Freelancers | Toolbase';
 const description =
-	'Free, no-sign-up tools for one-person businesses — calculators and decision aids that run instantly in your browser. New tool every week.';
+	'Free, no-sign-up tools for one-person businesses, calculators and decision aids that run instantly in your browser. New tool every week.';
 
-const tools = [
+const categories = [
 	{
-		href: '/tools/freelance-rate-calculator/',
-		name: 'Freelance Hourly Rate Calculator',
-		blurb:
-			'Work out exactly what to charge per hour — after expenses, taxes, time off and the hours you can actually bill.',
-		tag: 'Pricing',
-		eta: '2 min',
+		name: 'Freelance & money calculators',
+		intro: 'Price your work and make the big money decisions with confidence.',
+		tools: [
+			{
+				href: '/tools/freelance-rate-calculator/',
+				name: 'Freelance Hourly Rate Calculator',
+				blurb:
+					'Work out exactly what to charge per hour, after expenses, taxes, time off and the hours you can actually bill.',
+				tag: 'Pricing',
+				eta: '2 min',
+			},
+			{
+				href: '/tools/contract-vs-salary-calculator/',
+				name: 'Contract vs Salary Calculator',
+				blurb:
+					'Compare a contract or freelance rate against a full-time salary net of tax, benefits and unpaid time off, with a clear verdict and your break-even rate.',
+				tag: 'Decision',
+				eta: '3 min',
+			},
+			{
+				href: '/tools/project-quote-calculator/',
+				name: 'Freelance Project Quote Calculator',
+				blurb:
+					"Turn your hourly rate into a fixed project price with scope buffer, costs and margin, then test a client's budget and see the real hourly rate it pays.",
+				tag: 'Pricing',
+				eta: '3 min',
+			},
+			{
+				href: '/tools/rate-increase-calculator/',
+				name: 'Rate Increase Calculator',
+				blurb:
+					'Thinking of raising your rates? See how many clients you can afford to lose and still earn more than you do now, with a full scenario table.',
+				tag: 'Pricing',
+				eta: '2 min',
+			},
+		],
 	},
 	{
-		href: '/tools/contract-vs-salary-calculator/',
-		name: 'Contract vs Salary Calculator',
-		blurb:
-			'Compare a contract or freelance rate against a full-time salary net of tax, benefits and unpaid time off — with a clear verdict and your break-even rate.',
-		tag: 'Decision',
-		eta: '3 min',
+		name: 'PDF tools',
+		intro: 'Merge, split and fix PDFs, your files never leave your browser.',
+		tools: [
+			{
+				href: '/tools/merge-pdf/',
+				name: 'Merge PDF',
+				blurb:
+					'Combine PDFs and images into one file, reorder them and extract page ranges, 100% in your browser. Your files are never uploaded.',
+				tag: 'PDF',
+				eta: '1 min',
+			},
+			{
+				href: '/tools/split-pdf/',
+				name: 'Split PDF',
+				blurb:
+					'Split one PDF into multiple files, by custom ranges, every N pages, or one file per page. Downloads as a zip; 100% in your browser.',
+				tag: 'PDF',
+				eta: '1 min',
+			},
+			{
+				href: '/tools/jpg-to-pdf/',
+				name: 'JPG to PDF',
+				blurb:
+					'Convert and combine JPG/PNG images into one PDF, reorder them and pick fit-to-image, A4 or Letter pages. 100% in your browser.',
+				tag: 'PDF',
+				eta: '1 min',
+			},
+			{
+				href: '/tools/rotate-pdf/',
+				name: 'Rotate PDF',
+				blurb:
+					'Rotate PDF pages 90°, 180° or 270°, all pages or just specific ones, and download the fixed file. 100% in your browser.',
+				tag: 'PDF',
+				eta: '1 min',
+			},
+		],
 	},
 	{
-		href: '/tools/project-quote-calculator/',
-		name: 'Freelance Project Quote Calculator',
-		blurb:
-			"Turn your hourly rate into a fixed project price with scope buffer, costs and margin — then test a client's budget and see the real hourly rate it pays.",
-		tag: 'Pricing',
-		eta: '3 min',
+		name: 'Image tools',
+		intro: 'Compress, resize and convert images locally, nothing uploaded.',
+		tools: [
+			{
+				href: '/tools/compress-image/',
+				name: 'Compress Image',
+				blurb:
+					'Shrink JPG, PNG and WebP by quality or to a target size like "under 200 KB", resize and convert too. 100% in your browser.',
+				tag: 'Image',
+				eta: '1 min',
+			},
+			{
+				href: '/tools/resize-image/',
+				name: 'Resize Image',
+				blurb:
+					'Resize JPG, PNG and WebP by percentage or to an exact width/height, aspect kept. Batch resize and download as a zip. 100% in your browser.',
+				tag: 'Image',
+				eta: '1 min',
+			},
+			{
+				href: '/tools/convert-image/',
+				name: 'Convert Image',
+				blurb:
+					'Convert between PNG, JPG and WebP, including PNG to JPG and WebP to JPG. Batch convert and download as a zip. 100% in your browser.',
+				tag: 'Image',
+				eta: '1 min',
+			},
+		],
 	},
 	{
-		href: '/tools/rate-increase-calculator/',
-		name: 'Rate Increase Calculator',
-		blurb:
-			'Thinking of raising your rates? See how many clients you can afford to lose and still earn more than you do now — with a full scenario table.',
-		tag: 'Pricing',
-		eta: '2 min',
-	},
-	{
-		href: '/tools/merge-pdf/',
-		name: 'Merge PDF',
-		blurb:
-			'Combine PDFs and images into one file, reorder them and extract page ranges — 100% in your browser. Your files are never uploaded.',
-		tag: 'PDF',
-		eta: '1 min',
-	},
-	{
-		href: '/tools/split-pdf/',
-		name: 'Split PDF',
-		blurb:
-			'Split one PDF into multiple files — by custom ranges, every N pages, or one file per page. Downloads as a zip; 100% in your browser.',
-		tag: 'PDF',
-		eta: '1 min',
-	},
-	{
-		href: '/tools/jpg-to-pdf/',
-		name: 'JPG to PDF',
-		blurb:
-			'Convert and combine JPG/PNG images into one PDF — reorder them and pick fit-to-image, A4 or Letter pages. 100% in your browser.',
-		tag: 'PDF',
-		eta: '1 min',
-	},
-	{
-		href: '/tools/rotate-pdf/',
-		name: 'Rotate PDF',
-		blurb:
-			'Rotate PDF pages 90°, 180° or 270° — all pages or just specific ones — and download the fixed file. 100% in your browser.',
-		tag: 'PDF',
-		eta: '1 min',
+		name: 'Text & developer tools',
+		intro: 'Count, transform and clean up text and code in a click.',
+		tools: [
+			{
+				href: '/tools/word-counter/',
+				name: 'Word Counter',
+				blurb:
+					'Count words, characters, sentences and paragraphs as you type, plus reading and speaking time. 100% in your browser.',
+				tag: 'Text',
+				eta: '1 min',
+			},
+			{
+				href: '/tools/case-converter/',
+				name: 'Case Converter',
+				blurb:
+					'Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case and more. 100% in your browser.',
+				tag: 'Text',
+				eta: '1 min',
+			},
+			{
+				href: '/tools/json-formatter/',
+				name: 'JSON Formatter & Validator',
+				blurb:
+					'Format, minify and validate JSON with clear errors and line numbers, plus optional key sorting. 100% in your browser.',
+				tag: 'Dev',
+				eta: '1 min',
+			},
+		],
 	},
 ];
+const toolCount = categories.reduce((n, c) => n + c.tools.length, 0);
 ---
 
 <!doctype html>
@@ -87,29 +160,37 @@ const tools = [
 				<span class="eyebrow">No sign-up · Runs in your browser</span>
 				<h1>Free tools for solo businesses</h1>
 				<p class="lede">
-					Small, fast tools for freelancers and solopreneurs. No sign-up, no upload, nothing
-					sent to a server — every calculator runs entirely in your browser. A new one ships
+					{toolCount} small, fast tools for freelancers and solopreneurs. No sign-up, no upload,
+					nothing sent to a server, every tool runs entirely in your browser. New ones ship
 					each week.
 				</p>
 			</header>
 
-			<ul class="tool-grid">
-				{
-					tools.map((t) => (
-						<li>
-							<a href={t.href}>
-								<div class="tool-head">
-									<span class="tag">{t.tag}</span>
-									<span class="eta">{t.eta}</span>
-								</div>
-								<h2>{t.name}</h2>
-								<p>{t.blurb}</p>
-								<span class="open">Open tool →</span>
-							</a>
-						</li>
-					))
-				}
-			</ul>
+			{
+				categories.map((cat) => (
+					<section class="cat">
+						<div class="cat-head">
+							<h2>{cat.name}</h2>
+							<p>{cat.intro}</p>
+						</div>
+						<ul class="tool-grid">
+							{cat.tools.map((t) => (
+								<li>
+									<a href={t.href}>
+										<div class="tool-head">
+											<span class="tag">{t.tag}</span>
+											<span class="eta">{t.eta}</span>
+										</div>
+										<h3>{t.name}</h3>
+										<p>{t.blurb}</p>
+										<span class="open">Open tool →</span>
+									</a>
+								</li>
+							))}
+						</ul>
+					</section>
+				))
+			}
 
 			<p class="more">More tools landing weekly. Got a request? It probably belongs here.</p>
 		</main>
@@ -144,6 +225,17 @@ const tools = [
 				color: rgb(var(--gray-dark));
 				margin: 0;
 				max-width: 640px;
+			}
+			.cat { margin-bottom: 2.5em; }
+			.cat-head { margin-bottom: 1.1em; }
+			.cat-head h2 {
+				font-size: 1.5em;
+				margin: 0 0 0.15em;
+			}
+			.cat-head p {
+				margin: 0;
+				font-size: 0.95em;
+				color: rgb(var(--gray));
 			}
 			.tool-grid {
 				list-style: none;
@@ -192,7 +284,7 @@ const tools = [
 				color: rgb(var(--gray));
 				font-weight: 600;
 			}
-			.tool-grid h2 {
+			.tool-grid h3 {
 				font-size: 1.3em;
 				margin: 0 0 0.5em;
 				line-height: 1.25;

@@ -3,30 +3,30 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 
-const title = 'Freelance Rate Increase Calculator — How Many Clients Can You Afford to Lose? | Toolbase';
+const title = 'Freelance Rate Increase Calculator, How Many Clients Can You Afford to Lose? | Toolbase';
 const description =
 	'Raising your rates? See exactly how many clients you can lose and still earn more than you do now. Models your new income, your break-even churn, and the hours you’d free up. Free, instant, no sign-up.';
 
 const faqs = [
 	{
 		q: 'How many clients can I afford to lose when I raise my rates?',
-		a: 'More than you think. If you raise rates by 25%, you can lose up to 20% of your clients and still earn exactly what you earn today — and anything less than that means you earn more while working fewer hours. The exact break-even is increase ÷ (1 + increase). This calculator works out the client count for you.',
+		a: 'More than you think. If you raise rates by 25%, you can lose up to 20% of your clients and still earn exactly what you earn today, and anything less than that means you earn more while working fewer hours. The exact break-even is increase ÷ (1 + increase). This calculator works out the client count for you.',
 	},
 	{
 		q: 'What is a good amount to raise freelance rates by?',
-		a: 'A 10–20% rise is rarely questioned by good clients. If almost every client and prospect says yes to your current rate, you are too cheap — keep raising until roughly 20–30% start saying no. Losing some price-sensitive clients is the goal of a rate increase, not a side effect.',
+		a: 'A 10–20% rise is rarely questioned by good clients. If almost every client and prospect says yes to your current rate, you are too cheap, keep raising until roughly 20–30% start saying no. Losing some price-sensitive clients is the goal of a rate increase, not a side effect.',
 	},
 	{
 		q: 'Won’t I lose income if clients leave?',
-		a: 'Usually the opposite. Because each remaining client now pays more, you can lose a meaningful share of them and still match your old income — then every client you keep beyond that break-even point is pure upside, earned in fewer hours. The scenario table on this page shows your income at each level of client loss.',
+		a: 'Usually the opposite. Because each remaining client now pays more, you can lose a meaningful share of them and still match your old income, then every client you keep beyond that break-even point is pure upside, earned in fewer hours. The scenario table on this page shows your income at each level of client loss.',
 	},
 	{
 		q: 'Should I raise rates on existing clients or only new ones?',
-		a: 'Both, on different timelines. New clients get the new rate immediately. Existing clients get notice — typically 30–60 days — with a short, confident message. Use the break-even number here to go into that conversation knowing you are protected even if a couple say no.',
+		a: 'Both, on different timelines. New clients get the new rate immediately. Existing clients get notice, typically 30–60 days, with a short, confident message. Use the break-even number here to go into that conversation knowing you are protected even if a couple say no.',
 	},
 	{
 		q: 'How do I tell clients about a price increase?',
-		a: 'Keep it brief and matter-of-fact: state the new rate, the date it takes effect, and thank them — no lengthy justification or apology. Confidence does most of the work. Knowing your break-even churn (from this tool) is what lets you send that message without flinching.',
+		a: 'Keep it brief and matter-of-fact: state the new rate, the date it takes effect, and thank them, no lengthy justification or apology. Confidence does most of the work. Knowing your break-even churn (from this tool) is what lets you send that message without flinching.',
 	},
 ];
 
@@ -86,7 +86,7 @@ const breadcrumbJsonLd = JSON.stringify({
 			<p class="lede">
 				The reason freelancers stay underpaid is the fear of losing clients. This kills it with a
 				number: raise your rate, and see exactly <em>how many clients you can afford to lose</em> and
-				still earn more than you do today — plus the hours you'd win back. Runs entirely in your browser.
+				still earn more than you do today, plus the hours you'd win back. Runs entirely in your browser.
 			</p>
 
 			<section class="calc" aria-label="Rate increase calculator">
@@ -95,12 +95,12 @@ const breadcrumbJsonLd = JSON.stringify({
 						<div class="field">
 							<label for="currency">Currency</label>
 							<select id="currency">
-								<option value="USD">$ USD — US Dollar</option>
-								<option value="EUR">€ EUR — Euro</option>
-								<option value="GBP">£ GBP — British Pound</option>
-								<option value="INR">₹ INR — Indian Rupee</option>
-								<option value="CAD">$ CAD — Canadian Dollar</option>
-								<option value="AUD">$ AUD — Australian Dollar</option>
+								<option value="USD">$ USD, US Dollar</option>
+								<option value="EUR">€ EUR, Euro</option>
+								<option value="GBP">£ GBP, British Pound</option>
+								<option value="INR">₹ INR, Indian Rupee</option>
+								<option value="CAD">$ CAD, Canadian Dollar</option>
+								<option value="AUD">$ AUD, Australian Dollar</option>
 							</select>
 						</div>
 						<div class="field">
@@ -126,25 +126,25 @@ const breadcrumbJsonLd = JSON.stringify({
 					<div class="result">
 						<div class="headline">
 							<span class="label">You can lose up to</span>
-							<span class="rate" id="out-canlose">—</span>
+							<span class="rate" id="out-canlose">,</span>
 							<span class="per" id="out-canlose-sub">clients and still earn the same</span>
 						</div>
 						<div class="secondary">
 							<div>
 								<span class="s-label">New income if all stay</span>
-								<span class="s-val" id="out-allstay">—</span>
+								<span class="s-val" id="out-allstay">,</span>
 							</div>
 							<div>
 								<span class="s-label">Revenue you can lose</span>
-								<span class="s-val" id="out-revloss">—</span>
+								<span class="s-val" id="out-revloss">,</span>
 							</div>
 							<div id="hours-row" hidden>
 								<span class="s-label">Hours freed at break-even</span>
-								<span class="s-val" id="out-hoursfreed">—</span>
+								<span class="s-val" id="out-hoursfreed">,</span>
 							</div>
 						</div>
 						<div class="verdict" id="verdict">
-							<span class="v-line" id="v-line">—</span>
+							<span class="v-line" id="v-line">,</span>
 						</div>
 					</div>
 				</div>
@@ -165,7 +165,7 @@ const breadcrumbJsonLd = JSON.stringify({
 				</div>
 				<p class="disclaimer">
 					Assumes your clients are roughly equal in value and the new rate applies to all of them. A
-					planning estimate to size the decision — your real client mix will vary.
+					planning estimate to size the decision, your real client mix will vary.
 				</p>
 				<p class="cross">Related: <a href="/tools/freelance-rate-calculator/">Freelance rate calculator</a> · <a href="/tools/project-quote-calculator/">Project quote calculator</a></p>
 			</section>
@@ -174,21 +174,21 @@ const breadcrumbJsonLd = JSON.stringify({
 				<h2>The math that makes raising rates safe</h2>
 				<p>
 					Every client you keep after a rate rise pays more, so your income holds up even as some leave.
-					The break-even point — the share of clients you can lose before you earn less than today — is
+					The break-even point, the share of clients you can lose before you earn less than today, is
 					simply:
 				</p>
 				<blockquote>break-even loss = increase ÷ (1 + increase)</blockquote>
 				<p>
 					A 25% rise means you break even after losing 20% of your clients. A 50% rise means you can
 					lose a third of them and still match today's income. Below that line you're earning <em>more
-					for less work</em>. That's the whole case for raising rates, in one fraction — and it's why
+					for less work</em>. That's the whole case for raising rates, in one fraction, and it's why
 					the fear of "losing clients" is almost always overblown.
 				</p>
 
 				<h2>When to raise your freelance rates</h2>
 				<p>
 					Raise when any of these are true: your skills or results have visibly improved; you're booked
-					solid and turning work away; your costs have gone up; or — the big one — almost nobody ever
+					solid and turning work away; your costs have gone up; or, the big one, almost nobody ever
 					pushes back on your price. If every prospect says yes, you are leaving money on the table.
 					The goal is to nudge your rate up until roughly 20–30% of prospects decline. The ones who
 					stay value you correctly; the ones who leave were the price-sensitive clients eating your
@@ -210,17 +210,17 @@ const breadcrumbJsonLd = JSON.stringify({
 				MONETIZATION: outbound links are affiliate-ready.
 				Swap each href for the tracked affiliate URL on approval and change
 				rel to "sponsored noopener". Until then: plain rel="nofollow noopener"
-				links to the real homepages — nothing fake is shipped.
+				links to the real homepages, nothing fake is shipped.
 			-->
 			<aside class="recommends">
 				<h2>Make the new rate stick</h2>
 				<p>What helps when you roll out higher prices:</p>
 				<ul>
-					<li><a href="https://www.bonsai.com/" rel="nofollow noopener" target="_blank">Bonsai</a> — proposals &amp; contracts that present a higher rate professionally.</li>
-					<li><a href="https://www.freshbooks.com/" rel="nofollow noopener" target="_blank">FreshBooks</a> — invoice at the new rate and track who's on which plan.</li>
-					<li><a href="https://toggl.com/track/" rel="nofollow noopener" target="_blank">Toggl Track</a> — prove the hours you save once the low-value clients drop off.</li>
+					<li><a href="https://www.bonsai.com/" rel="nofollow noopener" target="_blank">Bonsai</a>, proposals &amp; contracts that present a higher rate professionally.</li>
+					<li><a href="https://www.freshbooks.com/" rel="nofollow noopener" target="_blank">FreshBooks</a>, invoice at the new rate and track who's on which plan.</li>
+					<li><a href="https://toggl.com/track/" rel="nofollow noopener" target="_blank">Toggl Track</a>, prove the hours you save once the low-value clients drop off.</li>
 				</ul>
-				<p class="tiny">We only list tools we'd use ourselves. Some links may become affiliate links — it never changes what we recommend or costs you anything.</p>
+				<p class="tiny">We only list tools we'd use ourselves. Some links may become affiliate links, it never changes what we recommend or costs you anything.</p>
 			</aside>
 
 			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
@@ -267,11 +267,11 @@ const breadcrumbJsonLd = JSON.stringify({
 				const canLose = Math.max(0, clients - keepNeeded);
 				const revLossFrac = inc > 0 ? inc / (1 + inc) : 0;
 
-				$('out-canlose').textContent = valid ? canLose.toString() : '—';
+				$('out-canlose').textContent = valid ? canLose.toString() : ',';
 				$('out-canlose-sub').textContent =
 					canLose === 1 ? 'client and still earn the same' : 'clients and still earn the same';
-				$('out-allstay').textContent = valid ? money(allStay, currency) : '—';
-				$('out-revloss').textContent = valid ? (revLossFrac * 100).toFixed(0) + '%' : '—';
+				$('out-allstay').textContent = valid ? money(allStay, currency) : ',';
+				$('out-revloss').textContent = valid ? (revLossFrac * 100).toFixed(0) + '%' : ',';
 
 				const hoursRow = $('hours-row');
 				if (has('hours') && valid) {
@@ -323,7 +323,7 @@ const breadcrumbJsonLd = JSON.stringify({
 						deltaStr +
 						'</td></tr>';
 				}
-				$('scenario-body').innerHTML = valid ? rows : '<tr><td colspan="4">—</td></tr>';
+				$('scenario-body').innerHTML = valid ? rows : '<tr><td colspan="4">,</td></tr>';
 
 				save();
 			}

@@ -3,14 +3,14 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 
-const title = 'Freelance Hourly Rate Calculator — Free, No Sign-Up | Toolbase';
+const title = 'Freelance Hourly Rate Calculator, Free, No Sign-Up | Toolbase';
 const description =
-	'Work out exactly what to charge per hour as a freelancer. Factors in your target take-home income, business expenses, taxes, billable hours and time off. Free, instant, runs entirely in your browser — no sign-up.';
+	'Work out exactly what to charge per hour as a freelancer. Factors in your target take-home income, business expenses, taxes, billable hours and time off. Free, instant, runs entirely in your browser, no sign-up.';
 
 const faqs = [
 	{
 		q: 'How much should I charge per hour as a freelancer?',
-		a: 'Start from the income you actually want to take home, add your annual business expenses, gross that up for the taxes you set aside, add a small buffer, then divide by the number of hours you can realistically bill in a year (not the hours you work — the hours a client pays for). For most full-time freelancers that lands meaningfully higher than their old salary divided by 2,080.',
+		a: 'Start from the income you actually want to take home, add your annual business expenses, gross that up for the taxes you set aside, add a small buffer, then divide by the number of hours you can realistically bill in a year (not the hours you work, the hours a client pays for). For most full-time freelancers that lands meaningfully higher than their old salary divided by 2,080.',
 	},
 	{
 		q: 'Why is my freelance rate higher than my old salary worked out to?',
@@ -18,15 +18,15 @@ const faqs = [
 	},
 	{
 		q: 'How many hours can a freelancer actually bill per week?',
-		a: 'Almost nobody bills 40. Once you remove sales, admin, invoicing, learning and gaps between projects, 20 to 30 billable hours a week is realistic for an established full-time freelancer. The calculator defaults to 25 for this reason — using 40 will quietly under-price you.',
+		a: 'Almost nobody bills 40. Once you remove sales, admin, invoicing, learning and gaps between projects, 20 to 30 billable hours a week is realistic for an established full-time freelancer. The calculator defaults to 25 for this reason, using 40 will quietly under-price you.',
 	},
 	{
 		q: 'Should I charge hourly or per project?',
-		a: 'Use the hourly number from this calculator as your internal floor — the minimum your time is worth. Then quote clients a fixed project price based on your estimated hours times that floor (plus margin). You capture the upside when you work efficiently, and the client gets price certainty.',
+		a: 'Use the hourly number from this calculator as your internal floor, the minimum your time is worth. Then quote clients a fixed project price based on your estimated hours times that floor (plus margin). You capture the upside when you work efficiently, and the client gets price certainty.',
 	},
 	{
 		q: 'Do I need to include taxes in my rate?',
-		a: 'Yes. The money a client pays you is not yours — a chunk goes to income tax and self-employment / national insurance. Enter the percentage you set aside and the calculator grosses your rate up so that what is left after tax still covers your target income.',
+		a: 'Yes. The money a client pays you is not yours, a chunk goes to income tax and self-employment / national insurance. Enter the percentage you set aside and the calculator grosses your rate up so that what is left after tax still covers your target income.',
 	},
 ];
 
@@ -85,7 +85,7 @@ const breadcrumbJsonLd = JSON.stringify({
 			<h1>Freelance Hourly Rate Calculator</h1>
 			<p class="lede">
 				Stop guessing what to charge. Enter the income you actually want to take home and this
-				calculator works out the hourly rate you need — after expenses, taxes and the fact that you
+				calculator works out the hourly rate you need, after expenses, taxes and the fact that you
 				can't bill every hour you work. Runs entirely in your browser. Nothing is sent anywhere.
 			</p>
 
@@ -95,12 +95,12 @@ const breadcrumbJsonLd = JSON.stringify({
 						<div class="field">
 							<label for="currency">Currency</label>
 							<select id="currency">
-								<option value="USD">$ USD — US Dollar</option>
-								<option value="EUR">€ EUR — Euro</option>
-								<option value="GBP">£ GBP — British Pound</option>
-								<option value="INR">₹ INR — Indian Rupee</option>
-								<option value="CAD">$ CAD — Canadian Dollar</option>
-								<option value="AUD">$ AUD — Australian Dollar</option>
+								<option value="USD">$ USD, US Dollar</option>
+								<option value="EUR">€ EUR, Euro</option>
+								<option value="GBP">£ GBP, British Pound</option>
+								<option value="INR">₹ INR, Indian Rupee</option>
+								<option value="CAD">$ CAD, Canadian Dollar</option>
+								<option value="AUD">$ AUD, Australian Dollar</option>
 							</select>
 						</div>
 
@@ -125,7 +125,7 @@ const breadcrumbJsonLd = JSON.stringify({
 						<div class="field">
 							<label for="hours">Billable hours per week</label>
 							<input id="hours" type="number" min="1" max="80" step="1" inputmode="numeric" value="25" />
-							<small>Hours a client actually pays for — not hours worked.</small>
+							<small>Hours a client actually pays for, not hours worked.</small>
 						</div>
 
 						<div class="field">
@@ -146,21 +146,21 @@ const breadcrumbJsonLd = JSON.stringify({
 					<div class="result" aria-live="polite">
 						<div class="headline">
 							<span class="label">You should charge</span>
-							<span class="rate" id="out-hourly">—</span>
+							<span class="rate" id="out-hourly">,</span>
 							<span class="per">per hour</span>
 						</div>
 						<div class="secondary">
 							<div>
 								<span class="s-label">Day rate (8 billable hrs)</span>
-								<span class="s-val" id="out-day">—</span>
+								<span class="s-val" id="out-day">,</span>
 							</div>
 							<div>
 								<span class="s-label">Annual revenue target</span>
-								<span class="s-val" id="out-revenue">—</span>
+								<span class="s-val" id="out-revenue">,</span>
 							</div>
 							<div>
 								<span class="s-label">Billable hours / year</span>
-								<span class="s-val" id="out-billable">—</span>
+								<span class="s-val" id="out-billable">,</span>
 							</div>
 						</div>
 
@@ -171,7 +171,7 @@ const breadcrumbJsonLd = JSON.stringify({
 							</table>
 						</details>
 						<p class="disclaimer">
-							Estimate only — your real tax situation, region and market set the final number. This is
+							Estimate only, your real tax situation, region and market set the final number. This is
 							your floor, not a ceiling.
 						</p>
 					</div>
@@ -188,11 +188,11 @@ const breadcrumbJsonLd = JSON.stringify({
 					want, not from a salary you've left behind:
 				</p>
 				<ol>
-					<li><strong>Start with the income you want to keep.</strong> Your real target — what hits your bank account after everything.</li>
-					<li><strong>Add your annual business expenses.</strong> Software, hardware, your accountant, insurance — the cost of running you.</li>
+					<li><strong>Start with the income you want to keep.</strong> Your real target, what hits your bank account after everything.</li>
+					<li><strong>Add your annual business expenses.</strong> Software, hardware, your accountant, insurance, the cost of running you.</li>
 					<li><strong>Gross it up for tax.</strong> Divide by (1 − your tax rate) so the money left after tax still covers your target.</li>
 					<li><strong>Add a buffer.</strong> Late payers, scope creep and dry spells are guaranteed. A 10% cushion is sensible.</li>
-					<li><strong>Divide by your real billable hours.</strong> Weekly billable hours × working weeks. This is the number that surprises people — and the one that makes your rate correct.</li>
+					<li><strong>Divide by your real billable hours.</strong> Weekly billable hours × working weeks. This is the number that surprises people, and the one that makes your rate correct.</li>
 				</ol>
 
 				<h2>Why your freelance rate looks "too high" (it isn't)</h2>
@@ -202,7 +202,7 @@ const breadcrumbJsonLd = JSON.stringify({
 					laptop they didn't buy. A freelancer aiming for the same take-home, billing 25 hours a week
 					for 46 weeks while covering their own taxes and tools, needs to charge roughly
 					<strong>three times</strong> that headline rate just to break even on the same lifestyle.
-					Charging less isn't being competitive — it's quietly working for free.
+					Charging less isn't being competitive, it's quietly working for free.
 				</p>
 
 				<h2>Frequently asked questions</h2>
@@ -220,18 +220,17 @@ const breadcrumbJsonLd = JSON.stringify({
 				MONETIZATION: outbound links below are affiliate-ready.
 				When affiliate programs are approved, swap each href for the tracked
 				affiliate URL and change rel to "sponsored noopener". Until then they
-				are plain rel="nofollow noopener" links to the real product homepages —
-				nothing fake is shipped.
+				are plain rel="nofollow noopener" links to the real product homepages, 				nothing fake is shipped.
 			-->
 			<aside class="recommends">
 				<h2>Once you've set your rate</h2>
 				<p>The tools freelancers use to actually bill that rate and get paid on time:</p>
 				<ul>
-					<li><a href="https://www.freshbooks.com/" rel="nofollow noopener" target="_blank">FreshBooks</a> — invoicing &amp; accounting built for freelancers.</li>
-					<li><a href="https://toggl.com/track/" rel="nofollow noopener" target="_blank">Toggl Track</a> — track billable vs non-billable hours so your assumptions stay honest.</li>
-					<li><a href="https://www.wave.com/" rel="nofollow noopener" target="_blank">Wave</a> — free invoicing if you're just starting out.</li>
+					<li><a href="https://www.freshbooks.com/" rel="nofollow noopener" target="_blank">FreshBooks</a>, invoicing &amp; accounting built for freelancers.</li>
+					<li><a href="https://toggl.com/track/" rel="nofollow noopener" target="_blank">Toggl Track</a>, track billable vs non-billable hours so your assumptions stay honest.</li>
+					<li><a href="https://www.wave.com/" rel="nofollow noopener" target="_blank">Wave</a>, free invoicing if you're just starting out.</li>
 				</ul>
-				<p class="tiny">We only list tools we'd use ourselves. Some links may become affiliate links — it never changes what we recommend or costs you anything.</p>
+				<p class="tiny">We only list tools we'd use ourselves. Some links may become affiliate links, it never changes what we recommend or costs you anything.</p>
 			</aside>
 
 			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
@@ -297,10 +296,10 @@ const breadcrumbJsonLd = JSON.stringify({
 				const hourly = valid ? withBuffer / billable : 0;
 				const day = hourly * 8;
 
-				$('out-hourly').textContent = valid ? money2(hourly, currency) : '—';
-				$('out-day').textContent = valid ? money(day, currency) : '—';
-				$('out-revenue').textContent = valid ? money(withBuffer, currency) : '—';
-				$('out-billable').textContent = valid ? billable.toLocaleString() + ' hrs' : '—';
+				$('out-hourly').textContent = valid ? money2(hourly, currency) : ',';
+				$('out-day').textContent = valid ? money(day, currency) : ',';
+				$('out-revenue').textContent = valid ? money(withBuffer, currency) : ',';
+				$('out-billable').textContent = valid ? billable.toLocaleString() + ' hrs' : ',';
 
 				const rows = [
 					['Target take-home income', money(income, currency)],
@@ -308,7 +307,7 @@ const breadcrumbJsonLd = JSON.stringify({
 					['= Money you must clear', money(baseNeed, currency)],
 					[`÷ (1 − ${(tax * 100).toFixed(0)}% tax) → revenue before tax`, money(grossTax, currency)],
 					[`+ ${(buffer * 100).toFixed(0)}% buffer → revenue target`, money(withBuffer, currency)],
-					[`÷ billable hours (${hours} × ${weeks} = ${billable.toLocaleString()})`, valid ? money2(hourly, currency) + ' / hr' : '—'],
+					[`÷ billable hours (${hours} × ${weeks} = ${billable.toLocaleString()})`, valid ? money2(hourly, currency) + ' / hr' : ','],
 				];
 				$('breakdown-body').innerHTML = rows
 					.map((r) => `<tr><td>${r[0]}</td><td class="amt">${r[1]}</td></tr>`)
@@ -338,7 +337,7 @@ const breadcrumbJsonLd = JSON.stringify({
 			ids.forEach((id) => {
 				$(id).addEventListener('input', compute);
 				$(id).addEventListener('change', compute);
-				// scrolling over a focused number field silently changes it — block that
+				// scrolling over a focused number field silently changes it, block that
 				$(id).addEventListener('wheel', (e) => {
 					if (document.activeElement === e.target) e.target.blur();
 				});

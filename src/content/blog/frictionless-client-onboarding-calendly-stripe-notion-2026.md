@@ -5,9 +5,9 @@ pubDate: 'Jun 15 2026'
 heroImage: '../../assets/frictionless-client-onboarding-calendly-stripe-notion-2026.webp'
 ---
 
-Most solo businesses lose clients in the gap between "interested" and "signed." A potential client sends an enthusiastic email. You reply with a calendar link. They book a call three days later. You take the call and it goes well. You promise to send a proposal. The proposal goes out two days after that. They sit on it for a week. The momentum is gone. They write back: *"Hey, sorry — we ended up going with someone else who could start sooner."*
+Most solo businesses lose clients in the gap between "interested" and "signed." A potential client sends an enthusiastic email. You reply with a calendar link. They book a call three days later. You take the call and it goes well. You promise to send a proposal. The proposal goes out two days after that. They sit on it for a week. The momentum is gone. They write back: *"Hey, sorry, we ended up going with someone else who could start sooner."*
 
-That sequence has cost me actual money. The fix isn't working harder — it's removing friction between every step. If a client can go from inquiry → call booked → deposit paid → kickoff scheduled → project folder created in under 24 hours without me touching anything, the close rate doubles.
+That sequence has cost me actual money. The fix isn't working harder, it's removing friction between every step. If a client can go from inquiry → call booked → deposit paid → kickoff scheduled → project folder created in under 24 hours without me touching anything, the close rate doubles.
 
 This is the exact 3-tool stack I use to make that happen. **Calendly + Stripe + Notion**, glued together with a tiny bit of automation. Free to start, $10–25/month to scale, set up in one focused afternoon.
 
@@ -28,38 +28,38 @@ So you can run the entire system for $0/month while you validate it. The paid up
 
 ## Step 1: The Calendly booking page (15 minutes)
 
-This is your single point of entry for prospect calls. Don't have multiple meeting types yet — the free tier limits you to 1 event type, and the discipline is actually useful.
+This is your single point of entry for prospect calls. Don't have multiple meeting types yet, the free tier limits you to 1 event type, and the discipline is actually useful.
 
 **Setup:**
 1. Sign up at [calendly.com](https://calendly.com) → choose the Free plan
 2. Connect your Google or Microsoft calendar (so Calendly knows when you're busy)
 3. Create your event type:
    - **Name:** "Discovery Call"
-   - **Duration:** 30 minutes (don't make it 60 — most discovery calls become time-wasters at 60)
+   - **Duration:** 30 minutes (don't make it 60, most discovery calls become time-wasters at 60)
    - **Buffer time:** 15 minutes before and after (prevents back-to-back fatigue)
    - **Daily limit:** 3 (forces you to maintain capacity for real work)
    - **Minimum scheduling notice:** 24 hours (prevents "can we hop on in an hour?" requests)
-4. **Booking page questions** — add 3 fields:
+4. **Booking page questions**, add 3 fields:
    - "What kind of project are you considering?"
    - "What's your rough timeline?"
-   - "What's your budget range?" (qualifying question — most solo operators are afraid to ask, then waste calls with unqualified leads)
+   - "What's your budget range?" (qualifying question, most solo operators are afraid to ask, then waste calls with unqualified leads)
 5. Customize your booking link URL: `calendly.com/yourname/discovery`
 
 **Why this matters:** The booking link goes in every email signature, every social profile, every reply to an inquiry. The prospect picks a time without back-and-forth. The qualifying questions filter time-wasters before the call.
 
 ## Step 2: Stripe payment link for the deposit (10 minutes)
 
-Most solo discovery calls are free. A small percentage of solo operators ask for a refundable deposit before discovery — usually the wrong move unless you're charging premium rates.
+Most solo discovery calls are free. A small percentage of solo operators ask for a refundable deposit before discovery, usually the wrong move unless you're charging premium rates.
 
-The Stripe integration matters more for **deposits on actual project starts** — after the discovery call, when the client says "yes, let's do this," they pay a deposit before you do any work. This is where Stripe earns its keep.
+The Stripe integration matters more for **deposits on actual project starts**, after the discovery call, when the client says "yes, let's do this," they pay a deposit before you do any work. This is where Stripe earns its keep.
 
 **Setup:**
-1. Sign up at [stripe.com](https://stripe.com) (no monthly fee — pays 2.9% + 30¢ per US transaction)
+1. Sign up at [stripe.com](https://stripe.com) (no monthly fee, pays 2.9% + 30¢ per US transaction)
 2. Verify your business (sole proprietor is fine) and connect your bank account
 3. Dashboard → Products → **Add product** → "Project Deposit"
 4. Set the deposit amount based on your typical project: 25–50% of total fee, minimum $500
 5. **Create a payment link** → copy the URL (looks like `buy.stripe.com/abcXYZ123`)
-6. Save this URL — it goes into your post-discovery-call email template
+6. Save this URL, it goes into your post-discovery-call email template
 
 **Why this matters:** A paid deposit kills the "ghosted between discovery and start" failure mode. People who pay $500–$2,000 don't disappear. People who didn't pay anything will.
 
@@ -126,10 +126,10 @@ This single automation eliminates the manual "now I have to set up everything fo
 
 ## The complete client journey, end to end
 
-Here's what happens when a prospect lands on your website and ends up as an active project — with no manual work from you between steps:
+Here's what happens when a prospect lands on your website and ends up as an active project, with no manual work from you between steps:
 
 1. **Prospect emails:** "I'd love to chat about a project."
-2. **You reply** with your Calendly link and one sentence: "Pick any time that works — looking forward."
+2. **You reply** with your Calendly link and one sentence: "Pick any time that works, looking forward."
 3. **They book** a discovery call. Calendly auto-confirms with calendar invites for both sides.
 4. **Make.com fires:**
    - Their record is created in your Notion Client Roster with status `Discovery`
@@ -149,10 +149,10 @@ Without this system, the same journey easily takes 7–10 days of back-and-forth
 
 Don't add these to the system until they solve a problem you've actually had:
 
-- **Contract automation tools** (Bonsai, HelloSign, etc.) — start by attaching a contract PDF to your proposal Google Doc. Add a contract tool later if you sign 4+ clients per month.
-- **CRM upgrades** (HubSpot, Pipedrive) — the Notion Client Roster IS your CRM at solo scale. You don't need a separate one.
-- **Project management software upgrades** — the Notion record + a simple ClickUp task list per client is enough. We covered the [ClickUp solo setup separately](/blog/clickup-for-solo-project-management-2026/).
-- **Email sequence tools** (ActiveCampaign, ConvertKit drip flows) — the Gmail send inside Make is enough until you have 5+ canned email sequences. By then a real ESP is worth the upgrade.
+- **Contract automation tools** (Bonsai, HelloSign, etc.), start by attaching a contract PDF to your proposal Google Doc. Add a contract tool later if you sign 4+ clients per month.
+- **CRM upgrades** (HubSpot, Pipedrive), the Notion Client Roster IS your CRM at solo scale. You don't need a separate one.
+- **Project management software upgrades**, the Notion record + a simple ClickUp task list per client is enough. We covered the [ClickUp solo setup separately](/blog/clickup-for-solo-project-management-2026/).
+- **Email sequence tools** (ActiveCampaign, ConvertKit drip flows), the Gmail send inside Make is enough until you have 5+ canned email sequences. By then a real ESP is worth the upgrade.
 
 ## The bigger point
 
@@ -164,4 +164,4 @@ You can build this entire system in one afternoon for $0. The first time it capt
 
 ---
 
-*This post contains affiliate links. We only recommend tools we'd use ourselves — Make.com is what I run my own onboarding automation on.*
+*This post contains affiliate links. We only recommend tools we'd use ourselves, Make.com is what I run my own onboarding automation on.*

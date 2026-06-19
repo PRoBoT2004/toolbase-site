@@ -3,9 +3,9 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 
-const title = 'Split PDF Free — 100% In Your Browser, No Upload | Toolbase';
+const title = 'Split PDF Free, 100% In Your Browser, No Upload | Toolbase';
 const description =
-	'Split one PDF into multiple files — by custom page ranges, every N pages, or one file per page. Downloads as a zip when there is more than one. Runs entirely in your browser; your file is never uploaded. Free, unlimited, no sign-up.';
+	'Split one PDF into multiple files, by custom page ranges, every N pages, or one file per page. Downloads as a zip when there is more than one. Runs entirely in your browser; your file is never uploaded. Free, unlimited, no sign-up.';
 
 const faqs = [
 	{
@@ -14,7 +14,7 @@ const faqs = [
 	},
 	{
 		q: 'How do I split a PDF into separate files?',
-		a: 'Add your PDF, choose how to split it — custom ranges like 1-3, 4-6, 7-10 (each group becomes its own file), every N pages, or one file per page — then click Split. If the result is more than one file you get a single zip containing all of them.',
+		a: 'Add your PDF, choose how to split it, custom ranges like 1-3, 4-6, 7-10 (each group becomes its own file), every N pages, or one file per page, then click Split. If the result is more than one file you get a single zip containing all of them.',
 	},
 	{
 		q: 'Can I extract just a few pages from a PDF?',
@@ -22,11 +22,11 @@ const faqs = [
 	},
 	{
 		q: 'What is the difference between this and the Merge tool?',
-		a: 'Splitting takes one PDF apart into several files; merging combines several files into one. They are opposites and pair naturally — split a document, edit the parts, then merge them back together, all without ever uploading anything.',
+		a: 'Splitting takes one PDF apart into several files; merging combines several files into one. They are opposites and pair naturally, split a document, edit the parts, then merge them back together, all without ever uploading anything.',
 	},
 	{
 		q: 'Is there a page or file size limit?',
-		a: 'No artificial limit — no signup, no daily cap, no watermark. Everything runs on your device, so the only real ceiling is your computer’s memory. Typical documents split in a second or two.',
+		a: 'No artificial limit, no signup, no daily cap, no watermark. Everything runs on your device, so the only real ceiling is your computer’s memory. Typical documents split in a second or two.',
 	},
 ];
 
@@ -79,7 +79,7 @@ const breadcrumbJsonLd = JSON.stringify({
 
 			<h1>Split PDF</h1>
 			<p class="lede">
-				Break one PDF into multiple files — by custom page ranges, every N pages, or one file per page.
+				Break one PDF into multiple files, by custom page ranges, every N pages, or one file per page.
 				<strong>Everything happens in your browser:</strong> your file is never uploaded, never sent
 				anywhere, never stored. Free, unlimited, no sign-up.
 			</p>
@@ -117,13 +117,13 @@ const breadcrumbJsonLd = JSON.stringify({
 					</div>
 				</div>
 
-				<p class="privacy">🔒 100% private — processed locally in your browser. Nothing is uploaded.</p>
+				<p class="privacy">🔒 100% private, processed locally in your browser. Nothing is uploaded.</p>
 			</section>
 
 			<div class="prose">
 				<h2>How to split a PDF in your browser</h2>
 				<ol>
-					<li><strong>Add your PDF.</strong> Drop it in or browse — it stays on your device.</li>
+					<li><strong>Add your PDF.</strong> Drop it in or browse, it stays on your device.</li>
 					<li><strong>Choose a split method.</strong> Custom ranges, every N pages, or one file per page.</li>
 					<li><strong>Split &amp; download.</strong> One file downloads directly; multiple files come back as a single zip.</li>
 				</ol>
@@ -131,7 +131,7 @@ const breadcrumbJsonLd = JSON.stringify({
 				<h2>Why split PDFs in the browser instead of an online uploader?</h2>
 				<p>
 					Most free PDF splitters upload your document to their servers, cap how many files you can make,
-					or push a signup. For anything sensitive — contracts, statements, scans of IDs — that's a real
+					or push a signup. For anything sensitive, contracts, statements, scans of IDs, that's a real
 					privacy risk. This tool runs entirely on your own device, so the file never travels over the
 					internet, there are no limits, and it works even offline once the page has loaded. It pairs with
 					the <a href="/tools/merge-pdf/">Merge PDF</a> tool: split a document apart, then merge the pieces
@@ -158,10 +158,10 @@ const breadcrumbJsonLd = JSON.stringify({
 				<h2>Working with PDFs a lot?</h2>
 				<p>Tools worth knowing when you outgrow the basics:</p>
 				<ul>
-					<li><a href="/tools/merge-pdf/">Merge PDF</a> — the opposite of this tool, also 100% in your browser.</li>
-					<li><a href="https://www.adobe.com/acrobat/online.html" rel="nofollow noopener" target="_blank">Adobe Acrobat online</a> — when you need OCR, redaction or e-signatures.</li>
+					<li><a href="/tools/merge-pdf/">Merge PDF</a>, the opposite of this tool, also 100% in your browser.</li>
+					<li><a href="https://www.adobe.com/acrobat/online.html" rel="nofollow noopener" target="_blank">Adobe Acrobat online</a>, when you need OCR, redaction or e-signatures.</li>
 				</ul>
-				<p class="tiny">We only list tools we'd use ourselves. Some links may become affiliate links — it never changes what we recommend or costs you anything.</p>
+				<p class="tiny">We only list tools we'd use ourselves. Some links may become affiliate links, it never changes what we recommend or costs you anything.</p>
 			</aside>
 
 			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
@@ -169,7 +169,7 @@ const breadcrumbJsonLd = JSON.stringify({
 		<Footer />
 
 		<script>
-			// pdf-lib (~180KB gz) and jszip load lazily — only when a file is added,
+			// pdf-lib (~180KB gz) and jszip load lazily, only when a file is added,
 			// so search visitors who bounce never download them.
 			let _pdfLibPromise = null;
 			function loadPdfLib() {
@@ -286,14 +286,14 @@ const breadcrumbJsonLd = JSON.stringify({
 
 					if (outputs.length === 1) {
 						downloadBlob(outputs[0].data, outputs[0].name, 'application/pdf');
-						setBusy(false, '✓ Extracted ' + groups[0].length + ' pages — downloaded.');
+						setBusy(false, '✓ Extracted ' + groups[0].length + ' pages, downloaded.');
 					} else {
 						const JSZip = (await loadJsZip()).default;
 						const zip = new JSZip();
 						outputs.forEach((o) => zip.file(o.name, o.data));
 						const blob = await zip.generateAsync({ type: 'blob' });
 						downloadBlobObject(blob, current.base + '_split.zip');
-						setBusy(false, '✓ Split into ' + outputs.length + ' files — downloaded as zip.');
+						setBusy(false, '✓ Split into ' + outputs.length + ' files, downloaded as zip.');
 					}
 				} catch (err) {
 					console.error(err);

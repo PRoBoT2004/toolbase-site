@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// publish-due.mjs — move library articles from _library/ to src/content/blog/
+// publish-due.mjs, move library articles from _library/ to src/content/blog/
 // when their pubDate has arrived.
 //
 // Usage:
@@ -88,7 +88,7 @@ for (const entry of due) {
   const liveAsset = path.join(LIVE_ASSETS, `${entry.slug}.webp`);
 
   if (fs.existsSync(liveArticle)) {
-    console.log(`SKIP  ${entry.slug} — already in src/content/blog/`);
+    console.log(`SKIP  ${entry.slug}, already in src/content/blog/`);
     continue;
   }
 

@@ -300,7 +300,7 @@ const breadcrumbJsonLd = JSON.stringify({
 				font-style: italic;
 				padding: 1em 0;
 			}
-			/* Article column stays at its natural width — TOC dot column
+			/* Article column stays at its natural width, TOC dot column
 			   only takes ~20px on the right edge so there is no overlap. */
 
 			/* ------- Floating action buttons ------- */
@@ -447,8 +447,7 @@ const breadcrumbJsonLd = JSON.stringify({
 				border-radius: 4px;
 			}
 			.notes-head button:hover { color: rgb(var(--black)); background: var(--surface-warm); }
-			/* .notes-list and .notes-empty styles are defined as :global() above —
-			   the elements are injected by JS and don't carry Astro's scoping attr. */
+			/* .notes-list and .notes-empty styles are defined as :global() above, 			   the elements are injected by JS and don't carry Astro's scoping attr. */
 
 			@media (max-width: 720px) {
 				.article-header h1 { font-size: 2em; }

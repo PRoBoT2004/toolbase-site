@@ -17,19 +17,19 @@ Not every difficult client is a fire-worthy client. Some can be reset with a cle
 
 The honest test before firing: which of these is true?
 
-**Fire candidates** — clients you should end the relationship with:
+**Fire candidates**, clients you should end the relationship with:
 - They pay invoices 30+ days late as a pattern, not as an exception, even after you've raised it
 - Scope creep is constant despite a written agreement, and pushback is treated as you "not being a team player"
 - You dread their messages before reading them, and that dread doesn't go away after a "good call"
 - They've crossed personal boundaries (rude in tone, dismissive about your other commitments, demanding off-hours availability)
-- The financial value of the engagement is no longer worth the time it consumes (do the math — see below)
+- The financial value of the engagement is no longer worth the time it consumes (do the math, see below)
 - Working with them is preventing you from taking better-paying or healthier work
 
-**Salvage candidates** — clients where one direct conversation fixes the situation:
+**Salvage candidates**, clients where one direct conversation fixes the situation:
 - The relationship started healthy and shifted recently due to their stress (new investor, deadline, team change)
 - You haven't raised the specific issue with them directly yet
 - The scope creep is partly your fault for not pushing back early
-- They pay on time but the working dynamic feels off — try a quarterly review conversation first
+- They pay on time but the working dynamic feels off, try a quarterly review conversation first
 - The financial value is genuinely high and the problems are recent
 
 The test before firing: have you had ONE direct, written conversation explicitly naming the specific behavior you need to change? If yes and nothing changed: fire. If no: have the conversation first, give 30 days, then fire if nothing changed.
@@ -38,11 +38,11 @@ The test before firing: have you had ONE direct, written conversation explicitly
 
 Before you fire a paying client, run this calculation. It often tells you to fire even faster than instinct does.
 
-- **Effective hourly rate on this client:** Total revenue from them in the last 90 days divided by total hours actually worked (including unbilled overhead — Slack threads, emails, mental load).
+- **Effective hourly rate on this client:** Total revenue from them in the last 90 days divided by total hours actually worked (including unbilled overhead, Slack threads, emails, mental load).
 - **Your standard hourly rate.**
 - **The gap.**
 
-If your standard rate is ₹3,000/hour and your effective rate on this client is ₹900/hour because of scope creep and admin overhead, you're losing ₹2,100/hour every hour you stay engaged with them. That's not "I get paid less by this client" — that's "I'm subsidizing this client with the income I could be earning from a healthier replacement."
+If your standard rate is ₹3,000/hour and your effective rate on this client is ₹900/hour because of scope creep and admin overhead, you're losing ₹2,100/hour every hour you stay engaged with them. That's not "I get paid less by this client", that's "I'm subsidizing this client with the income I could be earning from a healthier replacement."
 
 Most solopreneurs find one specific client is dragging their effective rate down by 30-50%. Firing them doesn't reduce your income for long; the time freed up gets reallocated to better-paying work within 30-60 days for most operators.
 
@@ -50,7 +50,7 @@ If you've done this math and you're still under-charging your remaining clients,
 
 ## The conversation: when and how
 
-**Timing matters.** Don't fire a client mid-deliverable. Wait until you've handed off a clean piece of work, ideally one they're happy with. Firing right after a successful delivery makes the conversation easier — you're ending on a high, not a low.
+**Timing matters.** Don't fire a client mid-deliverable. Wait until you've handed off a clean piece of work, ideally one they're happy with. Firing right after a successful delivery makes the conversation easier, you're ending on a high, not a low.
 
 **Channel matters.** Use email for the formal communication, not Slack or WhatsApp. Email creates a record. It also gives the client time to read, react, and respond in writing rather than a knee-jerk verbal reaction that escalates the situation.
 
@@ -62,11 +62,11 @@ This is the script. Adapt the specifics but keep the structure.
 
 ---
 
-**Subject:** Project transition — final delivery and handover
+**Subject:** Project transition, final delivery and handover
 
 Hi [Name],
 
-I'm writing to let you know that I'll be transitioning off our engagement effective [date — typically 2-4 weeks out].
+I'm writing to let you know that I'll be transitioning off our engagement effective [date, typically 2-4 weeks out].
 
 It's been a meaningful project, and I appreciate the work we did together. After thinking carefully about my client roster and the direction of my practice, I've decided this is the right time to wrap up our work cleanly.
 
@@ -107,7 +107,7 @@ This is the most common response, and it's a trap. If you list specific grievanc
 You don't owe them a list of complaints. You owe them a professional exit.
 
 **"Can you reconsider? I'll pay more / change X."**
-This is harder because the offer is sometimes tempting, especially if you're under financial pressure. Hold the line. The reason you got to "firing" in the first place is that the dynamic was unhealthy. Adding 20% to the rate doesn't fix that. The polite no: *"I appreciate that — I've already committed to this decision and need to follow through cleanly. I don't think reopening the engagement would serve either of us well."*
+This is harder because the offer is sometimes tempting, especially if you're under financial pressure. Hold the line. The reason you got to "firing" in the first place is that the dynamic was unhealthy. Adding 20% to the rate doesn't fix that. The polite no: *"I appreciate that, I've already committed to this decision and need to follow through cleanly. I don't think reopening the engagement would serve either of us well."*
 
 **"This is unprofessional / you're abandoning us mid-project."**
 This response is the clearest signal you made the right call. Stay calm, repeat the timeline you committed to in the original email, and end the exchange. *"I've laid out the deliverables I'll complete and the handover I'll provide between now and [date]. I'm following through fully on those commitments."*
@@ -122,7 +122,7 @@ Between sending the email and the actual end date, three things tend to go wrong
 
 **Payment slows further.** Late-paying clients sometimes use the firing as an excuse to delay the final invoice. Document everything in writing, send the final invoice on the date you committed to, and follow up exactly once at the 7-day-past-due mark. If they still don't pay, mention it in your final reply and accept that you may need to pursue it through small-claims or just write it off. Do not work additional hours hoping payment will come.
 
-**They want to "exit interview" you.** Some clients want a meeting to "discuss the transition." Decline. Email handles it. *"Happy to address any questions about the handover by email — that gives me the time to be thoughtful about each one."*
+**They want to "exit interview" you.** Some clients want a meeting to "discuss the transition." Decline. Email handles it. *"Happy to address any questions about the handover by email, that gives me the time to be thoughtful about each one."*
 
 ## What to NOT do, ever
 

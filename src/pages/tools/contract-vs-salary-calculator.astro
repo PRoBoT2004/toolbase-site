@@ -3,22 +3,22 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 
-const title = 'Contract vs Salary Calculator — Is Freelancing Actually Worth It? | Toolbase';
+const title = 'Contract vs Salary Calculator, Is Freelancing Actually Worth It? | Toolbase';
 const description =
-	'Compare a contract or freelance rate against a full-time salary properly — net of expenses, self-employment tax, unpaid time off and the benefits a job hides. Get a clear verdict and your break-even rate. Free, instant, no sign-up.';
+	'Compare a contract or freelance rate against a full-time salary properly, net of expenses, self-employment tax, unpaid time off and the benefits a job hides. Get a clear verdict and your break-even rate. Free, instant, no sign-up.';
 
 const faqs = [
 	{
 		q: 'Is contracting really better paid than a salaried job?',
-		a: 'Often yes on paper, but the headline rate is misleading. A contractor loses the employer-paid taxes, pension match, health cover, paid holiday and sick leave that a salary quietly includes, and pays for their own tools and downtime. Once you net all of that out — which this calculator does — the gap is usually much smaller than the raw rate suggests, and sometimes the salary wins.',
+		a: 'Often yes on paper, but the headline rate is misleading. A contractor loses the employer-paid taxes, pension match, health cover, paid holiday and sick leave that a salary quietly includes, and pays for their own tools and downtime. Once you net all of that out, which this calculator does, the gap is usually much smaller than the raw rate suggests, and sometimes the salary wins.',
 	},
 	{
 		q: 'How do I compare a day rate or hourly rate to an annual salary?',
-		a: 'You cannot just multiply the rate by 2,080 hours. Multiply your rate by the hours (or days) you can actually bill per week, then by the weeks you actually work (not 52 — subtract your unpaid time off). Then subtract business expenses and the extra self-employment tax you now carry. Compare that net figure to the salary plus the cash value of its benefits. This tool runs that whole calculation for you.',
+		a: 'You cannot just multiply the rate by 2,080 hours. Multiply your rate by the hours (or days) you can actually bill per week, then by the weeks you actually work (not 52, subtract your unpaid time off). Then subtract business expenses and the extra self-employment tax you now carry. Compare that net figure to the salary plus the cash value of its benefits. This tool runs that whole calculation for you.',
 	},
 	{
 		q: 'What benefits should I count on the salary side?',
-		a: 'Anything the employer pays that you would have to fund yourself as a contractor: pension or 401(k) match, health insurance, paid holiday and sick days, life/disability cover, training budget, and the employer half of payroll taxes. Add up the annual cash value and put it in the "employer benefits" field — leaving it at zero will make a salary look worse than it really is.',
+		a: 'Anything the employer pays that you would have to fund yourself as a contractor: pension or 401(k) match, health insurance, paid holiday and sick days, life/disability cover, training budget, and the employer half of payroll taxes. Add up the annual cash value and put it in the "employer benefits" field, leaving it at zero will make a salary look worse than it really is.',
 	},
 	{
 		q: 'What is a break-even rate?',
@@ -85,8 +85,7 @@ const breadcrumbJsonLd = JSON.stringify({
 			<h1>Contract vs Salary Calculator</h1>
 			<p class="lede">
 				A contract rate that looks huge next to a salary often isn't, once you subtract the taxes,
-				benefits and paid time off a job quietly includes. This compares the two <em>properly</em> —
-				net of all of it — and tells you which actually leaves you better off, plus the exact rate you'd
+				benefits and paid time off a job quietly includes. This compares the two <em>properly</em>, 				net of all of it, and tells you which actually leaves you better off, plus the exact rate you'd
 				need to break even. Runs entirely in your browser.
 			</p>
 
@@ -94,12 +93,12 @@ const breadcrumbJsonLd = JSON.stringify({
 				<div class="field currency-field">
 					<label for="currency">Currency</label>
 					<select id="currency">
-						<option value="USD">$ USD — US Dollar</option>
-						<option value="EUR">€ EUR — Euro</option>
-						<option value="GBP">£ GBP — British Pound</option>
-						<option value="INR">₹ INR — Indian Rupee</option>
-						<option value="CAD">$ CAD — Canadian Dollar</option>
-						<option value="AUD">$ AUD — Australian Dollar</option>
+						<option value="USD">$ USD, US Dollar</option>
+						<option value="EUR">€ EUR, Euro</option>
+						<option value="GBP">£ GBP, British Pound</option>
+						<option value="INR">₹ INR, Indian Rupee</option>
+						<option value="CAD">$ CAD, Canadian Dollar</option>
+						<option value="AUD">$ AUD, Australian Dollar</option>
 					</select>
 				</div>
 
@@ -152,24 +151,24 @@ const breadcrumbJsonLd = JSON.stringify({
 				</div>
 
 				<div class="verdict" id="verdict" aria-live="polite">
-					<span class="v-line" id="v-line">—</span>
+					<span class="v-line" id="v-line">,</span>
 					<span class="v-sub" id="v-sub"></span>
 				</div>
 
 				<div class="compare">
 					<div class="compare-card">
-						<span class="c-label">Salary — total value</span>
-						<span class="c-val" id="out-salary">—</span>
+						<span class="c-label">Salary, total value</span>
+						<span class="c-val" id="out-salary">,</span>
 						<span class="c-note">salary + benefits</span>
 					</div>
 					<div class="compare-card">
-						<span class="c-label">Contract — net value</span>
-						<span class="c-val" id="out-contract">—</span>
+						<span class="c-label">Contract, net value</span>
+						<span class="c-val" id="out-contract">,</span>
 						<span class="c-note">after expenses &amp; SE tax</span>
 					</div>
 					<div class="compare-card highlight">
 						<span class="c-label">Break-even rate</span>
-						<span class="c-val" id="out-breakeven">—</span>
+						<span class="c-val" id="out-breakeven">,</span>
 						<span class="c-note" id="out-breakeven-note">to match the salary</span>
 					</div>
 				</div>
@@ -183,7 +182,7 @@ const breadcrumbJsonLd = JSON.stringify({
 				<p class="disclaimer">
 					Compares structural value before your personal income tax (which applies to both options and
 					depends on your region). Includes the extra self-employment tax unique to contracting. An
-					estimate to inform the decision — not financial advice.
+					estimate to inform the decision, not financial advice.
 				</p>
 				<p class="cross">
 					Not sure what rate to put in?
@@ -199,16 +198,16 @@ const breadcrumbJsonLd = JSON.stringify({
 					Here's the comparison that holds up:
 				</p>
 				<ol>
-					<li><strong>Build the salary's true value.</strong> Take the gross salary and add the cash value of everything the employer pays on top — pension match, health insurance, paid holiday and sick days, the employer half of payroll taxes. That's the number contracting has to beat.</li>
-					<li><strong>Build the contract's real income.</strong> Rate × hours (or days) you can <em>bill</em> per week × the weeks you actually work. Not 52 — contractors don't get paid holidays.</li>
+					<li><strong>Build the salary's true value.</strong> Take the gross salary and add the cash value of everything the employer pays on top, pension match, health insurance, paid holiday and sick days, the employer half of payroll taxes. That's the number contracting has to beat.</li>
+					<li><strong>Build the contract's real income.</strong> Rate × hours (or days) you can <em>bill</em> per week × the weeks you actually work. Not 52, contractors don't get paid holidays.</li>
 					<li><strong>Subtract what contracting costs.</strong> Business expenses, plus the extra self-employment tax you now shoulder that an employer used to split with you.</li>
-					<li><strong>Compare the two net figures</strong> — and look at the break-even rate to see how much headroom (or shortfall) you actually have.</li>
+					<li><strong>Compare the two net figures</strong>, and look at the break-even rate to see how much headroom (or shortfall) you actually have.</li>
 				</ol>
 
 				<h2>Why a contract rate has to be much higher than a salary</h2>
 				<p>
 					A salaried employee is paid for roughly 2,080 hours a year and never works all of them on
-					billable output — yet still gets paid for holidays, sick days and the gaps between projects.
+					billable output, yet still gets paid for holidays, sick days and the gaps between projects.
 					A contractor is paid only for hours billed, funds their own taxes and tools, and earns nothing
 					while on holiday or between clients. To stand still against a salary, a contractor typically
 					needs a headline rate <strong>40–80% higher</strong> than the salary-per-hour figure. Anything
@@ -230,17 +229,17 @@ const breadcrumbJsonLd = JSON.stringify({
 				MONETIZATION: outbound links are affiliate-ready.
 				Swap each href for the tracked affiliate URL on approval and change
 				rel to "sponsored noopener". Until then: plain rel="nofollow noopener"
-				links to the real homepages — nothing fake is shipped.
+				links to the real homepages, nothing fake is shipped.
 			-->
 			<aside class="recommends">
 				<h2>If you decide to go contract</h2>
 				<p>What you'll want set up before your first invoice goes out:</p>
 				<ul>
-					<li><a href="https://www.freshbooks.com/" rel="nofollow noopener" target="_blank">FreshBooks</a> — invoicing &amp; expense tracking for the self-employed.</li>
-					<li><a href="https://www.bonsai.com/" rel="nofollow noopener" target="_blank">Bonsai</a> — contracts, proposals and accounting in one place.</li>
-					<li><a href="https://toggl.com/track/" rel="nofollow noopener" target="_blank">Toggl Track</a> — prove your real billable hours so this comparison stays honest.</li>
+					<li><a href="https://www.freshbooks.com/" rel="nofollow noopener" target="_blank">FreshBooks</a>, invoicing &amp; expense tracking for the self-employed.</li>
+					<li><a href="https://www.bonsai.com/" rel="nofollow noopener" target="_blank">Bonsai</a>, contracts, proposals and accounting in one place.</li>
+					<li><a href="https://toggl.com/track/" rel="nofollow noopener" target="_blank">Toggl Track</a>, prove your real billable hours so this comparison stays honest.</li>
 				</ul>
-				<p class="tiny">We only list tools we'd use ourselves. Some links may become affiliate links — it never changes what we recommend or costs you anything.</p>
+				<p class="tiny">We only list tools we'd use ourselves. Some links may become affiliate links, it never changes what we recommend or costs you anything.</p>
 			</aside>
 
 			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
@@ -320,9 +319,9 @@ const breadcrumbJsonLd = JSON.stringify({
 
 				const valid = unitsPerYear > 0 && (salary > 0 || benefits > 0 || rate > 0);
 
-				$('out-salary').textContent = valid ? money(salaryValue, currency) : '—';
-				$('out-contract').textContent = valid ? money(contractValue, currency) : '—';
-				$('out-breakeven').textContent = valid ? money2(breakeven, currency) + ' / ' + unitWord : '—';
+				$('out-salary').textContent = valid ? money(salaryValue, currency) : ',';
+				$('out-contract').textContent = valid ? money(contractValue, currency) : ',';
+				$('out-breakeven').textContent = valid ? money2(breakeven, currency) + ' / ' + unitWord : ',';
 
 				const v = $('verdict');
 				const vLine = $('v-line');
@@ -362,7 +361,7 @@ const breadcrumbJsonLd = JSON.stringify({
 					['− Business expenses', '−' + money(expenses, currency)],
 					['= Contract net value', money(contractValue, currency)],
 					['', ''],
-					['Break-even rate to match salary', valid ? money2(breakeven, currency) + ' / ' + unitWord : '—'],
+					['Break-even rate to match salary', valid ? money2(breakeven, currency) + ' / ' + unitWord : ','],
 				];
 				$('breakdown-body').innerHTML = rows
 					.map((r) =>

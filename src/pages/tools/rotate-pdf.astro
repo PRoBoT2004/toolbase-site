@@ -3,9 +3,9 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 
-const title = 'Rotate PDF Free — Fix Sideways Pages in Your Browser | Toolbase';
+const title = 'Rotate PDF Free, Fix Sideways Pages in Your Browser | Toolbase';
 const description =
-	'Rotate PDF pages 90°, 180° or 270° — all pages or just specific ones — and download the fixed file. Runs entirely in your browser; your file is never uploaded. Free, unlimited, no sign-up.';
+	'Rotate PDF pages 90°, 180° or 270°, all pages or just specific ones, and download the fixed file. Runs entirely in your browser; your file is never uploaded. Free, unlimited, no sign-up.';
 
 const faqs = [
 	{
@@ -22,11 +22,11 @@ const faqs = [
 	},
 	{
 		q: 'Will rotating reduce quality?',
-		a: 'No. Rotation only changes a page’s orientation flag — the underlying text and images are untouched, so there is zero quality loss and the file size barely changes.',
+		a: 'No. Rotation only changes a page’s orientation flag, the underlying text and images are untouched, so there is zero quality loss and the file size barely changes.',
 	},
 	{
 		q: 'Is there a size or usage limit?',
-		a: 'No artificial limit — no signup, no daily cap, no watermark. Everything runs locally, so the only real ceiling is your device’s memory.',
+		a: 'No artificial limit, no signup, no daily cap, no watermark. Everything runs locally, so the only real ceiling is your device’s memory.',
 	},
 ];
 
@@ -77,7 +77,7 @@ const breadcrumbJsonLd = JSON.stringify({
 
 			<h1>Rotate PDF</h1>
 			<p class="lede">
-				Fix sideways or upside-down pages — rotate the whole PDF or just specific pages, then download
+				Fix sideways or upside-down pages, rotate the whole PDF or just specific pages, then download
 				the corrected file. <strong>Everything happens in your browser:</strong> your file is never
 				uploaded, never sent anywhere, never stored. Free, unlimited, no sign-up.
 			</p>
@@ -120,23 +120,23 @@ const breadcrumbJsonLd = JSON.stringify({
 					</div>
 				</div>
 
-				<p class="privacy">🔒 100% private — processed locally in your browser. Nothing is uploaded.</p>
+				<p class="privacy">🔒 100% private, processed locally in your browser. Nothing is uploaded.</p>
 			</section>
 
 			<div class="prose">
 				<h2>How to rotate a PDF in your browser</h2>
 				<ol>
-					<li><strong>Add your PDF.</strong> Drop it in or browse — it stays on your device.</li>
-					<li><strong>Pick the rotation</strong> — 90° either way, or 180° to flip.</li>
+					<li><strong>Add your PDF.</strong> Drop it in or browse, it stays on your device.</li>
+					<li><strong>Pick the rotation</strong>, 90° either way, or 180° to flip.</li>
 					<li><strong>Choose all pages or specific ones</strong> like <code>1, 3-5</code>.</li>
-					<li><strong>Rotate &amp; download</strong> the corrected PDF — no upload.</li>
+					<li><strong>Rotate &amp; download</strong> the corrected PDF, no upload.</li>
 				</ol>
 
 				<h2>Why rotate PDFs locally?</h2>
 				<p>
 					Scanners and phone cameras constantly produce sideways pages. Uploading those to a random
 					website is a privacy risk, especially for documents. This tool rewrites the orientation flag
-					inside the PDF on your own device — permanent, zero quality loss, no upload. Need to do more?
+					inside the PDF on your own device, permanent, zero quality loss, no upload. Need to do more?
 					<a href="/tools/merge-pdf/">Merge</a>, <a href="/tools/split-pdf/">split</a> and
 					<a href="/tools/jpg-to-pdf/">convert images</a> the same private way.
 				</p>
@@ -155,9 +155,9 @@ const breadcrumbJsonLd = JSON.stringify({
 			<aside class="recommends">
 				<h2>More PDF tools</h2>
 				<ul>
-					<li><a href="/tools/merge-pdf/">Merge PDF</a> — combine files into one.</li>
-					<li><a href="/tools/split-pdf/">Split PDF</a> — break a PDF into multiple files.</li>
-					<li><a href="/tools/jpg-to-pdf/">JPG to PDF</a> — convert images to PDF.</li>
+					<li><a href="/tools/merge-pdf/">Merge PDF</a>, combine files into one.</li>
+					<li><a href="/tools/split-pdf/">Split PDF</a>, break a PDF into multiple files.</li>
+					<li><a href="/tools/jpg-to-pdf/">JPG to PDF</a>, convert images to PDF.</li>
 				</ul>
 			</aside>
 
@@ -251,7 +251,7 @@ const breadcrumbJsonLd = JSON.stringify({
 					});
 					const data = await doc.save();
 					downloadBlob(data, current.base + '_rotated.pdf');
-					setBusy(false, '✓ Rotated ' + n + ' page' + (n === 1 ? '' : 's') + ' — downloaded.');
+					setBusy(false, '✓ Rotated ' + n + ' page' + (n === 1 ? '' : 's') + ', downloaded.');
 				} catch (err) {
 					console.error(err);
 					setBusy(false, '⚠ ' + (err && err.message ? err.message : 'Something went wrong.'));

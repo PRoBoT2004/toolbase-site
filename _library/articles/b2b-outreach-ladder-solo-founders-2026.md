@@ -9,7 +9,7 @@ Most cold B2B outreach fails the same way. The founder writes a perfectly polish
 
 The actual problem isn't messaging. It's that the first message asks for too much. A 30-minute call is a 30-minute commitment, and you're asking a stranger to hand it over before they have any signal you're worth their time. The fix isn't better copy. The fix is staging the asks across a sequence of increasingly committal steps where each step earns the next.
 
-This is the version of the outreach ladder that works for solo founders in 2026 — five steps, each one designed to honor what the prospect has agreed to so far, none of them jumping ahead.
+This is the version of the outreach ladder that works for solo founders in 2026, five steps, each one designed to honor what the prospect has agreed to so far, none of them jumping ahead.
 
 ## Why graduated outreach is the only thing that works
 
@@ -27,7 +27,7 @@ The response: stop asking for commitments. Start asking for permission to send t
 
 Each step has a specific goal: earn the right to take the next one.
 
-### Step 1 — First touch (cold)
+### Step 1: First touch (cold)
 
 **Channel:** WhatsApp + email in parallel. The goal is interest detection, nothing more.
 
@@ -35,11 +35,11 @@ Each step has a specific goal: earn the right to take the next one.
 
 **What NOT to send:** A calendar link, a meeting proposal, a 30-minute call request, a long backstory about your company, or any reference to your team's mission. None of that earns trust at step 1. It signals you've skipped the trust-building work.
 
-**Expected outcome:** 5-15% reply rate when targeting verified contacts with a specific niche-fit pitch. Most replies will be "tell me more" or a specific question. Some will be "not interested" (still a win — they cleared their position). Most will be silence.
+**Expected outcome:** 5-15% reply rate when targeting verified contacts with a specific niche-fit pitch. Most replies will be "tell me more" or a specific question. Some will be "not interested" (still a win, they cleared their position). Most will be silence.
 
 **Mistake to avoid:** Sending two messages in 48 hours when the first one didn't reply. That signals desperation. Wait at least 5 days for a single follow-up.
 
-### Step 2 — The walkthrough video (30-90 seconds)
+### Step 2: The walkthrough video (30-90 seconds)
 
 **Trigger:** Prospect replies positively to step 1.
 
@@ -47,13 +47,13 @@ Each step has a specific goal: earn the right to take the next one.
 
 **What NOT to send:** A 5-minute "demo" of every feature, a slide deck, a written PDF brochure, a calendar link "if you want to talk." The video does the talking. After they watch, they'll either ask follow-up questions or go quiet.
 
-**Why a short video specifically:** Written follow-ups at this stage feel like you're escalating to "convince" mode. Video keeps it casual — they're watching, not reading. They can replay, share with a colleague, or close the tab. Low friction.
+**Why a short video specifically:** Written follow-ups at this stage feel like you're escalating to "convince" mode. Video keeps it casual, they're watching, not reading. They can replay, share with a colleague, or close the tab. Low friction.
 
 **Expected outcome:** 30-50% of prospects who replied at step 1 will engage with the video. About half of those will ask a specific question. The rest will go quiet and need to be marked for follow-up at the 5-7 day mark.
 
 **Mistake to avoid:** Re-pitching in the video. The first message already pitched. The video shows the product working. If you re-pitch in the video, you've wasted the most valuable conversion asset you have.
 
-### Step 3 — The brief call (15-20 minutes)
+### Step 3: The brief call (15-20 minutes)
 
 **Trigger:** Prospect asks a question that requires conversation, OR they explicitly ask for a call.
 
@@ -63,13 +63,13 @@ Each step has a specific goal: earn the right to take the next one.
 
 **What NOT to do:** Schedule a 60-minute call. Send a long pre-call form to fill out. Bring a slide deck. Ask probing qualification questions designed to "qualify out" bad fits. At this stage you've already qualified them in by getting to step 3. Now your job is to listen and adapt the pitch to what you hear.
 
-**Expected outcome:** 40-60% of prospects who took the call will agree to either a pilot or an in-person meeting at a follow-up date. The rest will say "let me think about it" — usually a polite no, sometimes a real maybe.
+**Expected outcome:** 40-60% of prospects who took the call will agree to either a pilot or an in-person meeting at a follow-up date. The rest will say "let me think about it", usually a polite no, sometimes a real maybe.
 
 **Mistake to avoid:** Forcing a close at the end of the first call. A solo founder closing in the first call signals desperation. Let them decide and reply by themselves; offer the pilot or pilot offer as a clear ask but don't push for a yes-no answer.
 
-### Step 4 — The in-person meeting (only if needed)
+### Step 4: The in-person meeting (only if needed)
 
-**Trigger:** The call went well, but the deal size, complexity, or trust requirement warrants face-to-face. Not all deals need this step — small subscriptions and trial pilots can skip it.
+**Trigger:** The call went well, but the deal size, complexity, or trust requirement warrants face-to-face. Not all deals need this step, small subscriptions and trial pilots can skip it.
 
 **What to do:** Travel to them. Bring a one-page printed summary of what was discussed on the call plus the proposed next step. Bring a physical demo (laptop with the product loaded, phone with the mobile flow ready). Be prepared to walk through the product in real time.
 
@@ -79,9 +79,9 @@ Each step has a specific goal: earn the right to take the next one.
 
 **Mistake to avoid:** Treating the meeting like a sales presentation. It's not. It's a conversation between two business people deciding if they want to work together. Act accordingly.
 
-### Step 5 — The pilot or trial
+### Step 5: The pilot or trial
 
-**Trigger:** They've said yes (or "soft yes — let's try it").
+**Trigger:** They've said yes (or "soft yes, let's try it").
 
 **What to do:** Move fast. Get them onboarded within 48 hours of agreement. Send a clean onboarding document, schedule a 15-minute setup call, give them a clear definition of "success" at the end of the trial period (usually 30 days).
 
@@ -93,7 +93,7 @@ Each step has a specific goal: earn the right to take the next one.
 
 ## What conversion looks like at each step
 
-For a solo founder running graduated outreach with verified leads (not IndiaMART numbers — those are mostly noise):
+For a solo founder running graduated outreach with verified leads (not IndiaMART numbers, those are mostly noise):
 
 | Step | Reply / engagement rate |
 |---|---|
@@ -138,4 +138,4 @@ Solo founders who internalize this ladder ship faster, close more, and burn out 
 
 ---
 
-*If you're using IndiaMART, JustDial, or scraped lead data, the [why IndiaMART and JustDial leads are broken](/blog/indiamart-justdial-leads-broken-2026/) piece pairs with this — your messaging only matters if the data is real. For the actual cold-email subject lines that pass the step 1 filter, see [the patterns that get replies in 2026](/blog/cold-email-subject-lines-that-actually-work-2026/).*
+*If you're using IndiaMART, JustDial, or scraped lead data, the [why IndiaMART and JustDial leads are broken](/blog/indiamart-justdial-leads-broken-2026/) piece pairs with this, your messaging only matters if the data is real. For the actual cold-email subject lines that pass the step 1 filter, see [the patterns that get replies in 2026](/blog/cold-email-subject-lines-that-actually-work-2026/).*

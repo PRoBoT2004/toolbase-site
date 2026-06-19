@@ -1,0 +1,234 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+
+const title = 'Case Converter, UPPER, lower, Title & camelCase | Toolbase';
+const description =
+	'Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, kebab-case and more. Runs entirely in your browser; nothing is uploaded. Free, instant, no sign-up.';
+
+const faqs = [
+	{
+		q: 'Is my text uploaded anywhere?',
+		a: 'No. The conversion runs entirely in your browser. Your text is never sent to a server or stored, so it is safe for anything private and works offline.',
+	},
+	{
+		q: 'What is the difference between Title Case and Sentence case?',
+		a: 'Title Case capitalises the first letter of every word, used for headlines. Sentence case capitalises only the first letter of each sentence, like normal prose. Pick Title for headings, Sentence for body text.',
+	},
+	{
+		q: 'What are camelCase, snake_case and kebab-case for?',
+		a: 'They are naming styles used in code and data. camelCase joins words with capitals (myVariableName), snake_case joins with underscores (my_variable_name), and kebab-case joins with hyphens (my-variable-name), the last is also ideal for URL slugs.',
+	},
+	{
+		q: 'Will it keep my punctuation and numbers?',
+		a: 'The plain cases (UPPER, lower, Title, Sentence, inVERSE, aLtErNaTiNg) preserve all your characters. The code cases (camel, snake, kebab, CONSTANT) strip punctuation and join word and number tokens, since that is what those formats require.',
+	},
+];
+
+const faqJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+});
+const appJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'WebApplication',
+	name: 'Case Converter',
+	applicationCategory: 'UtilitiesApplication',
+	operatingSystem: 'Any (web browser)',
+	url: 'https://gettoolbase.org/tools/case-converter/',
+	offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+	description: description,
+});
+const breadcrumbJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://gettoolbase.org/' },
+		{ '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://gettoolbase.org/tools/' },
+		{ '@type': 'ListItem', position: 3, name: 'Case Converter', item: 'https://gettoolbase.org/tools/case-converter/' },
+	],
+});
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<script type="application/ld+json" is:inline set:html={faqJsonLd} />
+		<script type="application/ld+json" is:inline set:html={appJsonLd} />
+		<script type="application/ld+json" is:inline set:html={breadcrumbJsonLd} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="crumbs" aria-label="Breadcrumb">
+				<a href="/">Home</a> › <a href="/tools/">Tools</a> › <span>Case Converter</span>
+			</nav>
+
+			<h1>Case Converter</h1>
+			<p class="lede">
+				Convert text between UPPERCASE, lowercase, Title Case, Sentence case and code styles like
+				camelCase and snake_case. <strong>Everything happens in your browser:</strong> your text is never
+				uploaded. Free, instant, no sign-up.
+			</p>
+
+			<section class="app" aria-label="Case converter">
+				<textarea id="text" rows="7" placeholder="Type or paste your text here…" aria-label="Text to convert"></textarea>
+
+				<div class="cases">
+					<button class="case" data-case="upper" type="button">UPPER CASE</button>
+					<button class="case" data-case="lower" type="button">lower case</button>
+					<button class="case" data-case="title" type="button">Title Case</button>
+					<button class="case" data-case="sentence" type="button">Sentence case</button>
+					<button class="case" data-case="camel" type="button">camelCase</button>
+					<button class="case" data-case="pascal" type="button">PascalCase</button>
+					<button class="case" data-case="snake" type="button">snake_case</button>
+					<button class="case" data-case="kebab" type="button">kebab-case</button>
+					<button class="case" data-case="constant" type="button">CONSTANT_CASE</button>
+					<button class="case" data-case="alternating" type="button">aLtErNaTiNg</button>
+					<button class="case" data-case="inverse" type="button">InVeRsE</button>
+				</div>
+
+				<div class="out-head">
+					<span>Result</span>
+					<button id="copy-btn" type="button" class="ghost">Copy</button>
+				</div>
+				<textarea id="out" rows="7" readonly aria-label="Converted text" placeholder="Your converted text appears here…"></textarea>
+				<div class="actions">
+					<button id="clear-btn" type="button" class="ghost">Clear</button>
+					<span id="status" class="status" aria-live="polite"></span>
+				</div>
+				<p class="privacy">🔒 100% private, converted locally in your browser. Nothing is uploaded.</p>
+			</section>
+
+			<div class="prose">
+				<h2>What each case is for</h2>
+				<ul>
+					<li><strong>UPPER / lower</strong>, emphasis, or normalising messy input.</li>
+					<li><strong>Title Case</strong>, headlines and headings.</li>
+					<li><strong>Sentence case</strong>, normal prose; fixes text typed in all caps.</li>
+					<li><strong>camelCase / PascalCase</strong>, variable and class names in code.</li>
+					<li><strong>snake_case / CONSTANT_CASE</strong>, variables and constants in many languages.</li>
+					<li><strong>kebab-case</strong>, URL slugs, CSS classes, file names.</li>
+				</ul>
+
+				<h2>Frequently asked questions</h2>
+				{
+					faqs.map((f) => (
+						<details class="faq">
+							<summary>{f.q}</summary>
+							<p>{f.a}</p>
+						</details>
+					))
+				}
+			</div>
+
+			<aside class="recommends">
+				<h2>More text tools</h2>
+				<ul>
+					<li><a href="/tools/word-counter/">Word Counter</a>, words, characters, reading time.</li>
+				</ul>
+			</aside>
+
+			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
+		</main>
+		<Footer />
+
+		<script>
+			const $ = (id) => document.getElementById(id);
+			const ta = $('text');
+			const out = $('out');
+
+			const cap = (w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w);
+			const words = (s) => s.match(/[A-Za-z0-9]+/g) || [];
+
+			const transforms = {
+				upper: (s) => s.toUpperCase(),
+				lower: (s) => s.toLowerCase(),
+				title: (s) => s.replace(/\w\S*/g, (w) => w[0].toUpperCase() + w.slice(1).toLowerCase()),
+				sentence: (s) =>
+					s.toLowerCase().replace(/(^\s*[a-z])|([.!?]\s+[a-z])/g, (m) => m.toUpperCase()),
+				camel: (s) => words(s).map((w, i) => (i === 0 ? w.toLowerCase() : cap(w))).join(''),
+				pascal: (s) => words(s).map(cap).join(''),
+				snake: (s) => words(s).map((w) => w.toLowerCase()).join('_'),
+				kebab: (s) => words(s).map((w) => w.toLowerCase()).join('-'),
+				constant: (s) => words(s).map((w) => w.toUpperCase()).join('_'),
+				alternating: (s) => {
+					let i = 0;
+					return s.replace(/[a-z]/gi, (c) => (i++ % 2 === 0 ? c.toLowerCase() : c.toUpperCase()));
+				},
+				inverse: (s) =>
+					s.replace(/[a-z]/gi, (c) => (c === c.toLowerCase() ? c.toUpperCase() : c.toLowerCase())),
+			};
+
+			function apply(name) {
+				const fn = transforms[name];
+				if (!fn) return;
+				out.value = fn(ta.value);
+			}
+
+			document.querySelectorAll('.case').forEach((btn) =>
+				btn.addEventListener('click', () => {
+					apply(btn.dataset.case);
+					document.querySelectorAll('.case').forEach((b) => b.classList.remove('active'));
+					btn.classList.add('active');
+				})
+			);
+			$('copy-btn').addEventListener('click', async () => {
+				try {
+					await navigator.clipboard.writeText(out.value);
+					setStatus('✓ Copied');
+				} catch (e) {
+					setStatus('⚠ Copy failed, select and copy manually');
+				}
+			});
+			$('clear-btn').addEventListener('click', () => {
+				ta.value = '';
+				out.value = '';
+				ta.focus();
+			});
+			function setStatus(m) {
+				const s = $('status');
+				s.textContent = m;
+				s.className = 'status' + (m[0] === '⚠' ? ' err' : '');
+				setTimeout(() => (s.textContent = ''), 2500);
+			}
+		</script>
+
+		<style>
+			.crumbs { font-size: 0.8em; color: rgb(var(--gray)); margin-bottom: 1em; }
+			.crumbs a { color: rgb(var(--gray)); }
+			.lede { font-size: 1.15em; color: rgb(var(--gray-dark)); }
+			.app { margin: 2em 0 3em; }
+			textarea {
+				width: 100%; box-sizing: border-box; border: 1px solid rgb(var(--gray-light));
+				border-radius: 10px; padding: 0.9em; font-size: 1em; line-height: 1.6; resize: vertical; font-family: inherit;
+			}
+			textarea:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+			textarea[readonly] { background: rgba(var(--gray-light), 30%); }
+			.cases { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 1em 0; }
+			button.case {
+				background: #fff; border: 1px solid rgb(var(--gray-light)); border-radius: 8px;
+				padding: 0.55em 0.9em; cursor: pointer; font-size: 0.88em; color: rgb(var(--gray-dark));
+			}
+			button.case:hover { border-color: var(--accent); color: var(--accent); }
+			button.case.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+			.out-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em; font-weight: 700; font-size: 0.85em; }
+			.actions { display: flex; align-items: center; gap: 0.6em; margin-top: 0.6em; flex-wrap: wrap; }
+			button.ghost { background: none; border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.45em 0.9em; cursor: pointer; color: rgb(var(--gray-dark)); font-size: 0.88em; }
+			button.ghost:hover { border-color: var(--accent); color: var(--accent); }
+			.status { font-size: 0.85em; color: #0d7a3f; font-weight: 700; }
+			.status.err { color: #9a2515; }
+			.privacy { margin: 1em 0 0; font-size: 0.82em; color: rgb(var(--gray-dark)); }
+			.prose h2 { margin-top: 1.5em; }
+			.prose .faq { border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.75em 1em; margin-bottom: 0.6em; }
+			.prose .faq summary { cursor: pointer; font-weight: 700; font-size: 0.95em; }
+			.prose .faq p { margin: 0.75em 0 0; font-size: 0.92em; }
+			.recommends { background: rgba(var(--gray-light), 40%); border-radius: 12px; padding: 1.25em 1.5em; margin: 2.5em 0; }
+			.recommends h2 { margin-top: 0; font-size: 1.6em; }
+			.back { margin-top: 2em; }
+		</style>
+	</body>
+</html>

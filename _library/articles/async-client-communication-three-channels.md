@@ -35,7 +35,7 @@ One exception: voice notes for vibe-checks and rapport. A 30-second voice note s
 
 Email is where anything with money, scope, or legal weight lives. Proposals. Invoices. Contracts. Scope changes. Project kickoff summaries. Final deliverables. Anything that a future version of either party might need to reference in a dispute.
 
-The discipline is treating every email as if it might be exhibit A. Subject lines are specific ("Acme Co — Brand Sprint Proposal v2") not vague ("Following up"). Bullet points, not walls of text. A "what I'm waiting on from you" line at the bottom of every email so the ball is never ambiguous.
+The discipline is treating every email as if it might be exhibit A. Subject lines are specific ("Acme Co, Brand Sprint Proposal v2") not vague ("Following up"). Bullet points, not walls of text. A "what I'm waiting on from you" line at the bottom of every email so the ball is never ambiguous.
 
 For solo operators billing internationally, this matters more than for agencies. There's no account manager to reconstruct decisions later. If a US client disputes a ₹2.5L invoice, the only record is what's in email. WhatsApp screenshots don't carry the same weight, and Slack history might be gone if the workspace was on a free plan and aged out.
 

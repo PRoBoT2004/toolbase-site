@@ -3,9 +3,9 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 
-const title = 'JPG to PDF Free — Convert Images to PDF in Your Browser | Toolbase';
+const title = 'JPG to PDF Free, Convert Images to PDF in Your Browser | Toolbase';
 const description =
-	'Convert JPG and PNG images into a single PDF — reorder them, choose fit-to-image, A4 or Letter pages, and download. Runs entirely in your browser; your images are never uploaded. Free, unlimited, no sign-up.';
+	'Convert JPG and PNG images into a single PDF, reorder them, choose fit-to-image, A4 or Letter pages, and download. Runs entirely in your browser; your images are never uploaded. Free, unlimited, no sign-up.';
 
 const faqs = [
 	{
@@ -18,7 +18,7 @@ const faqs = [
 	},
 	{
 		q: 'What does "fit to image" mean versus A4 or Letter?',
-		a: 'Fit to image makes each PDF page exactly the size of its image, with no borders — best for screenshots and graphics. A4 or Letter places each image, scaled to fit and centred, on a standard document page — best when the PDF will be printed.',
+		a: 'Fit to image makes each PDF page exactly the size of its image, with no borders, best for screenshots and graphics. A4 or Letter places each image, scaled to fit and centred, on a standard document page, best when the PDF will be printed.',
 	},
 	{
 		q: 'Does it support PNG too?',
@@ -26,7 +26,7 @@ const faqs = [
 	},
 	{
 		q: 'Is there a limit on how many images I can convert?',
-		a: 'No artificial limit — no signup, no daily cap, no watermark. Everything runs locally, so the only real ceiling is your device’s memory. Most batches convert in a second or two.',
+		a: 'No artificial limit, no signup, no daily cap, no watermark. Everything runs locally, so the only real ceiling is your device’s memory. Most batches convert in a second or two.',
 	},
 ];
 
@@ -77,7 +77,7 @@ const breadcrumbJsonLd = JSON.stringify({
 
 			<h1>JPG to PDF</h1>
 			<p class="lede">
-				Turn JPG and PNG images into a single PDF — reorder them, pick the page size, and download.
+				Turn JPG and PNG images into a single PDF, reorder them, pick the page size, and download.
 				<strong>Everything happens in your browser:</strong> your images are never uploaded, never sent
 				anywhere, never stored. Free, unlimited, no sign-up.
 			</p>
@@ -115,22 +115,22 @@ const breadcrumbJsonLd = JSON.stringify({
 					</div>
 				</div>
 
-				<p class="privacy">🔒 100% private — processed locally in your browser. Nothing is uploaded.</p>
+				<p class="privacy">🔒 100% private, processed locally in your browser. Nothing is uploaded.</p>
 			</section>
 
 			<div class="prose">
 				<h2>How to convert images to PDF in your browser</h2>
 				<ol>
-					<li><strong>Add your images.</strong> Drop in JPGs or PNGs — as many as you like.</li>
+					<li><strong>Add your images.</strong> Drop in JPGs or PNGs, as many as you like.</li>
 					<li><strong>Order them.</strong> Use the arrows to set the page order.</li>
 					<li><strong>Pick a page size.</strong> Fit-to-image for screenshots, A4/Letter for printing.</li>
-					<li><strong>Convert &amp; download.</strong> One PDF is built on your device — no upload.</li>
+					<li><strong>Convert &amp; download.</strong> One PDF is built on your device, no upload.</li>
 				</ol>
 
 				<h2>Why convert images locally instead of uploading?</h2>
 				<p>
-					Most "JPG to PDF" sites upload your pictures to their servers — a real privacy problem for
-					receipts, ID scans or personal photos — and add limits or watermarks. This tool builds the PDF
+					Most "JPG to PDF" sites upload your pictures to their servers, a real privacy problem for
+					receipts, ID scans or personal photos, and add limits or watermarks. This tool builds the PDF
 					entirely on your own device, so nothing leaves your computer, there are no limits, and it works
 					offline once loaded. Need to take a PDF apart again? Use <a href="/tools/split-pdf/">Split PDF</a>,
 					or combine finished PDFs with <a href="/tools/merge-pdf/">Merge PDF</a>.
@@ -150,9 +150,9 @@ const breadcrumbJsonLd = JSON.stringify({
 			<aside class="recommends">
 				<h2>More PDF tools</h2>
 				<ul>
-					<li><a href="/tools/merge-pdf/">Merge PDF</a> — combine PDFs and images into one file.</li>
-					<li><a href="/tools/split-pdf/">Split PDF</a> — break a PDF into multiple files.</li>
-					<li><a href="/tools/rotate-pdf/">Rotate PDF</a> — fix sideways pages.</li>
+					<li><a href="/tools/merge-pdf/">Merge PDF</a>, combine PDFs and images into one file.</li>
+					<li><a href="/tools/split-pdf/">Split PDF</a>, break a PDF into multiple files.</li>
+					<li><a href="/tools/rotate-pdf/">Rotate PDF</a>, fix sideways pages.</li>
 				</ul>
 			</aside>
 
@@ -263,7 +263,7 @@ const breadcrumbJsonLd = JSON.stringify({
 					}
 					const data = await out.save();
 					downloadBlob(data, 'converted.pdf');
-					setBusy(false, '✓ Built a ' + out.getPageCount() + '-page PDF — downloaded.');
+					setBusy(false, '✓ Built a ' + out.getPageCount() + '-page PDF, downloaded.');
 				} catch (err) {
 					console.error(err);
 					setBusy(false, '⚠ ' + (err && err.message ? err.message : 'Something went wrong.'));

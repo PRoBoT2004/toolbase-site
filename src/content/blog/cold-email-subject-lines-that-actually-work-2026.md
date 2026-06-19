@@ -1,6 +1,6 @@
 ---
 title: 'Cold Email Subject Lines That Get Replies in 2026 (Solopreneur Edition)'
-description: 'Cold email subject lines that get replies in 2026 — for solopreneurs reaching SMBs. Eight working patterns plus the first-line preview trick most senders miss.'
+description: 'Cold email subject lines that get replies in 2026, for solopreneurs reaching SMBs. Eight working patterns plus the first-line preview trick most senders miss.'
 pubDate: 'Jun 16 2026'
 heroImage: '../../assets/cold-email-subject-lines-that-actually-work-2026.webp'
 ---
@@ -25,11 +25,11 @@ The major shifts in the last 18 months that broke older subject-line advice:
 
 After stripping the dead tactics, three patterns consistently get opens in 2026.
 
-**Pattern 1 — Specific observation about the recipient.** Something only someone who actually looked at their site or business would notice. NOT "I love your work" (that's flattery). More like "your pricing page links to a 404" or "your blog hasn't shipped since March."
+**Pattern 1, Specific observation about the recipient.** Something only someone who actually looked at their site or business would notice. NOT "I love your work" (that's flattery). More like "your pricing page links to a 404" or "your blog hasn't shipped since March."
 
-**Pattern 2 — Mutual context.** Naming a specific shared connection, event, or community without making it the main thing. "From the SaaSFest dinner Tuesday" reads as personal because it's specific.
+**Pattern 2, Mutual context.** Naming a specific shared connection, event, or community without making it the main thing. "From the SaaSFest dinner Tuesday" reads as personal because it's specific.
 
-**Pattern 3 — Direct value, no setup.** Skip the curiosity gap. Just say what you have to offer in plain English. "Spreadsheet I built that calculates X for businesses like yours" opens because it's clear, not because it's clever.
+**Pattern 3, Direct value, no setup.** Skip the curiosity gap. Just say what you have to offer in plain English. "Spreadsheet I built that calculates X for businesses like yours" opens because it's clear, not because it's clever.
 
 ## Eight subject lines that get opened
 
@@ -37,20 +37,20 @@ Categorized by the kind of relationship you're starting:
 
 ### For SMB owner cold outreach
 
-1. **"Saw your post on [specific platform]"** — works when paired with a first line that proves you actually read it
-2. **"Your [thing on their site] vs [competitor's version]"** — opens because it triggers competitive curiosity, doesn't feel like a sales email
-3. **"Quick observation on [their product/site]"** — only works if your observation is actually useful in the first line
+1. **"Saw your post on [specific platform]"**, works when paired with a first line that proves you actually read it
+2. **"Your [thing on their site] vs [competitor's version]"**, opens because it triggers competitive curiosity, doesn't feel like a sales email
+3. **"Quick observation on [their product/site]"**, only works if your observation is actually useful in the first line
 
 ### For referral and warm-intro openers
 
-4. **"[Mutual contact] suggested I reach out"** — clean, honest, the highest open rate of any pattern
-5. **"From the [specific event] dinner"** — specific enough to feel real, vague enough to not require recall on their end
+4. **"[Mutual contact] suggested I reach out"**, clean, honest, the highest open rate of any pattern
+5. **"From the [specific event] dinner"**, specific enough to feel real, vague enough to not require recall on their end
 
 ### For project-based pitching
 
-6. **"Built a [thing] for [type of business]"** — direct value, low pattern matching
-7. **"15-min ask about [specific topic they care about]"** — honest framing of what you want
-8. **"Stupid question about [their industry]"** — works because most senders are afraid to look dumb
+6. **"Built a [thing] for [type of business]"**, direct value, low pattern matching
+7. **"15-min ask about [specific topic they care about]"**, honest framing of what you want
+8. **"Stupid question about [their industry]"**, works because most senders are afraid to look dumb
 
 ## The first-line preview trick most senders waste
 
@@ -70,12 +70,12 @@ The second version doubles the chance of an open before the recipient has tapped
 
 These are the patterns Gmail and Outlook actively penalize right now:
 
-- ALL-CAPS WORDS like FREE, URGENT, OPPORTUNITY — instant spam score increase
-- Currency symbols in the subject ($5,000 in revenue, ₹1 lakh savings) — spam-adjacent flag
-- "Free" + "Money" combinations — algorithmic flag dating back to 2010 and still active
-- Multiple exclamation marks — looks like 2002 chain mail
-- "Limited time" or "Act now" — sales-pressure language algorithms learn to filter
-- Excessive emoji (more than one in the subject) — hits deliverability score directly
+- ALL-CAPS WORDS like FREE, URGENT, OPPORTUNITY, instant spam score increase
+- Currency symbols in the subject ($5,000 in revenue, ₹1 lakh savings), spam-adjacent flag
+- "Free" + "Money" combinations, algorithmic flag dating back to 2010 and still active
+- Multiple exclamation marks, looks like 2002 chain mail
+- "Limited time" or "Act now", sales-pressure language algorithms learn to filter
+- Excessive emoji (more than one in the subject), hits deliverability score directly
 
 ## A/B testing for solopreneur volumes
 

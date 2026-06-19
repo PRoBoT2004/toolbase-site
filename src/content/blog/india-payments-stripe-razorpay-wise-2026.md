@@ -13,7 +13,7 @@ This is the honest version. Three real options, one recommendation per revenue s
 
 Solo founders in India taking foreign client payments have three working options in 2026: Wise Business (formerly TransferWise), Razorpay International, and Stripe via the India entity (or Stripe Atlas US LLC for the small subset who genuinely need it).
 
-PayPal exists. It is not on this list on purpose. The withdrawal fee, the FX spread, the dispute system, the seller-disadvantage policies — every part of using PayPal as an Indian freelancer costs you money or stress. Skip it.
+PayPal exists. It is not on this list on purpose. The withdrawal fee, the FX spread, the dispute system, the seller-disadvantage policies, every part of using PayPal as an Indian freelancer costs you money or stress. Skip it.
 
 ## What everyone gets wrong about GST
 
@@ -35,7 +35,7 @@ Equally misunderstood: receiving USD into your Indian bank does NOT automaticall
 
 Always pull current rates from each platform before opening an account. Fee structures update quarterly and 2-3% on the wrong platform compounds into real money fast.
 
-## Wise Business — the default pick under ₹30 lakh revenue
+## Wise Business: the default pick under ₹30 lakh revenue
 
 Wise is the cheapest way to receive small-to-medium foreign payments into India today. The fee structure looks more like a bank wire than a payment processor: a tiny percentage plus a flat fee, with FX at the actual mid-market rate. For a $2,000 invoice, you'll lose roughly $12-15 total in fees. Stripe takes $90+ on the same transaction.
 
@@ -45,7 +45,7 @@ For solo consultants billing 2-10 invoices per month, this matches the actual wo
 
 Open a Wise Business account at [wise.com/business](https://wise.com/business). Verification is fully online, takes 1-2 working days, and costs about ₹4,000 one-time. There's no monthly fee after that.
 
-## Razorpay International — the middle option
+## Razorpay International: the middle option
 
 Razorpay International gives you the smoothest checkout experience of the three and supports card payments from international clients. The fee is bundled at roughly 3% all-in, which sits between Wise and Stripe.
 
@@ -55,7 +55,7 @@ Where it loses: the all-in 3% is significantly more than Wise's 0.5% on larger t
 
 Right fit: you sell digital products or SaaS to international customers and need a real checkout flow, not invoice-based billing.
 
-## Stripe — only worth it past a certain volume
+## Stripe: only worth it past a certain volume
 
 Stripe via the India entity works, but the international transaction fee is the highest of the three at 4.3% plus ₹3 per transaction. It only earns its keep when you have either:
 
@@ -72,7 +72,7 @@ Avoid Stripe Atlas (US LLC) unless your CA explicitly recommends it. Yes, it giv
 
 **₹10-50 lakh/year, with self-serve checkout (SaaS or digital products):** Razorpay International. The checkout flow plus Indian-native tax support outweighs the 2.5% fee gap.
 
-**₹50 lakh+/year with recurring revenue and a dev resource:** Stripe via India entity. Subscription billing, dunning, dispute handling — these become worth the fee at scale.
+**₹50 lakh+/year with recurring revenue and a dev resource:** Stripe via India entity. Subscription billing, dunning, dispute handling, these become worth the fee at scale.
 
 ## The conversation to have with your CA before opening any account
 
@@ -96,7 +96,7 @@ Filing GST returns without categorizing foreign revenue separately. Indian GST t
 
 ## The pattern that matters
 
-Choosing how to receive foreign payments is one of those quiet decisions that compounds over years. Pick well and you keep an extra 2-4% of every invoice for the next decade. Pick badly and you spend hours each quarter cleaning up reconciliation issues with your CA. For most Indian solo founders starting out, Wise Business is the right answer. Upgrade only when you have a specific reason — never because Stripe looks cooler.
+Choosing how to receive foreign payments is one of those quiet decisions that compounds over years. Pick well and you keep an extra 2-4% of every invoice for the next decade. Pick badly and you spend hours each quarter cleaning up reconciliation issues with your CA. For most Indian solo founders starting out, Wise Business is the right answer. Upgrade only when you have a specific reason, never because Stripe looks cooler.
 
 ---
 

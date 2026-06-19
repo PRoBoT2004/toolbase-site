@@ -1,5 +1,5 @@
 /*
-  Toolbase — editorial theme
+  Toolbase, editorial theme
   Warm cream background, charcoal text, burnt-orange accent, system serif headings.
   Matches the editorial line-illustration aesthetic used in hero images.
 */
@@ -18,7 +18,7 @@
 	--gray-gradient: rgba(234, 226, 213, 40%), #FBF6EC;
 
 	/* Surfaces */
-	--bg: #FBF6EC;                  /* warm cream — body */
+	--bg: #FBF6EC;                  /* warm cream, body */
 	--surface: #FFFFFF;             /* cards */
 	--surface-warm: #F7F0E0;        /* warm tinted surface */
 

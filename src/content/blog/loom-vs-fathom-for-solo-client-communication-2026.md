@@ -5,11 +5,11 @@ pubDate: 'Jun 15 2026'
 heroImage: '../../assets/loom-vs-fathom-for-solo-client-communication-2026.webp'
 ---
 
-Every "best tools for solopreneurs" article lumps Loom and Fathom into the same category — "async video for client work." They are not the same category. They solve almost completely different problems, and confusing them costs you either time or money depending on which one you guessed wrong.
+Every "best tools for solopreneurs" article lumps Loom and Fathom into the same category, "async video for client work." They are not the same category. They solve almost completely different problems, and confusing them costs you either time or money depending on which one you guessed wrong.
 
 I run a solo consulting practice. For 30 days I tried to handle every client touchpoint with Loom alone. For the next 30 days I switched to Fathom alone. Same client load (4 active accounts), same touchpoint volume (around 12 video/call moments per week). Same kind of work.
 
-What I learned is the opposite of what most reviews say. **Most solopreneurs need both, but in a specific 80/20 split** — and the one most reviews call "the bigger deal" is usually the wrong one for solo work.
+What I learned is the opposite of what most reviews say. **Most solopreneurs need both, but in a specific 80/20 split**, and the one most reviews call "the bigger deal" is usually the wrong one for solo work.
 
 Real prices, real workflows, six tests.
 
@@ -32,7 +32,7 @@ Once you see that distinction, the "which is better" question almost dissolves. 
 - Enterprise: custom.
 
 **Fathom**
-- **Free: $0.** Unlimited recordings + transcripts + instant AI summaries. **This free tier is the most surprising thing in this whole comparison** — more on that below.
+- **Free: $0.** Unlimited recordings + transcripts + instant AI summaries. **This free tier is the most surprising thing in this whole comparison**, more on that below.
 - Premium: $20/month (or $16/month annually). Advanced summaries, AI-generated action items, conversational meeting assistant.
 - Team: $19/user/month (2-user minimum). Search across shared calls, comments, folders.
 - Business: $34/user/month. CRM sync, deal view, coaching metrics.
@@ -60,25 +60,25 @@ For 30 days each, I forced myself to use only one of them for all client video t
 
 **Loom:** Open the Loom desktop app, click record, talk into webcam for 2 minutes, copy the link, paste into Slack/email. The AI tier (Business+AI) auto-generates a clean title, 3–5 bullet summary, and chapters for longer videos. Total time: ~4 minutes per client × 4 clients = 16 minutes a week.
 
-**Fathom:** This workflow sits outside Fathom's design space — it's built to capture live conversations, not one-way recorded monologues. For a no-meeting update like this, you'd reach past Fathom for a recording tool.
+**Fathom:** This workflow sits outside Fathom's design space, it's built to capture live conversations, not one-way recorded monologues. For a no-meeting update like this, you'd reach past Fathom for a recording tool.
 
 **Best fit:** **Loom.** This is exactly the workflow Loom was designed for, and it shines here.
 
 ## Test 2: Walking a client through a deliverable
 
-**The task:** Share a finished design file or document and explain what they're looking at — voiceover + screen-share style.
+**The task:** Share a finished design file or document and explain what they're looking at, voiceover + screen-share style.
 
 **Loom:** Hit record, click "screen + cam," walk through the file with cursor highlights, stop, send. Loom's annotation tools (cursor zoom, drawing) make this feel like a polished walkthrough. Total time: ~6 minutes per deliverable.
 
-**Fathom:** Fathom is purpose-built for live calls, and a walkthrough done as a live call works beautifully through it — the client got a clean summary email after. The trade-off is that the walkthrough then takes a 25-minute synchronous slot instead of a 6-minute async video.
+**Fathom:** Fathom is purpose-built for live calls, and a walkthrough done as a live call works beautifully through it, the client got a clean summary email after. The trade-off is that the walkthrough then takes a 25-minute synchronous slot instead of a 6-minute async video.
 
-**Best fit:** **Loom for the async path; Fathom for the live path.** Async tends to be faster for both sides on monologue-heavy explainer content — clients can rewind, pause, watch at 1.5x.
+**Best fit:** **Loom for the async path; Fathom for the live path.** Async tends to be faster for both sides on monologue-heavy explainer content, clients can rewind, pause, watch at 1.5x.
 
 ## Test 3: Capturing a kickoff call
 
 **The task:** Run a 45-minute new-client onboarding call. Need: clean notes, action items by assignee, decisions made.
 
-**Loom:** Loom isn't designed to join your Zoom call — it sits in a different category, focused on recordings you make yourself rather than capturing meetings as they happen. For this workflow you'd reach past Loom and pair the kickoff call with a meeting-capture tool.
+**Loom:** Loom isn't designed to join your Zoom call, it sits in a different category, focused on recordings you make yourself rather than capturing meetings as they happen. For this workflow you'd reach past Loom and pair the kickoff call with a meeting-capture tool.
 
 **Fathom:** Joins the Zoom automatically. Records, transcribes, summarizes. Within 90 seconds of the call ending, I had: a 4-paragraph meeting summary, a list of action items separated by who owns each, key decisions, and a searchable transcript. I copy-pasted the action items into ClickUp in 30 seconds.
 
@@ -88,7 +88,7 @@ For 30 days each, I forced myself to use only one of them for all client video t
 
 **The task:** A client emails a complex question. The answer is too nuanced for a text reply but doesn't warrant scheduling a call.
 
-**Loom:** Hit record. Talk for 2 minutes. Send. Client replies in their own time. This is the magic Loom moment — the meeting you didn't have to schedule.
+**Loom:** Hit record. Talk for 2 minutes. Send. Client replies in their own time. This is the magic Loom moment, the meeting you didn't have to schedule.
 
 **Fathom:** Fathom shines once the call is on the calendar, but this workflow is specifically about *not* scheduling a call.
 
@@ -100,7 +100,7 @@ For 30 days each, I forced myself to use only one of them for all client video t
 
 **Loom:** Record once. Loom AI generates chapters automatically. Embed the link in a Notion doc with steps and links. The AI title is usually decent ("Friday Content Review Walkthrough"). Job done. Future assistant clicks the link, watches, follows along.
 
-**Fathom:** SOP recording isn't Fathom's job — it captures meetings, not screencast walkthroughs.
+**Fathom:** SOP recording isn't Fathom's job, it captures meetings, not screencast walkthroughs.
 
 **Best fit:** **Loom.** SOP video is one of those rare "build it once, use forever" outputs Loom is genuinely great at.
 
@@ -125,11 +125,11 @@ For 30 days each, I forced myself to use only one of them for all client video t
 | Recording SOPs | Loom | Sporadic but high-leverage |
 | Meeting recaps for absent people | Fathom | Occasional |
 
-Both tools are excellent in their categories — they just aim at different jobs. **Loom is built to replace a meeting** (you record once, send a link, the client watches when they want). **Fathom is built to summarize a meeting** (it sits in the call you were already having and turns it into structured notes).
+Both tools are excellent in their categories, they just aim at different jobs. **Loom is built to replace a meeting** (you record once, send a link, the client watches when they want). **Fathom is built to summarize a meeting** (it sits in the call you were already having and turns it into structured notes).
 
-Solopreneurs whose week leans heavily async benefit more from Loom. Solopreneurs whose week is live-call heavy benefit more from Fathom (the [full Fathom setup walkthrough is here](/blog/fathom-setup-guide-solo-client-calls-2026/) if that's you). Most one-person businesses are somewhere in between — and the good news is that both tools have meaningful free tiers, so you don't have to pick blindly.
+Solopreneurs whose week leans heavily async benefit more from Loom. Solopreneurs whose week is live-call heavy benefit more from Fathom (the [full Fathom setup walkthrough is here](/blog/fathom-setup-guide-solo-client-calls-2026/) if that's you). Most one-person businesses are somewhere in between, and the good news is that both tools have meaningful free tiers, so you don't have to pick blindly.
 
-![Loom and Fathom map to different jobs in your week — async monologue vs live-meeting capture.](../../assets/loom-vs-fathom-scoreboard.webp)
+![Loom and Fathom map to different jobs in your week, async monologue vs live-meeting capture.](../../assets/loom-vs-fathom-scoreboard.webp)
 
 ## The Fathom free tier is the actual headline of this comparison
 
@@ -137,17 +137,17 @@ Most reviews bury this. **Fathom's free tier is genuinely free and genuinely use
 
 The only things you give up on the free tier:
 - Advanced summary customization
-- AI-generated action items (you still get the meeting summary, you just have to extract action items yourself — takes 60 seconds per meeting)
+- AI-generated action items (you still get the meeting summary, you just have to extract action items yourself, takes 60 seconds per meeting)
 - Conversational "ask Fathom about your meetings" assistant
 
 For a 1-person business, those gaps are minor. Fathom Free is the rare freemium that gives you almost all of the core value at no cost.
 
-Loom takes a different free-tier strategy: their Starter tier (25 videos, 5 minutes each) is positioned as a way to try the product, with the real value living in the paid Business + AI plan ($24/month) — which unlocks unlimited videos, AI summaries, and auto-chapters. Two valid product philosophies — and the choice between them depends on which model fits your usage shape.
+Loom takes a different free-tier strategy: their Starter tier (25 videos, 5 minutes each) is positioned as a way to try the product, with the real value living in the paid Business + AI plan ($24/month), which unlocks unlimited videos, AI summaries, and auto-chapters. Two valid product philosophies, and the choice between them depends on which model fits your usage shape.
 
 ## Which one should you actually pay for?
 
 **If you can only spend $0:**
-- Use **Fathom Free** for all meeting capture — it's full-featured at zero cost.
+- Use **Fathom Free** for all meeting capture, it's full-featured at zero cost.
 - Use **Loom Starter** for your short, occasional async videos; if you start needing more than ~25 a month, that's the signal to consider the Business + AI plan.
 
 **If you can pay $24/month total (recommended for most active solo operators):**
@@ -160,14 +160,14 @@ Loom takes a different free-tier strategy: their Starter tier (25 videos, 5 minu
 - Lean **Fathom Premium ($20/month, or $16/month annual)** if your week is live-meeting heavy and AI-generated action items would save you the most time.
 
 **Heavy live-meeting weeks (10+ client calls):**
-- Pairing **Fathom Premium ($20/month)** with Loom Starter is a strong stack — the Premium AI action items typically save ~15 minutes per meeting, which pays itself back quickly at that volume.
+- Pairing **Fathom Premium ($20/month)** with Loom Starter is a strong stack, the Premium AI action items typically save ~15 minutes per meeting, which pays itself back quickly at that volume.
 
 ## What's NOT in this comparison (and why)
 
-- **Otter.ai** — a long-time meeting-notes player. Free tier was trimmed in 2025 (now ~300 minutes/month); Fathom's free tier is more generous for solo use right now, though Otter is still strong for users already inside its ecosystem.
-- **Granola** — well-designed for certain workflows; the trade-off is that it's a paid-only product, so it sits in a different evaluation bucket than tools with full-featured free tiers.
-- **tl;dv** — similar category to Fathom with a comparable free tier; both are worth a look depending on which workflow feels more native.
-- **Zoom's built-in AI Companion** — included with paid Zoom plans and excellent inside Zoom; Fathom adds cross-platform coverage (Zoom + Meet + Teams) for solo operators who run mixed-client calls.
+- **Otter.ai**, a long-time meeting-notes player. Free tier was trimmed in 2025 (now ~300 minutes/month); Fathom's free tier is more generous for solo use right now, though Otter is still strong for users already inside its ecosystem.
+- **Granola**, well-designed for certain workflows; the trade-off is that it's a paid-only product, so it sits in a different evaluation bucket than tools with full-featured free tiers.
+- **tl;dv**, similar category to Fathom with a comparable free tier; both are worth a look depending on which workflow feels more native.
+- **Zoom's built-in AI Companion**, included with paid Zoom plans and excellent inside Zoom; Fathom adds cross-platform coverage (Zoom + Meet + Teams) for solo operators who run mixed-client calls.
 
 ## The bigger point
 
@@ -177,10 +177,10 @@ If you're a designer, developer, or writer who mostly delivers asynchronously an
 
 If you're a coach, consultant, or strategist who runs lots of live calls and prepares lots of recap docs → **Fathom does most of the heavy lifting.**
 
-For most solopreneurs, the truthful answer is *both* — but the split is rarely 50/50. Figure out which one matches your actual week, fund that one properly, and use the other's free tier as a backstop.
+For most solopreneurs, the truthful answer is *both*, but the split is rarely 50/50. Figure out which one matches your actual week, fund that one properly, and use the other's free tier as a backstop.
 
 That's the whole frame. Skip the Business plans and the Team plans until you're a multi-person operation. They're sized for problems you don't have yet.
 
 ---
 
-*Next up: Make.com vs Zapier for solopreneur automation — the unsexy but high-leverage tool fight that decides whether your client onboarding is 3 manual steps or zero. Subscribe to the [blog](/blog) so you don't miss it.*
+*Next up: Make.com vs Zapier for solopreneur automation, the unsexy but high-leverage tool fight that decides whether your client onboarding is 3 manual steps or zero. Subscribe to the [blog](/blog) so you don't miss it.*
