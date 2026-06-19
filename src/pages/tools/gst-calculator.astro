@@ -1,0 +1,340 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+
+const title = 'GST Calculator India, Free CGST SGST IGST Calculator | Toolbase';
+const description =
+	'Calculate GST on any amount at 5%, 12%, 18% or 28% slabs, with CGST + SGST split for intra-state and IGST for inter-state. Inclusive or exclusive of GST. Runs in your browser; nothing is uploaded. Free, instant, no sign-up.';
+
+const faqs = [
+	{
+		q: 'Is my data sent anywhere?',
+		a: 'No. Everything happens entirely in your browser as you type. No amount, no rate, no calculation is ever uploaded or stored on a server. Safe for client work, quotes and private invoices.',
+	},
+	{
+		q: 'What is the difference between CGST, SGST, and IGST?',
+		a: 'For an intra-state sale (buyer and seller in the same state), GST is split equally into CGST (paid to the central government) and SGST (paid to the state government). For an inter-state sale (different states or to a UT), the full amount is charged as IGST, which the central government later distributes. The calculator lets you pick which case applies.',
+	},
+	{
+		q: 'What is the difference between GST-inclusive and GST-exclusive?',
+		a: 'GST-exclusive means the amount you enter is the base price and GST is added on top (the customer pays more than what you entered). GST-inclusive means the amount you enter is the final price already including GST (you back-calculate the base and the tax portion). Use exclusive when quoting; use inclusive when working from a receipt or MRP.',
+	},
+	{
+		q: 'Which GST slab applies to what?',
+		a: 'India has five main GST slabs. 0% covers essentials like unbranded grains, milk and vegetables. 5% covers items like packaged food, footwear under Rs.1000 and economy travel. 12% covers items like processed food, computers and business class travel. 18% is the standard rate for most services, software, electronics and restaurants. 28% covers luxury goods, automobiles and tobacco. When in doubt, check the official CBIC rate finder or ask your CA for your HSN/SAC code.',
+	},
+	{
+		q: 'Does this work for reverse charge or composition scheme?',
+		a: 'This calculator does the core split, base + CGST + SGST or IGST. Reverse charge (where the buyer pays GST directly to the government) and composition scheme (a flat 1% to 6% on turnover for small businesses) need different handling and are outside the scope of a quick calculator. Talk to your CA before assuming either applies to your invoice.',
+	},
+];
+
+const faqJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+});
+const appJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'WebApplication',
+	name: 'GST Calculator',
+	applicationCategory: 'FinanceApplication',
+	operatingSystem: 'Any (web browser)',
+	url: 'https://gettoolbase.org/tools/gst-calculator/',
+	offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
+	description: description,
+});
+const breadcrumbJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://gettoolbase.org/' },
+		{ '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://gettoolbase.org/tools/' },
+		{ '@type': 'ListItem', position: 3, name: 'GST Calculator', item: 'https://gettoolbase.org/tools/gst-calculator/' },
+	],
+});
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<script type="application/ld+json" is:inline set:html={faqJsonLd} />
+		<script type="application/ld+json" is:inline set:html={appJsonLd} />
+		<script type="application/ld+json" is:inline set:html={breadcrumbJsonLd} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="crumbs" aria-label="Breadcrumb">
+				<a href="/">Home</a> › <a href="/tools/">Tools</a> › <span>GST Calculator</span>
+			</nav>
+
+			<h1>GST Calculator (India)</h1>
+			<p class="lede">
+				Calculate Indian GST on any amount at 5%, 12%, 18% or 28% slabs. Splits into CGST + SGST
+				for intra-state or IGST for inter-state. Works both ways: GST-exclusive (add tax) and
+				GST-inclusive (back-calculate from a final price).
+				<strong>Everything happens in your browser:</strong> nothing is uploaded.
+			</p>
+
+			<section class="app" aria-label="GST calculator">
+				<div class="inputs">
+					<label class="field">
+						<span class="lbl">Amount (Rs.)</span>
+						<input id="amount" type="number" step="0.01" min="0" inputmode="decimal" placeholder="1000.00" />
+					</label>
+
+					<label class="field">
+						<span class="lbl">GST rate</span>
+						<select id="rate">
+							<option value="5">5%</option>
+							<option value="12">12%</option>
+							<option value="18" selected>18%</option>
+							<option value="28">28%</option>
+						</select>
+					</label>
+
+					<fieldset class="toggle-row">
+						<legend>Mode</legend>
+						<label><input type="radio" name="mode" value="exclusive" checked /> GST-exclusive (add)</label>
+						<label><input type="radio" name="mode" value="inclusive" /> GST-inclusive (extract)</label>
+					</fieldset>
+
+					<fieldset class="toggle-row">
+						<legend>Transaction type</legend>
+						<label><input type="radio" name="ttype" value="intra" checked /> Intra-state (CGST + SGST)</label>
+						<label><input type="radio" name="ttype" value="inter" /> Inter-state (IGST)</label>
+					</fieldset>
+				</div>
+
+				<div class="results" id="results" hidden>
+					<div class="result-grid">
+						<div class="r"><span class="lbl">Base amount</span><span class="val" id="r-base">Rs. 0.00</span></div>
+						<div class="r" id="r-cgst-row"><span class="lbl">CGST</span><span class="val" id="r-cgst">Rs. 0.00</span></div>
+						<div class="r" id="r-sgst-row"><span class="lbl">SGST</span><span class="val" id="r-sgst">Rs. 0.00</span></div>
+						<div class="r" id="r-igst-row" hidden><span class="lbl">IGST</span><span class="val" id="r-igst">Rs. 0.00</span></div>
+						<div class="r total"><span class="lbl">Total GST</span><span class="val" id="r-gst">Rs. 0.00</span></div>
+						<div class="r grand"><span class="lbl">Final amount</span><span class="val" id="r-total">Rs. 0.00</span></div>
+					</div>
+					<button type="button" id="copy-btn" class="ghost">Copy breakdown</button>
+					<span id="status" class="status" aria-live="polite"></span>
+				</div>
+
+				<p class="privacy">🔒 100% private, calculated locally in your browser. Nothing is uploaded.</p>
+			</section>
+
+			<div class="prose">
+				<h2>When to use this</h2>
+				<p>
+					Three common moments when an Indian solopreneur or freelancer needs a GST split fast:
+				</p>
+				<ul>
+					<li><strong>Quoting a client:</strong> the rate they need to see is GST-exclusive (your work) plus the GST line item. This shows them the real total.</li>
+					<li><strong>Reading an invoice or receipt:</strong> the price is GST-inclusive. The calculator works backwards to show what the supplier actually charged for the goods or service vs the tax.</li>
+					<li><strong>Filing returns:</strong> the CGST + SGST or IGST split decides which fields on GSTR-1 and GSTR-3B the tax flows into. Get the split wrong and reconciliation breaks.</li>
+				</ul>
+
+				<h2>How the math works</h2>
+				<p>
+					<strong>Exclusive (add):</strong> tax = amount × rate / 100. Final = amount + tax. For intra-state, CGST = SGST = tax / 2. For inter-state, IGST = tax.
+				</p>
+				<p>
+					<strong>Inclusive (extract):</strong> base = total / (1 + rate/100). Tax = total - base. Split the same way as above.
+				</p>
+				<p>
+					The numbers are rounded to two decimals on display. Internal math runs at full float precision so a copy-paste into an invoice will reconcile to within a paisa.
+				</p>
+
+				<h2>Quick GST slab cheat sheet</h2>
+				<ul>
+					<li><strong>0%:</strong> essential unbranded food, fresh vegetables, milk, education and healthcare services.</li>
+					<li><strong>5%:</strong> packaged food, footwear under Rs.1000, economy air travel, restaurants without AC.</li>
+					<li><strong>12%:</strong> processed food, computers, business class air travel, branded apparel above Rs.1000.</li>
+					<li><strong>18%:</strong> most services (software, consulting, design, marketing), AC restaurants, electronics, telecoms.</li>
+					<li><strong>28%:</strong> luxury goods, automobiles, tobacco, sin goods. Often plus a compensation cess.</li>
+				</ul>
+				<p>
+					Your specific HSN (goods) or SAC (services) code decides the rate. The CBIC rate finder at <a href="https://cbic-gst.gov.in/gst-goods-services-rates.html" rel="nofollow">cbic-gst.gov.in</a> is the authoritative source. When in doubt, your CA.
+				</p>
+
+				<h2>Frequently asked questions</h2>
+				{
+					faqs.map((f) => (
+						<details class="faq">
+							<summary>{f.q}</summary>
+							<p>{f.a}</p>
+						</details>
+					))
+				}
+			</div>
+
+			<aside class="recommends">
+				<h2>More money tools</h2>
+				<ul>
+					<li><a href="/tools/freelance-rate-calculator/">Freelance Hourly Rate Calculator</a>, work out exactly what to charge per hour.</li>
+					<li><a href="/tools/project-quote-calculator/">Project Quote Calculator</a>, turn an hourly rate into a fixed quote.</li>
+					<li><a href="/tools/rate-increase-calculator/">Rate Increase Calculator</a>, model how many clients you can lose and still earn more.</li>
+				</ul>
+			</aside>
+
+			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
+		</main>
+		<Footer />
+
+		<script>
+			const KEY = 'tb-gst-calc';
+			const $ = (id) => document.getElementById(id);
+
+			function fmt(n) {
+				if (!isFinite(n)) return 'Rs. 0.00';
+				return 'Rs. ' + n.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+			}
+
+			function compute() {
+				const amount = parseFloat($('amount').value);
+				const rate = parseFloat($('rate').value) / 100;
+				const mode = document.querySelector('input[name="mode"]:checked').value;
+				const ttype = document.querySelector('input[name="ttype"]:checked').value;
+
+				if (!isFinite(amount) || amount <= 0) {
+					$('results').hidden = true;
+					return;
+				}
+				$('results').hidden = false;
+
+				let base, gst, total;
+				if (mode === 'exclusive') {
+					base = amount;
+					gst = base * rate;
+					total = base + gst;
+				} else {
+					total = amount;
+					base = total / (1 + rate);
+					gst = total - base;
+				}
+
+				$('r-base').textContent = fmt(base);
+				$('r-gst').textContent = fmt(gst);
+				$('r-total').textContent = fmt(total);
+
+				if (ttype === 'intra') {
+					$('r-cgst-row').hidden = false;
+					$('r-sgst-row').hidden = false;
+					$('r-igst-row').hidden = true;
+					const half = gst / 2;
+					$('r-cgst').textContent = fmt(half);
+					$('r-sgst').textContent = fmt(half);
+				} else {
+					$('r-cgst-row').hidden = true;
+					$('r-sgst-row').hidden = true;
+					$('r-igst-row').hidden = false;
+					$('r-igst').textContent = fmt(gst);
+				}
+
+				try {
+					localStorage.setItem(KEY, JSON.stringify({
+						amount: $('amount').value, rate: $('rate').value, mode, ttype,
+					}));
+				} catch (e) {}
+			}
+
+			['amount', 'rate'].forEach((id) => $(id).addEventListener('input', compute));
+			document.querySelectorAll('input[name="mode"], input[name="ttype"]').forEach((el) =>
+				el.addEventListener('change', compute)
+			);
+
+			$('copy-btn').addEventListener('click', async () => {
+				const ttype = document.querySelector('input[name="ttype"]:checked').value;
+				const rateText = $('rate').selectedOptions[0].text;
+				const lines = [
+					'GST breakdown (' + rateText + ')',
+					'Base amount: ' + $('r-base').textContent,
+				];
+				if (ttype === 'intra') {
+					lines.push('CGST: ' + $('r-cgst').textContent);
+					lines.push('SGST: ' + $('r-sgst').textContent);
+				} else {
+					lines.push('IGST: ' + $('r-igst').textContent);
+				}
+				lines.push('Total GST: ' + $('r-gst').textContent);
+				lines.push('Final amount: ' + $('r-total').textContent);
+				const text = lines.join('\n');
+				try {
+					await navigator.clipboard.writeText(text);
+					setStatus('✓ Copied');
+				} catch (e) {
+					setStatus('⚠ Copy failed, select and copy manually');
+				}
+			});
+
+			function setStatus(m) {
+				const s = $('status');
+				s.textContent = m;
+				s.className = 'status' + (m[0] === '⚠' ? ' err' : '');
+				setTimeout(() => (s.textContent = ''), 2500);
+			}
+
+			try {
+				const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+				if (saved) {
+					$('amount').value = saved.amount || '';
+					$('rate').value = saved.rate || '18';
+					const modeEl = document.querySelector('input[name="mode"][value="' + saved.mode + '"]');
+					if (modeEl) modeEl.checked = true;
+					const ttypeEl = document.querySelector('input[name="ttype"][value="' + saved.ttype + '"]');
+					if (ttypeEl) ttypeEl.checked = true;
+				}
+			} catch (e) {}
+			compute();
+		</script>
+
+		<style>
+			.crumbs { font-size: 0.8em; color: rgb(var(--gray)); margin-bottom: 1em; }
+			.crumbs a { color: rgb(var(--gray)); }
+			.lede { font-size: 1.15em; color: rgb(var(--gray-dark)); }
+			.app { margin: 2em 0 3em; }
+			.inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; }
+			.field { display: flex; flex-direction: column; gap: 0.3em; }
+			.field .lbl { font-size: 0.85em; font-weight: 700; color: rgb(var(--gray-dark)); }
+			.field input, .field select {
+				border: 1px solid rgb(var(--gray-light)); border-radius: 10px;
+				padding: 0.75em 0.9em; font-size: 1em; font-family: inherit;
+				background: #fff;
+			}
+			.field input:focus, .field select:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+			.toggle-row {
+				grid-column: 1 / -1; border: 1px solid rgb(var(--gray-light)); border-radius: 10px;
+				padding: 0.75em 0.9em; display: flex; flex-wrap: wrap; gap: 0.5em 1.25em;
+				background: #fff;
+			}
+			.toggle-row legend { font-size: 0.85em; font-weight: 700; color: rgb(var(--gray-dark)); padding: 0 0.3em; }
+			.toggle-row label { font-size: 0.95em; display: inline-flex; align-items: center; gap: 0.4em; cursor: pointer; }
+			.results { margin-top: 1.5em; background: #fff; border: 1px solid rgb(var(--gray-light)); border-radius: 12px; padding: 1.25em 1.4em; }
+			.result-grid { display: grid; gap: 0.65em; }
+			.r { display: flex; justify-content: space-between; align-items: baseline; }
+			.r .lbl { font-size: 0.92em; color: rgb(var(--gray-dark)); }
+			.r .val { font-size: 1.05em; font-weight: 600; color: rgb(var(--black)); }
+			.r.total { border-top: 1px solid rgb(var(--gray-light)); padding-top: 0.65em; margin-top: 0.25em; }
+			.r.total .val { color: var(--accent-dark); }
+			.r.grand { padding-top: 0.5em; }
+			.r.grand .lbl, .r.grand .val { font-size: 1.2em; font-weight: 700; color: rgb(var(--black)); }
+			.results button.ghost { margin-top: 1em; background: none; border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.55em 1em; cursor: pointer; color: rgb(var(--gray-dark)); }
+			.results button.ghost:hover { border-color: var(--accent); color: var(--accent); }
+			.status { font-size: 0.85em; color: #0d7a3f; font-weight: 700; margin-left: 0.6em; }
+			.status.err { color: #9a2515; }
+			.privacy { margin: 1em 0 0; font-size: 0.82em; color: rgb(var(--gray-dark)); }
+			.prose h2 { margin-top: 1.5em; }
+			.prose .faq { border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.75em 1em; margin-bottom: 0.6em; }
+			.prose .faq summary { cursor: pointer; font-weight: 700; font-size: 0.95em; }
+			.prose .faq p { margin: 0.75em 0 0; font-size: 0.92em; }
+			.recommends { background: rgba(var(--gray-light), 40%); border-radius: 12px; padding: 1.25em 1.5em; margin: 2.5em 0; }
+			.recommends h2 { margin-top: 0; font-size: 1.6em; }
+			.back { margin-top: 2em; }
+			@media (max-width: 600px) {
+				.inputs { grid-template-columns: 1fr; }
+			}
+		</style>
+	</body>
+</html>

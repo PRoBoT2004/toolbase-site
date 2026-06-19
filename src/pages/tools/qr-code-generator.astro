@@ -1,0 +1,333 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+
+const title = 'QR Code Generator, Free Downloadable QR Codes | Toolbase';
+const description =
+	'Make a QR code for any URL, text, phone, email, or Wi-Fi. Download as PNG or SVG. Runs entirely in your browser; nothing is uploaded. Free, instant, no sign-up.';
+
+const faqs = [
+	{
+		q: 'Is the QR code or my data sent to a server?',
+		a: 'No. The QR code is generated entirely in your browser, on your device. The text or URL you encode never leaves the page, so it is safe for private links, internal docs, and Wi-Fi passwords.',
+	},
+	{
+		q: 'What is error correction (L, M, Q, H) and what should I pick?',
+		a: 'Error correction is how much of the QR code can be obscured or damaged while still scanning. L is about 7% recovery, M is about 15%, Q is about 25%, H is about 30%. Higher correction makes the code denser (more squares). M is the default and works for most uses. Pick H if you plan to overlay a logo in the centre or print on glossy stock that may scuff.',
+	},
+	{
+		q: 'PNG or SVG, which should I download?',
+		a: 'PNG is a raster image, good for slide decks, social posts, photo prints, anywhere fixed sizes work. SVG is vector, scales to any size without blurring, best for posters, business cards, and print-shop submissions. If you might resize the code, use SVG.',
+	},
+	{
+		q: 'Can I make a Wi-Fi or contact QR?',
+		a: 'Yes, by encoding the right plain-text string. For Wi-Fi: WIFI:T:WPA;S:NetworkName;P:Password;; (T is auth type, S is SSID, P is password). For contact: a vCard string starting with BEGIN:VCARD. Paste the formatted string into the text box and scan to test on a phone.',
+	},
+	{
+		q: 'Do QR codes expire or stop working?',
+		a: 'Static QR codes encoded with the destination (like the ones this tool makes) never expire. They will keep working as long as the destination URL is live. Dynamic QR codes (which route through a tracking service) can expire if the service is shut down or the user stops paying. This tool makes static codes.',
+	},
+];
+
+const faqJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+});
+const appJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'WebApplication',
+	name: 'QR Code Generator',
+	applicationCategory: 'UtilitiesApplication',
+	operatingSystem: 'Any (web browser)',
+	url: 'https://gettoolbase.org/tools/qr-code-generator/',
+	offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+	description: description,
+});
+const breadcrumbJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://gettoolbase.org/' },
+		{ '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://gettoolbase.org/tools/' },
+		{ '@type': 'ListItem', position: 3, name: 'QR Code Generator', item: 'https://gettoolbase.org/tools/qr-code-generator/' },
+	],
+});
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<script type="application/ld+json" is:inline set:html={faqJsonLd} />
+		<script type="application/ld+json" is:inline set:html={appJsonLd} />
+		<script type="application/ld+json" is:inline set:html={breadcrumbJsonLd} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="crumbs" aria-label="Breadcrumb">
+				<a href="/">Home</a> › <a href="/tools/">Tools</a> › <span>QR Code Generator</span>
+			</nav>
+
+			<h1>QR Code Generator</h1>
+			<p class="lede">
+				Paste any URL, text, phone number, email, or Wi-Fi string. The QR code updates as you type.
+				Download as PNG or SVG.
+				<strong>Everything happens in your browser:</strong> nothing is uploaded.
+			</p>
+
+			<section class="app" aria-label="QR code generator">
+				<div class="layout">
+					<div class="left">
+						<label class="field">
+							<span class="lbl">Text, URL, or formatted string</span>
+							<textarea id="input" rows="5" placeholder="https://example.com" autocomplete="off"></textarea>
+						</label>
+
+						<div class="opts">
+							<label class="opt">
+								Size
+								<select id="size">
+									<option value="200">Small (200px)</option>
+									<option value="400" selected>Medium (400px)</option>
+									<option value="800">Large (800px)</option>
+								</select>
+							</label>
+							<label class="opt">
+								Error correction
+								<select id="ecc">
+									<option value="L">L (7%)</option>
+									<option value="M" selected>M (15%)</option>
+									<option value="Q">Q (25%)</option>
+									<option value="H">H (30%)</option>
+								</select>
+							</label>
+							<label class="opt">
+								Margin
+								<input type="number" id="margin" min="0" max="10" value="2" />
+							</label>
+						</div>
+
+						<div class="presets">
+							<span class="presets-lbl">Quick presets:</span>
+							<button data-preset="url" type="button" class="preset">URL</button>
+							<button data-preset="email" type="button" class="preset">Email</button>
+							<button data-preset="tel" type="button" class="preset">Phone</button>
+							<button data-preset="wifi" type="button" class="preset">Wi-Fi</button>
+							<button data-preset="vcard" type="button" class="preset">Contact (vCard)</button>
+						</div>
+					</div>
+
+					<div class="right">
+						<div id="qr-out" class="qr-out" aria-live="polite">
+							<p class="placeholder">QR code appears here as you type.</p>
+						</div>
+						<div class="actions">
+							<button id="dl-png" type="button" class="ghost" disabled>Download PNG</button>
+							<button id="dl-svg" type="button" class="ghost" disabled>Download SVG</button>
+						</div>
+						<span id="status" class="status" aria-live="polite"></span>
+					</div>
+				</div>
+
+				<p class="privacy">🔒 100% private, generated locally in your browser. Nothing is uploaded.</p>
+			</section>
+
+			<div class="prose">
+				<h2>What you can encode</h2>
+				<ul>
+					<li><strong>URLs:</strong> any link, paste directly. Most QR scanners open the URL with one tap.</li>
+					<li><strong>Phone:</strong> <code>tel:+919876543210</code></li>
+					<li><strong>Email:</strong> <code>mailto:hi@example.com?subject=Hello&body=Hi</code></li>
+					<li><strong>SMS:</strong> <code>sms:+919876543210?body=Hi</code></li>
+					<li><strong>Wi-Fi:</strong> <code>WIFI:T:WPA;S:NetworkName;P:Password;;</code></li>
+					<li><strong>Plain text:</strong> any string up to about 2000 characters at error correction L.</li>
+				</ul>
+
+				<h2>Where solopreneurs use QR codes</h2>
+				<ul>
+					<li><strong>Business cards:</strong> QR linking to your portfolio or Calendly. Saves typing.</li>
+					<li><strong>Invoice PDFs:</strong> QR to the payment page or UPI ID.</li>
+					<li><strong>Restaurant or shop:</strong> menu, Wi-Fi password, Google review link.</li>
+					<li><strong>Workshops or talks:</strong> slide deck or signup form.</li>
+					<li><strong>Packaging:</strong> care instructions, refill order page, support link.</li>
+				</ul>
+
+				<h2>Frequently asked questions</h2>
+				{
+					faqs.map((f) => (
+						<details class="faq">
+							<summary>{f.q}</summary>
+							<p>{f.a}</p>
+						</details>
+					))
+				}
+			</div>
+
+			<aside class="recommends">
+				<h2>More handy tools</h2>
+				<ul>
+					<li><a href="/tools/slug-generator/">URL Slug Generator</a>, turn titles into clean URL paths.</li>
+					<li><a href="/tools/word-counter/">Word Counter</a>, count words and reading time.</li>
+					<li><a href="/tools/case-converter/">Case Converter</a>, switch between UPPER, lower, Title and more.</li>
+				</ul>
+			</aside>
+
+			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
+		</main>
+		<Footer />
+
+		<script>
+			const KEY = 'tb-qr-gen';
+			const $ = (id) => document.getElementById(id);
+
+			let _qrPromise;
+			function loadQR() {
+				if (!_qrPromise) _qrPromise = import('qrcode');
+				return _qrPromise;
+			}
+
+			let lastSvg = '';
+			let lastPng = '';
+
+			async function render() {
+				const text = $('input').value;
+				const size = parseInt($('size').value, 10) || 400;
+				const ecc = $('ecc').value;
+				const margin = Math.max(0, Math.min(10, parseInt($('margin').value, 10) || 2));
+				const out = $('qr-out');
+				if (!text.trim()) {
+					out.innerHTML = '<p class="placeholder">QR code appears here as you type.</p>';
+					$('dl-png').disabled = true;
+					$('dl-svg').disabled = true;
+					return;
+				}
+				try {
+					const QR = await loadQR();
+					const svg = await QR.toString(text, { type: 'svg', width: size, margin, errorCorrectionLevel: ecc });
+					const dataUrl = await QR.toDataURL(text, { type: 'image/png', width: size, margin, errorCorrectionLevel: ecc });
+					out.innerHTML = svg;
+					lastSvg = svg;
+					lastPng = dataUrl;
+					$('dl-png').disabled = false;
+					$('dl-svg').disabled = false;
+					try {
+						localStorage.setItem(KEY, JSON.stringify({ text, size, ecc, margin }));
+					} catch (e) {}
+				} catch (err) {
+					out.innerHTML = '<p class="placeholder err">Could not encode this string. It may be too long for the current error-correction level. Try Q or L.</p>';
+					$('dl-png').disabled = true;
+					$('dl-svg').disabled = true;
+				}
+			}
+
+			$('input').addEventListener('input', render);
+			['size', 'ecc', 'margin'].forEach((id) => $(id).addEventListener('input', render));
+
+			document.querySelectorAll('.preset').forEach((btn) => {
+				btn.addEventListener('click', () => {
+					const kind = btn.getAttribute('data-preset');
+					let stub = '';
+					if (kind === 'url') stub = 'https://';
+					else if (kind === 'email') stub = 'mailto:hi@example.com?subject=Hello';
+					else if (kind === 'tel') stub = 'tel:+919876543210';
+					else if (kind === 'wifi') stub = 'WIFI:T:WPA;S:NetworkName;P:Password;;';
+					else if (kind === 'vcard') stub = 'BEGIN:VCARD\nVERSION:3.0\nFN:Your Name\nORG:Your Company\nTEL:+919876543210\nEMAIL:you@example.com\nURL:https://example.com\nEND:VCARD';
+					$('input').value = stub;
+					render();
+				});
+			});
+
+			$('dl-png').addEventListener('click', () => {
+				if (!lastPng) return;
+				const a = document.createElement('a');
+				a.href = lastPng;
+				a.download = 'qr-code.png';
+				a.click();
+				setStatus('✓ PNG downloaded');
+			});
+
+			$('dl-svg').addEventListener('click', () => {
+				if (!lastSvg) return;
+				const blob = new Blob([lastSvg], { type: 'image/svg+xml' });
+				const url = URL.createObjectURL(blob);
+				const a = document.createElement('a');
+				a.href = url;
+				a.download = 'qr-code.svg';
+				a.click();
+				URL.revokeObjectURL(url);
+				setStatus('✓ SVG downloaded');
+			});
+
+			function setStatus(m) {
+				const s = $('status');
+				s.textContent = m;
+				s.className = 'status' + (m[0] === '⚠' ? ' err' : '');
+				setTimeout(() => (s.textContent = ''), 2500);
+			}
+
+			try {
+				const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+				if (saved) {
+					$('input').value = saved.text || '';
+					$('size').value = String(saved.size || 400);
+					$('ecc').value = saved.ecc || 'M';
+					$('margin').value = String(saved.margin ?? 2);
+				}
+			} catch (e) {}
+			render();
+		</script>
+
+		<style>
+			.crumbs { font-size: 0.8em; color: rgb(var(--gray)); margin-bottom: 1em; }
+			.crumbs a { color: rgb(var(--gray)); }
+			.lede { font-size: 1.15em; color: rgb(var(--gray-dark)); }
+			.app { margin: 2em 0 3em; }
+			.layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; }
+			.field { display: flex; flex-direction: column; gap: 0.3em; margin-bottom: 1em; }
+			.field .lbl { font-size: 0.85em; font-weight: 700; color: rgb(var(--gray-dark)); }
+			.field textarea {
+				border: 1px solid rgb(var(--gray-light)); border-radius: 10px;
+				padding: 0.85em 1em; font-size: 0.95em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+				background: #fff; resize: vertical;
+			}
+			.field textarea:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+			.opts { display: flex; flex-wrap: wrap; gap: 0.75em 1em; margin-bottom: 1em; align-items: center; font-size: 0.85em; }
+			.opts .opt { display: inline-flex; align-items: center; gap: 0.4em; color: rgb(var(--gray-dark)); }
+			.opts select { border: 1px solid rgb(var(--gray-light)); border-radius: 6px; padding: 0.3em 0.5em; background: #fff; }
+			.opts input[type="number"] { width: 3.5em; border: 1px solid rgb(var(--gray-light)); border-radius: 6px; padding: 0.3em 0.5em; }
+			.presets { display: flex; flex-wrap: wrap; gap: 0.4em; align-items: center; font-size: 0.85em; }
+			.presets-lbl { color: rgb(var(--gray-dark)); margin-right: 0.3em; }
+			.preset { background: none; border: 1px solid rgb(var(--gray-light)); border-radius: 999px; padding: 0.3em 0.85em; font-size: 0.82em; cursor: pointer; color: rgb(var(--gray-dark)); }
+			.preset:hover { border-color: var(--accent); color: var(--accent); }
+			.qr-out {
+				background: #fff; border: 1px solid rgb(var(--gray-light)); border-radius: 12px;
+				padding: 1em; min-height: 280px; display: flex; align-items: center; justify-content: center;
+				margin-bottom: 0.8em;
+			}
+			.qr-out svg { max-width: 100%; height: auto; display: block; }
+			.qr-out .placeholder { color: rgb(var(--gray)); text-align: center; margin: 0; font-size: 0.9em; }
+			.qr-out .placeholder.err { color: #9a2515; }
+			.actions { display: flex; gap: 0.5em; flex-wrap: wrap; }
+			button.ghost { background: none; border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.5em 0.95em; cursor: pointer; color: rgb(var(--gray-dark)); font-size: 0.9em; }
+			button.ghost:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+			button.ghost:disabled { opacity: 0.5; cursor: not-allowed; }
+			.status { display: inline-block; margin-top: 0.6em; font-size: 0.85em; color: #0d7a3f; font-weight: 700; }
+			.status.err { color: #9a2515; }
+			.privacy { margin: 1em 0 0; font-size: 0.82em; color: rgb(var(--gray-dark)); }
+			.prose h2 { margin-top: 1.5em; }
+			.prose code { background: rgba(var(--gray-light), 40%); padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em; }
+			.prose .faq { border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.75em 1em; margin-bottom: 0.6em; }
+			.prose .faq summary { cursor: pointer; font-weight: 700; font-size: 0.95em; }
+			.prose .faq p { margin: 0.75em 0 0; font-size: 0.92em; }
+			.recommends { background: rgba(var(--gray-light), 40%); border-radius: 12px; padding: 1.25em 1.5em; margin: 2.5em 0; }
+			.recommends h2 { margin-top: 0; font-size: 1.6em; }
+			.back { margin-top: 2em; }
+			@media (max-width: 700px) {
+				.layout { grid-template-columns: 1fr; }
+			}
+		</style>
+	</body>
+</html>

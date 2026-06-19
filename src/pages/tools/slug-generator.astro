@@ -1,0 +1,287 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+
+const title = 'URL Slug Generator, Free SEO-Friendly Slug Tool | Toolbase';
+const description =
+	'Turn any title into a clean URL slug, lowercase, hyphenated, no special characters. Also outputs underscore, camelCase, and PascalCase variants. Runs in your browser; free, instant, no sign-up.';
+
+const faqs = [
+	{
+		q: 'What is a URL slug?',
+		a: 'The slug is the human-readable part of a URL after the domain. For a blog post like "How to file GST online in 2026" the slug would be "how-to-file-gst-online-in-2026". A good slug is short, lowercase, hyphen-separated, contains the main keywords, and has no special characters.',
+	},
+	{
+		q: 'Why does the slug matter for SEO?',
+		a: 'Search engines and humans both read slugs as a quick summary of what the page is about. A slug that contains the target keyword (without keyword stuffing) gives a small ranking signal, makes the URL more clickable in results, and is easier to share. Random IDs (like "?p=482") work but lose all of that.',
+	},
+	{
+		q: 'Should I include stop words like "the", "a", "in"?',
+		a: 'Usually no, because they add length without helping search. The Generator can strip them automatically with the "Remove stop words" toggle. Exception: when the stop word changes meaning (an article titled "The Office" loses identity without "The").',
+	},
+	{
+		q: 'What is the difference between hyphens and underscores?',
+		a: 'Hyphens are the SEO standard, search engines treat them as word separators. Underscores get treated as part of the word, so "user_id" reads as one token. Use hyphens for URLs; use underscores for variable names or filenames where word separation matters less.',
+	},
+	{
+		q: 'Why does my slug get truncated?',
+		a: 'The slug is auto-capped at the length you choose (default 60 characters). Long URLs hurt click-through in search results and get truncated in social previews. 50 to 75 characters is a comfortable target for blog posts.',
+	},
+];
+
+const faqJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+});
+const appJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'WebApplication',
+	name: 'URL Slug Generator',
+	applicationCategory: 'UtilitiesApplication',
+	operatingSystem: 'Any (web browser)',
+	url: 'https://gettoolbase.org/tools/slug-generator/',
+	offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+	description: description,
+});
+const breadcrumbJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://gettoolbase.org/' },
+		{ '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://gettoolbase.org/tools/' },
+		{ '@type': 'ListItem', position: 3, name: 'URL Slug Generator', item: 'https://gettoolbase.org/tools/slug-generator/' },
+	],
+});
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<script type="application/ld+json" is:inline set:html={faqJsonLd} />
+		<script type="application/ld+json" is:inline set:html={appJsonLd} />
+		<script type="application/ld+json" is:inline set:html={breadcrumbJsonLd} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="crumbs" aria-label="Breadcrumb">
+				<a href="/">Home</a> › <a href="/tools/">Tools</a> › <span>URL Slug Generator</span>
+			</nav>
+
+			<h1>URL Slug Generator</h1>
+			<p class="lede">
+				Type a title, get a clean SEO-friendly URL slug. Also outputs underscore, camelCase, and
+				PascalCase versions for filenames, variables, and class names.
+				<strong>Everything happens in your browser:</strong> nothing is uploaded.
+			</p>
+
+			<section class="app" aria-label="Slug generator">
+				<label class="field">
+					<span class="lbl">Title or phrase</span>
+					<input id="input" type="text" placeholder="The 5 best AI tools for solopreneurs in 2026" autocomplete="off" />
+				</label>
+
+				<div class="opts">
+					<label class="opt"><input type="checkbox" id="strip-stop" /> Remove stop words (a, an, the, in, of, etc.)</label>
+					<label class="opt">
+						Max length
+						<input type="number" id="max-len" min="10" max="200" value="60" />
+					</label>
+				</div>
+
+				<div class="results" id="results">
+					<div class="r">
+						<span class="lbl">Hyphen (URL slug, SEO standard)</span>
+						<div class="row"><code id="out-hyphen" class="val">slug-appears-here</code><button data-target="out-hyphen" class="copy-btn ghost" type="button">Copy</button></div>
+					</div>
+					<div class="r">
+						<span class="lbl">Underscore (filenames, variables)</span>
+						<div class="row"><code id="out-underscore" class="val">slug_appears_here</code><button data-target="out-underscore" class="copy-btn ghost" type="button">Copy</button></div>
+					</div>
+					<div class="r">
+						<span class="lbl">camelCase (JS variables)</span>
+						<div class="row"><code id="out-camel" class="val">slugAppearsHere</code><button data-target="out-camel" class="copy-btn ghost" type="button">Copy</button></div>
+					</div>
+					<div class="r">
+						<span class="lbl">PascalCase (class names, components)</span>
+						<div class="row"><code id="out-pascal" class="val">SlugAppearsHere</code><button data-target="out-pascal" class="copy-btn ghost" type="button">Copy</button></div>
+					</div>
+				</div>
+				<span id="status" class="status" aria-live="polite"></span>
+
+				<p class="privacy">🔒 100% private, generated locally in your browser. Nothing is uploaded.</p>
+			</section>
+
+			<div class="prose">
+				<h2>How a good slug looks</h2>
+				<ul>
+					<li><strong>Short:</strong> 50 to 75 characters fits in search results without truncation.</li>
+					<li><strong>Lowercase:</strong> mixed case URLs work but are easier to mistype.</li>
+					<li><strong>Hyphens, not underscores:</strong> hyphens are the SEO convention.</li>
+					<li><strong>Keyword-rich:</strong> include the main search term, skip filler words.</li>
+					<li><strong>Stable:</strong> once a slug is live, do not change it. If you must, set a 301 redirect.</li>
+				</ul>
+
+				<h2>How the generator cleans your input</h2>
+				<ol>
+					<li>Strips diacritics (café becomes cafe).</li>
+					<li>Removes special characters (commas, quotes, parentheses).</li>
+					<li>Lowercases everything.</li>
+					<li>Optionally drops common stop words.</li>
+					<li>Collapses multiple spaces into one separator.</li>
+					<li>Truncates at the max length (without breaking a word).</li>
+				</ol>
+
+				<h2>Frequently asked questions</h2>
+				{
+					faqs.map((f) => (
+						<details class="faq">
+							<summary>{f.q}</summary>
+							<p>{f.a}</p>
+						</details>
+					))
+				}
+			</div>
+
+			<aside class="recommends">
+				<h2>More developer tools</h2>
+				<ul>
+					<li><a href="/tools/json-formatter/">JSON Formatter & Validator</a>, format and validate JSON instantly.</li>
+					<li><a href="/tools/case-converter/">Case Converter</a>, switch between UPPER, lower, Title and other cases.</li>
+					<li><a href="/tools/word-counter/">Word Counter</a>, count words, characters and reading time.</li>
+				</ul>
+			</aside>
+
+			<p class="back"><a href="/tools/">← All Toolbase tools</a></p>
+		</main>
+		<Footer />
+
+		<script>
+			const KEY = 'tb-slug-gen';
+			const $ = (id) => document.getElementById(id);
+
+			const STOP = new Set(['a','an','the','and','or','but','if','of','in','on','at','to','for','from','by','with','as','is','are','was','were','be','been','being','it','its','this','that','these','those']);
+
+			function clean(raw) {
+				let s = raw.normalize('NFD').replace(/[̀-ͯ]/g, '');
+				s = s.toLowerCase();
+				s = s.replace(/[^\w\s-]/g, ' ');
+				s = s.replace(/_/g, ' ');
+				return s.trim().split(/\s+/).filter(Boolean);
+			}
+
+			function applyStops(words, strip) {
+				if (!strip) return words;
+				const out = words.filter((w) => !STOP.has(w));
+				return out.length ? out : words;
+			}
+
+			function truncate(s, max) {
+				if (s.length <= max) return s;
+				const cut = s.slice(0, max);
+				const idx = cut.lastIndexOf('-');
+				return idx > 0 ? cut.slice(0, idx) : cut;
+			}
+
+			function render() {
+				const raw = $('input').value;
+				const strip = $('strip-stop').checked;
+				const maxLen = Math.max(10, Math.min(200, parseInt($('max-len').value, 10) || 60));
+				if (!raw.trim()) {
+					$('out-hyphen').textContent = '(type a title above)';
+					$('out-underscore').textContent = '(type a title above)';
+					$('out-camel').textContent = '(type a title above)';
+					$('out-pascal').textContent = '(type a title above)';
+					return;
+				}
+				const words = applyStops(clean(raw), strip);
+				const hyphen = truncate(words.join('-'), maxLen);
+				const underscore = truncate(words.join('_'), maxLen);
+				const camel = words.map((w, i) => i === 0 ? w : w[0].toUpperCase() + w.slice(1)).join('');
+				const pascal = words.map((w) => w[0].toUpperCase() + w.slice(1)).join('');
+				$('out-hyphen').textContent = hyphen;
+				$('out-underscore').textContent = underscore;
+				$('out-camel').textContent = camel.slice(0, maxLen);
+				$('out-pascal').textContent = pascal.slice(0, maxLen);
+				try {
+					localStorage.setItem(KEY, JSON.stringify({ raw, strip, maxLen }));
+				} catch (e) {}
+			}
+
+			$('input').addEventListener('input', render);
+			$('strip-stop').addEventListener('change', render);
+			$('max-len').addEventListener('input', render);
+
+			document.querySelectorAll('.copy-btn').forEach((btn) => {
+				btn.addEventListener('click', async () => {
+					const target = btn.getAttribute('data-target');
+					const text = $(target).textContent;
+					if (!text || text.startsWith('(')) {
+						setStatus('⚠ Nothing to copy yet');
+						return;
+					}
+					try {
+						await navigator.clipboard.writeText(text);
+						setStatus('✓ Copied');
+					} catch (e) {
+						setStatus('⚠ Copy failed, select and copy manually');
+					}
+				});
+			});
+
+			function setStatus(m) {
+				const s = $('status');
+				s.textContent = m;
+				s.className = 'status' + (m[0] === '⚠' ? ' err' : '');
+				setTimeout(() => (s.textContent = ''), 2500);
+			}
+
+			try {
+				const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+				if (saved) {
+					$('input').value = saved.raw || '';
+					$('strip-stop').checked = !!saved.strip;
+					$('max-len').value = saved.maxLen || 60;
+				}
+			} catch (e) {}
+			render();
+		</script>
+
+		<style>
+			.crumbs { font-size: 0.8em; color: rgb(var(--gray)); margin-bottom: 1em; }
+			.crumbs a { color: rgb(var(--gray)); }
+			.lede { font-size: 1.15em; color: rgb(var(--gray-dark)); }
+			.app { margin: 2em 0 3em; }
+			.field { display: flex; flex-direction: column; gap: 0.3em; margin-bottom: 1em; }
+			.field .lbl { font-size: 0.85em; font-weight: 700; color: rgb(var(--gray-dark)); }
+			.field input {
+				border: 1px solid rgb(var(--gray-light)); border-radius: 10px;
+				padding: 0.85em 1em; font-size: 1.05em; font-family: inherit; background: #fff;
+			}
+			.field input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+			.opts { display: flex; flex-wrap: wrap; gap: 0.75em 1.5em; margin-bottom: 1.25em; align-items: center; font-size: 0.9em; }
+			.opts .opt { display: inline-flex; align-items: center; gap: 0.4em; color: rgb(var(--gray-dark)); }
+			.opts input[type="number"] { width: 4em; border: 1px solid rgb(var(--gray-light)); border-radius: 6px; padding: 0.3em 0.5em; }
+			.results { display: grid; gap: 0.8em; }
+			.r { display: flex; flex-direction: column; gap: 0.3em; background: #fff; border: 1px solid rgb(var(--gray-light)); border-radius: 10px; padding: 0.85em 1em; }
+			.r .lbl { font-size: 0.78em; color: rgb(var(--gray-dark)); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
+			.r .row { display: flex; align-items: center; gap: 0.5em; }
+			.r .val { flex: 1; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 1em; word-break: break-all; background: rgba(var(--gray-light), 40%); padding: 0.5em 0.75em; border-radius: 6px; }
+			.copy-btn.ghost { background: none; border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.5em 0.85em; cursor: pointer; color: rgb(var(--gray-dark)); font-size: 0.85em; }
+			.copy-btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+			.status { display: inline-block; margin-top: 0.6em; font-size: 0.85em; color: #0d7a3f; font-weight: 700; }
+			.status.err { color: #9a2515; }
+			.privacy { margin: 1em 0 0; font-size: 0.82em; color: rgb(var(--gray-dark)); }
+			.prose h2 { margin-top: 1.5em; }
+			.prose .faq { border: 1px solid rgb(var(--gray-light)); border-radius: 8px; padding: 0.75em 1em; margin-bottom: 0.6em; }
+			.prose .faq summary { cursor: pointer; font-weight: 700; font-size: 0.95em; }
+			.prose .faq p { margin: 0.75em 0 0; font-size: 0.92em; }
+			.recommends { background: rgba(var(--gray-light), 40%); border-radius: 12px; padding: 1.25em 1.5em; margin: 2.5em 0; }
+			.recommends h2 { margin-top: 0; font-size: 1.6em; }
+			.back { margin-top: 2em; }
+		</style>
+	</body>
+</html>
