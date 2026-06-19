@@ -1,4 +1,4 @@
-# Hero image prompts, library queue (38 articles)
+# Hero image prompts, library queue (43 articles)
 
 All prompts use the Toolbase brand:
 - Editorial line illustration, 16:9 wide aspect ratio
@@ -245,4 +245,33 @@ Editorial line illustration, 16:9 wide aspect ratio. Cream background (#F4EBD8).
 ### 38. `bulk-ai-output-drift-trap-2026`: The Bulk AI Output Trap
 ```
 Editorial line illustration, 16:9 wide aspect ratio. Cream background (#F4EBD8). A 3/4 angled view of a writing desk surface. A vertical cascade of 7 narrow rectangular printout pages flows from upper-left down toward lower-right, like a fanned printout strip. The TOP TWO pages show crisp neat horizontal lines suggesting clean structured text. As the stack descends, the lines on each subsequent page get progressively rougher and more broken. By the bottom three pages the lines have collapsed into rough scribbles. Beside the stack on the desk, a small handheld magnifying glass with its lens resting over the fourth page from the top (where the drift begins). A graphite pencil lies on the lower-left of the desk. A small coffee cup sits at the upper-right corner of the frame, partially visible. Charcoal black ink (#1A1A1A) for all linework, page outlines, scribbles, magnifying glass, pencil, cup. The magnifying glass lens rim is burnt orange (#E07856), the only color accent. Editorial style, hand-drawn feel, generous negative space.
+```
+
+---
+
+## First-hire bridge cluster (Jul 26 to Jul 30, added 2026-06-19)
+
+### 39. `when-to-make-first-hire-solopreneur`: When to Make Your First Hire
+```
+Editorial line illustration, 16:9 wide aspect ratio. Cream background (#F4EBD8). A 3/4 angled view of a wooden desk surface. On one side of the desk: a workspace in active use, an open laptop angled away from the viewer (showing only the back panel and hinge), a coffee cup with a small wisp of steam, a notebook with a few short handwritten lines. On the OTHER side of the desk, directly opposite, an EMPTY chair facing toward the workspace, slightly pulled in, clearly waiting for someone. Between the two sides of the desk, lying flat, a single sheet of paper with a hand-drawn 5-row budget table (just horizontal lines suggesting rows, no text). Behind the empty chair, a small wall calendar leaning against a short stack of books, showing a month grid with one specific day marked with a small dot. Charcoal black ink (#1A1A1A) for all linework, desk, laptop, cup, chair, paper, calendar, books. The empty chair backrest is burnt orange (#E07856), the only color accent. Editorial style, hand-drawn feel, generous negative space.
+```
+
+### 40. `contractor-vs-employee-first-hire-india`: Contractor vs Employee
+```
+Editorial line illustration, 16:9 wide aspect ratio. Cream background (#F4EBD8). Top-down view of a desk surface. Two file folders lying side by side, equally weighted, centered in the frame. Between them, a thin vertical line down the middle of the desk separating left and right. The LEFT folder is closed with a single invoice page peeking out from under its top edge (single horizontal line and a small total at the bottom right corner of the visible page). The RIGHT folder is closed with a thicker multi-page document peeking out, with a small circular wax-seal-style stamp visible on the top page. Resting horizontally across the dividing line, a fountain pen, undecided which side it points toward. To the upper-right corner of the frame, partially visible, a coffee cup. Charcoal black ink (#1A1A1A) for all linework, folders, pages, pen, cup. The vertical dividing line is burnt orange (#E07856), the only color accent. Editorial style, hand-drawn feel, generous negative space.
+```
+
+### 41. `tech-stack-solo-to-three-person`: The 1-to-3 Person Tech Stack
+```
+Editorial line illustration, 16:9 wide aspect ratio. Cream background (#F4EBD8). A 3/4 angled view of a wide desk surface. Three monitors arranged in a slight arc behind the desk surface, each angled slightly toward a central viewer position. Each monitor shows a simple abstract interface, just a header bar and three or four horizontal content lines suggesting an app, no specific branding. Below the monitors on the desk surface, three coffee cups arranged in a row, the middle one with a small wisp of steam (active), the other two upright but at rest. To the side, a small notebook closed. Behind the monitors, the partial outline of a window frame visible at the upper-right of the composition. A thin curved cable loops gently between the three monitors at the back, connecting them across the arc. Charcoal black ink (#1A1A1A) for all linework, monitors, interfaces, cups, notebook, window frame. The looping cable is burnt orange (#E07856), the only color accent. Editorial style, hand-drawn feel, generous negative space.
+```
+
+### 42. `first-hire-onboarding-30-60-90`: First Hire 30/60/90 Onboarding Playbook
+```
+Editorial line illustration, 16:9 wide aspect ratio. Cream background (#F4EBD8). Top-down view of a desk surface. A long horizontal calendar timeline strip laid flat across the full width of the desk, divided by two vertical lines into three equal blocks. Below each block, in the lower margin, a small marker with the labels 30, 60, and 90 (just numerals, no other text). On the FIRST block (days 1 to 30), a small terracotta pot with a tiny sprout just emerging from the soil, two small leaves. On the SECOND block (days 31 to 60), a slightly larger pot with a young plant of 4 to 5 leaves on a thin stem. On the THIRD block (days 61 to 90), a larger pot with a more developed plant, multiple branches, several leaves. A fountain pen rests diagonally across the timeline at the day-30 dividing line. To the upper-right corner of the frame, partially visible, a coffee cup. Charcoal black ink (#1A1A1A) for all linework, timeline, pots, plants, pen, cup, number markers. The leaves of the day-90 plant (the fullest one on the right) are burnt orange (#E07856), the only color accent. Editorial style, hand-drawn feel, generous negative space.
+```
+
+### 43. `three-sops-before-first-hire`: 3 SOPs Before Hiring
+```
+Editorial line illustration, 16:9 wide aspect ratio. Cream background (#F4EBD8). A 3/4 angled view of a desk surface. Three thin binders or document holders standing upright on the desk, lined up like books on a shelf, each at a slightly different upright angle. A FOURTH binder lies opened flat on the desk in front of the three standing ones, with its inner page visible to the viewer, showing a numbered checklist of about 5 horizontal lines (each line short, each with a small checkbox at the left margin). A graphite pencil rests on the open binder's page near the top of the checklist. A small coffee cup sits at the upper-right corner of the frame, partially visible. A small handwritten note tag is visible on the top edge of each standing binder, just a thin rectangle suggesting a label without specific text. Charcoal black ink (#1A1A1A) for all linework, binders, checklist, pencil, cup, label tags. The spine of the MIDDLE (second) standing binder is burnt orange (#E07856), the only color accent. Editorial style, hand-drawn feel, generous negative space.
 ```
