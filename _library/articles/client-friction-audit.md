@@ -1,7 +1,7 @@
 ---
 title: 'The Client Friction Audit: Checking Your Delivery Process'
 description: 'Hidden friction in your delivery process is why clients churn even when the work is good. The audit you should run every quarter.'
-pubDate: 'Jul 12 2026'
+pubDate: 'Jul 11 2026'
 heroImage: '../../assets/client-friction-audit.webp'
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'How to Handle the "Discount" Question from Prospects'
 description: 'Every solopreneur hits this question by month 3. The 4 honest responses that don''t lose the deal AND don''t train clients to expect discounts.'
-pubDate: 'Jul 7 2026'
+pubDate: 'Jul 6 2026'
 heroImage: '../../assets/handle-discount-question-prospects.webp'
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'Knowing When to Stay Solo vs Go Small Team'
 description: 'The honest decision framework for solopreneurs hitting the ceiling of what one person can deliver. When to hire, when to stay, when to outsource.'
-pubDate: 'Jul 26 2026'
+pubDate: 'Jul 25 2026'
 heroImage: '../../assets/when-to-stay-solo-vs-small-team.webp'
 ---
 

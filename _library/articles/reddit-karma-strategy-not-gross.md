@@ -1,7 +1,7 @@
 ---
 title: 'The Reddit Karma Strategy That Doesn''t Feel Gross'
 description: 'Reddit karma compounds for solopreneurs who do it right. The strategy that builds karma without the obvious self-promotion that gets you banned.'
-pubDate: 'Jul 16 2026'
+pubDate: 'Jul 15 2026'
 heroImage: '../../assets/reddit-karma-strategy-not-gross.webp'
 ---
 

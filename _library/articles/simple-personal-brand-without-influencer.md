@@ -1,7 +1,7 @@
 ---
 title: 'Building a Simple Personal Brand Without Becoming an Influencer'
 description: 'Solopreneurs need a personal brand to win client trust. Most personal-brand advice pushes you toward content-creator hell. The honest minimum.'
-pubDate: 'Jul 9 2026'
+pubDate: 'Jul 8 2026'
 heroImage: '../../assets/simple-personal-brand-without-influencer.webp'
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'Perplexity Research Workflows for Solopreneurs in 2026'
 description: 'Perplexity’s killer use case isn’t search. It’s 4 specific research workflows that compound for solo operators doing client work.'
-pubDate: 'Jul 1 2026'
+pubDate: 'Jun 30 2026'
 heroImage: '../../assets/perplexity-research-workflows-solopreneurs.webp'
 ---
 

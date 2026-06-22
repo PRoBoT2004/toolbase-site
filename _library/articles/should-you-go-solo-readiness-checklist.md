@@ -1,7 +1,7 @@
 ---
 title: 'Should You Go Solo? The Honest Readiness Checklist'
 description: 'Most "should you quit your job" advice is romanticism. The 12-point honest readiness checklist that tells you if you’re actually ready.'
-pubDate: 'Jul 24 2026'
+pubDate: 'Jul 23 2026'
 heroImage: '../../assets/should-you-go-solo-readiness-checklist.webp'
 ---
 

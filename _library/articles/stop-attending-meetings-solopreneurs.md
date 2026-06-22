@@ -1,7 +1,7 @@
 ---
 title: 'Stop Attending Meetings: The 5-Tier Framework for Solopreneurs'
 description: '80% of meetings on a solopreneur''s calendar shouldn''t exist. The 5-tier filter to drop, async, or attend without guilt.'
-pubDate: 'Jun 27 2026'
+pubDate: 'Jun 26 2026'
 heroImage: '../../assets/stop-attending-meetings-solopreneurs.webp'
 ---
 

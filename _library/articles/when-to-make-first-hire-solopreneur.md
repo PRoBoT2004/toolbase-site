@@ -1,7 +1,7 @@
 ---
 title: 'When to Make Your First Hire as a Solo Founder (The Financial and Workload Math)'
 description: 'Most first-hire decisions are made on instinct and regretted in three months. The decision framework, the four real triggers, and the India-specific cost math that tells you whether you are ready.'
-pubDate: 'Jul 26 2026'
+pubDate: 'Jul 25 2026'
 heroImage: '../../assets/when-to-make-first-hire-solopreneur.webp'
 ---
 

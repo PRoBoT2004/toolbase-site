@@ -1,7 +1,7 @@
 ---
 title: 'Twitter for Solo Founders Who Hate Twitter'
 description: 'The bare-minimum Twitter strategy that builds a useful audience without forcing you to live on the platform.'
-pubDate: 'Jul 15 2026'
+pubDate: 'Jul 14 2026'
 heroImage: '../../assets/twitter-for-founders-who-hate-twitter.webp'
 ---
 

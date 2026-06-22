@@ -1,7 +1,7 @@
 ---
 title: 'Annual Rate Increases for Freelancers (When to Raise, How to Announce)'
 description: 'Most freelancers never raise rates on existing clients. The script that delivers a 15% increase with 85% client retention.'
-pubDate: 'Jul 6 2026'
+pubDate: 'Jul 5 2026'
 heroImage: '../../assets/annual-rate-increase-script.webp'
 ---
 

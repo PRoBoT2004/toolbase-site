@@ -1,7 +1,7 @@
 ---
 title: 'Energy Management vs Time Management for One-Person Businesses'
 description: 'Time management assumes you can force output on any schedule. Solopreneurs don''t have that luxury. The energy framework that actually works.'
-pubDate: 'Jun 25 2026'
+pubDate: 'Jun 24 2026'
 heroImage: '../../assets/energy-vs-time-management-solopreneurs.webp'
 ---
 

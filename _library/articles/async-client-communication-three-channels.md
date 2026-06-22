@@ -1,7 +1,7 @@
 ---
 title: 'Async Client Communication: The 3-Channel Framework'
 description: 'WhatsApp, email, and Slack don’t do the same job. The 3-channel framework that assigns each channel a clear role with clients.'
-pubDate: 'Jul 11 2026'
+pubDate: 'Jul 10 2026'
 heroImage: '../../assets/async-client-communication-three-channels.webp'
 ---
 

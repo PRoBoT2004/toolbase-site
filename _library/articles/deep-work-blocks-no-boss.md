@@ -1,7 +1,7 @@
 ---
 title: 'Deep Work Blocks When You Have No Boss (The Realistic Version)'
 description: 'Cal Newport''s deep work framework assumes a boss enforcing the boundary. For solopreneurs, you ARE the boss. The honest adaptation.'
-pubDate: 'Jun 26 2026'
+pubDate: 'Jun 25 2026'
 heroImage: '../../assets/deep-work-blocks-no-boss.webp'
 ---
 

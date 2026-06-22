@@ -1,7 +1,7 @@
 ---
 title: 'Stripe vs Razorpay for Indian Freelancers (Local Client Payments)'
 description: 'For domestic Indian client payments, the Stripe-vs-Razorpay math flips from the international comparison. The honest local-client breakdown.'
-pubDate: 'Jul 4 2026'
+pubDate: 'Jul 3 2026'
 heroImage: '../../assets/stripe-vs-razorpay-indian-freelancers-local.webp'
 ---
 

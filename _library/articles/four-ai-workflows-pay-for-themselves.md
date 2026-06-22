@@ -1,7 +1,7 @@
 ---
 title: 'The 4 AI Workflows That Pay For Themselves in Week One'
 description: 'Most AI tool ROI is theoretical. These 4 specific workflows pay back the subscription cost in the first 7 days for any solo operator.'
-pubDate: 'Jul 3 2026'
+pubDate: 'Jul 2 2026'
 heroImage: '../../assets/four-ai-workflows-pay-for-themselves.webp'
 ---
 

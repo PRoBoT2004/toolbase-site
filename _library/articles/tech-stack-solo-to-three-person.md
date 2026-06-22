@@ -1,7 +1,7 @@
 ---
 title: 'The 1-to-3 Person Tech Stack That Scales Without a Rebuild'
 description: 'Most solo tech stacks break the moment a second person joins, forcing a painful migration in month four. The minimum viable stack that works for 1, 2, and 3 people without re-onboarding or re-paying.'
-pubDate: 'Jul 28 2026'
+pubDate: 'Jul 27 2026'
 heroImage: '../../assets/tech-stack-solo-to-three-person.webp'
 ---
 

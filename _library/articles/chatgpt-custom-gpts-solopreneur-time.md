@@ -1,7 +1,7 @@
 ---
 title: 'ChatGPT Custom GPTs That Actually Save Solopreneur Time'
 description: 'Most Custom GPTs in the store are toys. The 6 categories of GPT that earn their setup time back inside one week.'
-pubDate: 'Jun 29 2026'
+pubDate: 'Jun 28 2026'
 heroImage: '../../assets/chatgpt-custom-gpts-solopreneur-time.webp'
 ---
 

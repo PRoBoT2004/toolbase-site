@@ -1,7 +1,7 @@
 ---
 title: 'Tier-2 India Advantages for Solo Founders (Bharuch, Indore, Coimbatore)'
 description: 'Solo founders in Tier-2 Indian cities have specific unfair advantages over Mumbai/Bangalore founders. The honest breakdown by city.'
-pubDate: 'Jul 23 2026'
+pubDate: 'Jul 22 2026'
 heroImage: '../../assets/tier-2-india-solo-founder-advantage.webp'
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'Claude Projects vs ChatGPT Custom GPTs (When to Use Which)'
 description: 'Both tools claim to solve the same problem. They don''t. The clean decision tree for picking the right tool for each kind of solopreneur task.'
-pubDate: 'Jun 30 2026'
+pubDate: 'Jun 29 2026'
 heroImage: '../../assets/claude-projects-vs-chatgpt-custom-gpts.webp'
 ---
 

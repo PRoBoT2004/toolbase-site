@@ -1,7 +1,7 @@
 ---
 title: 'Calendar Blocking for Solopreneurs (Different Than for Teams)'
 description: 'Team calendar-blocking advice doesn''t transfer when you ARE the team. The honest framework for solo operators.'
-pubDate: 'Jun 24 2026'
+pubDate: 'Jun 23 2026'
 heroImage: '../../assets/calendar-blocking-solopreneurs.webp'
 ---
 

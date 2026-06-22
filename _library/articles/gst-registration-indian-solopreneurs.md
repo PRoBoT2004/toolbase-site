@@ -1,7 +1,7 @@
 ---
 title: 'GST Registration for Indian Solopreneurs (The Actually-Useful Guide)'
 description: 'Most GST registration guides for Indian freelancers are dated or written by tax SaaS sellers. The actually-useful 2026 update.'
-pubDate: 'Jul 21 2026'
+pubDate: 'Jul 20 2026'
 heroImage: '../../assets/gst-registration-indian-solopreneurs.webp'
 ---
 

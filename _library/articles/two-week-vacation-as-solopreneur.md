@@ -1,7 +1,7 @@
 ---
 title: 'How to Take a 2-Week Vacation as a Solopreneur'
 description: 'Solopreneurs convinced themselves vacations are impossible. They’re not. The 6-week setup that lets you actually unplug for 2 weeks.'
-pubDate: 'Jul 20 2026'
+pubDate: 'Jul 19 2026'
 heroImage: '../../assets/two-week-vacation-as-solopreneur.webp'
 ---
 

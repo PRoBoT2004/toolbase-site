@@ -1,7 +1,7 @@
 ---
 title: 'The 3 SOPs Every Solo Founder Needs Written Before Hiring Anyone'
 description: 'Most first-hire failures are SOP failures in disguise. The three workflows that must exist as written, transferable documents before the new hire walks in, with templates you can adapt.'
-pubDate: 'Jul 30 2026'
+pubDate: 'Jul 29 2026'
 heroImage: '../../assets/three-sops-before-first-hire.webp'
 ---
 

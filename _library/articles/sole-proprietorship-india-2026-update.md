@@ -1,7 +1,7 @@
 ---
 title: 'Setting Up a Sole Proprietorship in India (2026 Update)'
 description: 'Sole proprietorship is the right legal structure for most Indian solopreneurs in year 1. The current setup process + when to upgrade to OPC.'
-pubDate: 'Jul 22 2026'
+pubDate: 'Jul 21 2026'
 heroImage: '../../assets/sole-proprietorship-india-2026-update.webp'
 ---
 

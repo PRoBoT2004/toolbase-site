@@ -1,7 +1,7 @@
 ---
 title: 'Late-Payment Recovery for Solopreneurs (The Script That Works)'
 description: 'Polite reminders get ignored. Threats burn relationships. The middle-path script that recovers late invoices in 80% of cases without damage.'
-pubDate: 'Jul 8 2026'
+pubDate: 'Jul 7 2026'
 heroImage: '../../assets/late-payment-recovery-script.webp'
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'Using AI for Client Work Without Losing Your Voice'
 description: 'AI-flavored output gets detected by clients in 2026. The actual workflow for using AI to draft fast without the AI tells reaching your client.'
-pubDate: 'Jun 28 2026'
+pubDate: 'Jun 27 2026'
 heroImage: '../../assets/ai-for-client-work-without-losing-voice.webp'
 ---
 

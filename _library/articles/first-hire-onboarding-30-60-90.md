@@ -1,7 +1,7 @@
 ---
 title: 'The First Hire 30/60/90 Onboarding Playbook (The Version That Does Not Waste Two Months)'
 description: 'Most first-hire onboardings burn 60 days on training and discover at day 90 that the fit is wrong. The 30/60/90 framework that tests fit by day 30, builds independence by day 60, and earns its keep by day 90.'
-pubDate: 'Jul 29 2026'
+pubDate: 'Jul 28 2026'
 heroImage: '../../assets/first-hire-onboarding-30-60-90.webp'
 ---
 

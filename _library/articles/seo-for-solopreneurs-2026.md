@@ -1,7 +1,7 @@
 ---
 title: 'SEO for Solopreneurs in 2026 (Without Becoming an SEO Expert)'
 description: 'The minimum-viable SEO checklist for solopreneurs who need traffic but won’t become full-time content marketers.'
-pubDate: 'Jul 14 2026'
+pubDate: 'Jul 13 2026'
 heroImage: '../../assets/seo-for-solopreneurs-2026.webp'
 ---
 

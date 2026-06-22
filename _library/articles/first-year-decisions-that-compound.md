@@ -1,7 +1,7 @@
 ---
 title: 'The 5 First-Year Decisions That Compound for Years'
 description: 'Five decisions you make in year 1 shape years 2-10. The non-obvious ones that solopreneurs get wrong and regret later.'
-pubDate: 'Jul 25 2026'
+pubDate: 'Jul 24 2026'
 heroImage: '../../assets/first-year-decisions-that-compound.webp'
 ---
 

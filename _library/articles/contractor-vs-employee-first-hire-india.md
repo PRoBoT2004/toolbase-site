@@ -1,7 +1,7 @@
 ---
 title: 'Contractor vs First Employee in India (Legal, Tax, and Total Cost Math)'
 description: 'The choice between hiring a contractor and hiring an employee changes your monthly cost by 30 to 40 percent and your legal exposure by an order of magnitude. The framework, the actual math, and the mistakes that get founders penalised.'
-pubDate: 'Jul 27 2026'
+pubDate: 'Jul 26 2026'
 heroImage: '../../assets/contractor-vs-employee-first-hire-india.webp'
 ---
 

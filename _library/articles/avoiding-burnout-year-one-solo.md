@@ -1,7 +1,7 @@
 ---
 title: 'Avoiding Burnout in Year One of Solo Work'
 description: 'Year-one burnout has specific patterns. The early-warning signs and the framework for catching them before you blow up the business.'
-pubDate: 'Jul 18 2026'
+pubDate: 'Jul 17 2026'
 heroImage: '../../assets/avoiding-burnout-year-one-solo.webp'
 ---
 

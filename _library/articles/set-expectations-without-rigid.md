@@ -1,7 +1,7 @@
 ---
 title: 'How to Set Expectations Without Sounding Rigid'
 description: 'Boundaries protect the business. But rigid boundaries lose clients. The framework for setting them so clients feel safe, not policed.'
-pubDate: 'Jul 13 2026'
+pubDate: 'Jul 12 2026'
 heroImage: '../../assets/set-expectations-without-rigid.webp'
 ---
 

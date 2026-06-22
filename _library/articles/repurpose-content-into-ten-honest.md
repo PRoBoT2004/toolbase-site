@@ -1,7 +1,7 @@
 ---
 title: 'Repurposing One Piece of Content Into Ten (The Honest Version)'
 description: 'Most content-repurposing advice produces 10 watered-down posts. The honest version that produces 10 pieces of genuinely different value.'
-pubDate: 'Jul 17 2026'
+pubDate: 'Jul 16 2026'
 heroImage: '../../assets/repurpose-content-into-ten-honest.webp'
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'How to Write a Project Brief That Prevents Scope Creep'
 description: 'Scope creep is killed at the brief, not at delivery. The 7-section project brief template that holds up after 6 months of revisions.'
-pubDate: 'Jul 10 2026'
+pubDate: 'Jul 9 2026'
 heroImage: '../../assets/project-brief-prevents-scope-creep.webp'
 ---
 

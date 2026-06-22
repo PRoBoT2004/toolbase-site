@@ -1,7 +1,7 @@
 ---
 title: 'AI Transcription Tools Compared (Otter, Fireflies, Tactiq, Granola)'
 description: 'Four AI transcription tools. Same call. Same audio. The honest comparison nobody else has run for solopreneur use cases.'
-pubDate: 'Jul 2 2026'
+pubDate: 'Jul 1 2026'
 heroImage: '../../assets/ai-transcription-tools-compared.webp'
 ---
 

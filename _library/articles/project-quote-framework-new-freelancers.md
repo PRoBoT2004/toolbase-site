@@ -1,7 +1,7 @@
 ---
 title: 'The Project Quote Framework for New Freelancers (Avoid the Underpricing Trap)'
 description: 'First-year freelancers underprice fixed-bid projects by 40-60% on average. The framework that catches the cost overruns before you send the quote.'
-pubDate: 'Jul 5 2026'
+pubDate: 'Jul 4 2026'
 heroImage: '../../assets/project-quote-framework-new-freelancers.webp'
 ---
 
