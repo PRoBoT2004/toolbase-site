@@ -1,0 +1,123 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	lastUpdated?: string;
+}
+
+const { title, description, lastUpdated } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const webPageJsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'WebPage',
+	name: title,
+	description,
+	url: canonicalURL.toString(),
+	isPartOf: { '@type': 'WebSite', name: 'Toolbase', url: 'https://gettoolbase.org/' },
+});
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={`${title} · Toolbase`} description={description} />
+		<script type="application/ld+json" is:inline set:html={webPageJsonLd} />
+		<style>
+			main {
+				width: 100%;
+				max-width: 100%;
+				padding: 2.5em 1em 0;
+			}
+			.page {
+				max-width: 760px;
+				margin: 0 auto;
+			}
+			.page-header {
+				margin-bottom: 2em;
+				padding-bottom: 1.5em;
+				border-bottom: 1px solid rgb(var(--gray-light));
+			}
+			.page-header h1 {
+				margin: 0;
+				font-size: 2.6em;
+				line-height: 1.12;
+				letter-spacing: -0.025em;
+			}
+			.last-updated {
+				display: block;
+				margin-top: 0.7em;
+				font-size: 0.82em;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				color: rgb(var(--gray));
+			}
+			.content {
+				color: rgb(var(--gray-dark));
+				font-size: 1.05em;
+				line-height: 1.75;
+			}
+			.content :global(h2) {
+				margin: 1.8em 0 0.5em;
+				font-size: 1.4em;
+				scroll-margin-top: 90px;
+			}
+			.content :global(h3) {
+				margin: 1.4em 0 0.4em;
+				font-size: 1.12em;
+			}
+			.content :global(p) { margin: 0 0 1.3em; }
+			.content :global(ul),
+			.content :global(ol) { margin: 0 0 1.3em; padding-left: 1.4em; }
+			.content :global(li) { margin: 0 0 0.5em; }
+			.content :global(a) {
+				color: var(--accent-dark);
+				text-decoration: underline;
+				text-decoration-thickness: 1px;
+				text-underline-offset: 2px;
+			}
+			.content :global(strong) { color: rgb(var(--black)); }
+			.content :global(table) {
+				width: 100%;
+				border-collapse: collapse;
+				margin: 1.5em 0;
+				background: var(--surface);
+				border-radius: var(--radius-md);
+				overflow: hidden;
+				box-shadow: var(--shadow-sm);
+				font-size: 0.95em;
+			}
+			.content :global(th),
+			.content :global(td) {
+				padding: 0.7em 0.9em;
+				text-align: left;
+				border-bottom: 1px solid rgb(var(--gray-light));
+			}
+			.content :global(th) { background: var(--surface-warm); font-weight: 700; }
+			.content :global(tr:last-child td) { border-bottom: none; }
+			@media (max-width: 720px) {
+				.page-header h1 { font-size: 2em; }
+				.content { font-size: 1em; line-height: 1.7; }
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="page">
+				<header class="page-header">
+					<h1>{title}</h1>
+					{lastUpdated && <span class="last-updated">Last updated: {lastUpdated}</span>}
+				</header>
+				<div class="content">
+					<slot />
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

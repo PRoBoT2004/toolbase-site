@@ -22,10 +22,15 @@ const today = new Date();
 			<a href="/tools/">All tools →</a>
 		</nav>
 		<div class="legal">
+			<nav class="legal-links" aria-label="Legal">
+				<a href="/privacy/">Privacy</a>
+				<a href="/terms/">Terms</a>
+				<a href="/contact/">Contact</a>
+			</nav>
 			<p class="copyright">&copy; {today.getFullYear()} Toolbase</p>
 			<p class="disclosure">
-				Some outbound links are affiliate links. We only recommend tools we'd use ourselves.
-				<a href="/about">How we make money &rarr;</a>
+				We only recommend tools we'd use ourselves. Some outbound links may be affiliate links,
+				which never changes what we recommend or costs you anything.
 			</p>
 		</div>
 	</div>
@@ -86,6 +91,19 @@ const today = new Date();
 		font-size: 0.85em;
 		color: rgb(var(--gray));
 	}
+	.legal-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.9em;
+		margin-bottom: 0.7em;
+	}
+	.legal-links a {
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		font-size: 0.9em;
+		font-weight: 600;
+	}
+	.legal-links a:hover { color: var(--accent-dark); }
 	.copyright {
 		margin: 0 0 0.5em;
 		font-weight: 700;
