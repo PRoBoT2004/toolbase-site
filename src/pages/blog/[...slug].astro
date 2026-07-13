@@ -17,8 +17,62 @@ const { Content } = await render(post);
 const WORDS_PER_MIN = 220;
 const wordCount = post.body?.trim().split(/\s+/).length ?? 0;
 const readingTime = Math.max(1, Math.round(wordCount / WORDS_PER_MIN));
+
+// ----- Related posts: keyword overlap weighted by inverse document frequency -----
+// No tags in the schema, so relatedness is computed from title + description.
+// IDF weighting means corpus-ubiquitous words ("solopreneur", "tool") count for
+// almost nothing, while distinctive shared words ("razorpay", "transcription")
+// drive the match.
+const STOP = new Set([
+	'the', 'and', 'for', 'you', 'your', 'that', 'this', 'with', 'without', 'when',
+	'what', 'how', 'why', 'who', 'from', 'into', 'than', 'then', 'they', 'them',
+	'are', 'was', 'were', 'has', 'have', 'had', 'not', 'but', 'all', 'any', 'can',
+	'will', 'more', 'most', 'some', 'each', 'about', 'over', 'after', 'before',
+	'these', 'those', 'their', 'there', 'here', 'been', 'being', 'does', 'doing',
+	'get', 'got', 'one', 'two', 'out', 'off', 'per', 'via', 'use', 'using', 'used',
+	'guide', 'best', 'vs', 'versus', 'update', 'updated', 'compared', 'honest',
+]);
+
+const tokenize = (entry: CollectionEntry<'blog'>) => {
+	const text = `${entry.data.title} ${entry.data.description}`.toLowerCase();
+	const words = text.match(/[a-z]{4,}/g) ?? [];
+	return new Set(words.filter((w) => !STOP.has(w)));
+};
+
+const allPosts = await getCollection('blog');
+const tokenSets = new Map(allPosts.map((p) => [p.id, tokenize(p)]));
+const df = new Map<string, number>();
+for (const set of tokenSets.values()) {
+	for (const t of set) df.set(t, (df.get(t) ?? 0) + 1);
+}
+
+const current = tokenSets.get(post.id)!;
+const scored = allPosts
+	.filter((p) => p.id !== post.id)
+	.map((p) => {
+		let score = 0;
+		for (const t of tokenSets.get(p.id)!) {
+			if (current.has(t)) score += 1 / (df.get(t) ?? 1);
+		}
+		return { post: p, score };
+	})
+	.sort(
+		(a, b) => b.score - a.score || b.post.data.pubDate.valueOf() - a.post.data.pubDate.valueOf(),
+	);
+
+let relatedPosts = scored.filter((s) => s.score > 0).slice(0, 3).map((s) => s.post);
+
+// If fewer than 3 share meaningful keywords, top up with the most recent others.
+if (relatedPosts.length < 3) {
+	const taken = new Set([post.id, ...relatedPosts.map((p) => p.id)]);
+	const filler = allPosts
+		.filter((p) => !taken.has(p.id))
+		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+		.slice(0, 3 - relatedPosts.length);
+	relatedPosts = [...relatedPosts, ...filler];
+}
 ---
 
-<BlogPost {...post.data} readingTime={readingTime}>
+<BlogPost {...post.data} readingTime={readingTime} relatedPosts={relatedPosts}>
 	<Content />
 </BlogPost>
